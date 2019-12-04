@@ -1,7 +1,7 @@
 class CreateGoods < ActiveRecord::Migration[5.0]
   def change
     create_table :goods do |t|
-
+      
       t.string      :name,          null: false
       t.string      :size,          null: false
       t.integer     :price,         null: false
