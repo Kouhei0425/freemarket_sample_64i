@@ -7,95 +7,148 @@
 @import "modules/toppage";
 @import "modules/good";
 
-header {
-  background-color: #346343;
-  height: 100px;
-  width: 100%;
+body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
-  .header-inner {
+
+  header {
+    background-color: #FFF;
     height: 100px;
-    width: 1020px;
-    margin: 0 210px;
-    padding: 8px 0 0;
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    position: relative;
-    .header-top {
-      background-color: yellow;
-      height: 40px;
-      margin: 0 auto;
-      position: absolute;
-      top: 0;
-      .logo {
-        background-image: url(mercari_logo_horizontal.png);
-        height: 36px;
-        width: 134px;
-        .text_field {
-          padding: 0 50px 0 10px;
-
-          .icon-search {
-
+    width: 100%;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    .header-inner {
+      height: 100px;
+      width: 1020px;
+      margin: 0 210px;
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      position: relative;
+      .header-top {
+        background-color: rgba(171, 250, 230, 0.4);
+        height: 48px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 8px 0 0;
+        position: absolute;
+        top: 0;
+        display: flex;
+        .logo {
+          height: 34px;
+          width: 134px;
+          margin-top: 4px;
+          .logo-img img {
+            width: 134px;
+          }
+        }
+        .form {
+          height: 40px;
+          width: calc(100% - 134px);
+          padding: 0 0 0 10px;
+          margin-left: 44px;
+          form {
+            height: 100%;
+            background-color: rgb(245, 245, 245);
+            font-size: 16px;
+            line-height: 1.4em;
+            -webkit-appearance: none;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-image: initial;
+            border-radius: 4px;
+            outline: none;
+            padding: 0px 50px 0px 10px;
+            transition: all 0.3s ease-out 0s;
+            display: flex;
+            .text-field {
+              border: none;
+              height: 40px;
+              width: 100%;
+              font-size: 20px;
+              line-height: 50px;
+            }
+            .icon-btn {
+              
+              .icon-search {
+                
+              }
+            }
           }
         }
       }
-    }
 
-    .header-nav {
-      height: 44px;
-      width: 1020px;
-      margin-top: 8px;
-      position: absolute;
-      top: 48px;
-      .header-nav-box .clearfix {
-        position: relative;
-        .l-left {
-          float: left;
-          position: absolute;
-          left: 0;
+      .header-nav {
+        background-color: rgba(243, 209, 217, 0.404);
+        height: 52px;
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        .header-nav-box {
+          height: 44px;
+          margin-top: 8px;
+          display: flex;
           .header-cat-nav {
+            height: 100%;
             display: flex;
-            .header-nav-root .list-parent {
-              color: #fff;
-              .icon-list .header-cat-brand-icon {
-                display: block;
+            .header-nav-cat {
+              width: 160px;
+              text-decoration: none;
+              .nav-cat {
+                color: rgb(234, 53, 45);
+                height: 12px;
+                line-height: 36px;
+                margin-right: 4px;
                 font-size: 14px;
                 font-weight: 600;
-                line-height: 36px;
                 white-space: nowrap;
-              }
-              span {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                display: block;
+                .icon-cat {
+                  height: 12px;
+                }
+                span {
+                  color: #333333
+                }
               }
             }
-
-            .header-nav-root .list-parent {
-              .icon-tag .header-cat-brand-icon {
+            .header-nav-brand {
+              width: 160px;
+              text-decoration: none;
+              .nav-brand {
                 max-width: 100%;
                 max-height: 100%;
                 color: rgb(234, 53, 45);
                 height: 12px;
                 margin-right: 4px;
-              }
-              span {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 36px;
+                white-space: nowrap;
+                text-align: center;
+                .icon-brand {
+                  height: 12px;
+                }
+                span {
+                  color: #333333;
+                }
               }
             }
           }
-        }
-      
-        .l-right {
-          float: right;
-          vertical-align: baseline;
-          margin: 0px;
-          padding: 0px;
-          border-width: 0px;
-          border-style: initial;
-          border-color: initial;
-          border-image: initial;
-          position: absolute;
-          right: 0;
           .header-login-nav {
+            height: 100%;
+            vertical-align: baseline;
+            border-width: 0px;
+            border-style: initial;
+            border-color: initial;
+            border-image: initial;
+            position: absolute;
+            right: 0;
             display: flex;
             .btn-red {
+              height: 32px;
+              width: 106px;
               background-color: rgb(234, 53, 45);
               color: rgb(255, 255, 255);
               display: block;
@@ -105,10 +158,15 @@ header {
               border-color: rgb(234, 53, 45);
               border-image: initial;
               border-radius: 4px;
-              padding: 8px 10px;
+              text-align: center;
+              transition: all 0.3s ease-out 0s;
+              padding: 0 auto;
+              margin-right: 12px;
+              text-decoration: none;
             }
-
             .header-login {
+              height: 32px;
+              width: 78px;
               background-color: rgb(255, 255, 255);
               color: rgb(0, 149, 238);
               display: block;
@@ -118,8 +176,10 @@ header {
               border-color: rgb(0, 149, 238);
               border-image: initial;
               border-radius: 4px;
-              padding: 8px 10px;
+              text-align: center;
               transition: all 0.3s ease-out 0s;
+              padding: 0 auto;
+              text-decoration: none;
             }
           }
         }
