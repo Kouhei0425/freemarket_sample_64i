@@ -1,7 +1,55 @@
--@first.each do |first|
-  .box
-    =link_to first.name, category_path(first.id)
-    -first.children.each do |second|
-      =link_to second.name, category_path(second.id)
-      -second.children.each do |third|
-        = link_to third.name, category_path(third.id)
+%body
+  %main.l-container.cleafix
+    .l-content.full-width
+      %ul.parts-nav.cleafix
+        %li
+          %a{:href => ""}
+            トップス
+        %li
+          %a{:href => ""}
+            アクセサリー
+        %li
+          %a{:href => ""}
+            ジャケット/シアター
+        %li
+          %a{:href => ""}
+            バック
+        %li
+          %a{:href => ""}
+            パンツ
+        %li
+          %a{:href => ""}
+            レッグウェア
+        %li
+          %a{:href => ""}
+            ワンピース
+        %li
+          %a{:href => ""}
+            小物
+        %li
+          %a{:href => ""}
+            靴
+        \::after
+      %section.items-box-container.cleafix
+        %h1.items-box-head
+          レディースの商品一覧
+        .items-box-content.cleafix.category-brand-list
+          %section{:class => "items-box></section>"}
+            \::after
+          %ul.pager
+            %li.pager-num
+              %ul
+                %li.pager-cell.active 1
+                %li.pager-cell.active 2
+                %li.pager-cell.active 3
+                %li.pager-cell.active 4
+                %li.pager-cell.active 5
+            %li.pager-next.visible-pc
+              %ul
+                %li.pager-cell
+                  %a{:href => ""}
+                %li.pager-cell
+                  %a{:href => ""}
+              .spacial-description
+                .text-center.spacial-description-title.red
+                  %h3.font-white レディース
