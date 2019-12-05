@@ -4,5 +4,6 @@ class CreateImages < ActiveRecord::Migration[5.0]
       t.string       :image,        null: false
       t.references   :good,         null: false, foreign_key: true
       t.timestamps
+    end
   end
 end
