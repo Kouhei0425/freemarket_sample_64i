@@ -1,0 +1,123 @@
+.show{
+  background-color:rgb(245, 245, 245);  
+  .header{
+    height: 100px;
+    background-color: pink;
+  }
+  .item-box{
+    width: 620px;
+    padding:24px 40px 40px;
+    margin: 40px auto;
+    background-color: red;
+    &__name{
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      background-color: white;
+    }
+    &__detail{
+      height: 420px;
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      &__img{
+        width: 300px;
+        background-color: blue;
+      }
+      &__user{
+        width: 300px;
+        background-color: green;
+      }
+    }
+    &__price{
+      height: 50px;
+      margin-top: 24px;
+      display: flex;
+      padding-left:200px;
+      &__main{
+        font-size: 50px;
+        font-weight: bold;
+        margin-right: 16px;
+      }
+      &__tax{
+        font-size: 16px;
+        padding-top: 25px;
+      }
+    }
+    &__buy{
+      height: 60px;
+      margin-top: 16px;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 60px;
+      background-color:black;
+    }
+    &__caution{
+      height: 21px;
+      margin-top: 16px;
+      background-color: orange;
+      color: red;
+      text-align: center;
+    }
+    &__description{
+      height: 500px;
+      background-color: white;
+      padding-top:32px;
+    }
+    &__footer{
+      height: 33px;
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      &__left{
+        display: flex;
+      }
+    }
+  }
+  .comment-box{
+    width: 700px;
+    height: 262px;
+    margin: 8px auto;
+    background-color: red;
+  }
+  .link-box{
+    width: 700px;
+    height: 28px;
+    margin: 24px auto 0;
+    background-color:red;
+  }
+  .sns-box{
+    width: 700px;
+    height: 82px;
+    padding: 32px 0 24px 0;
+    margin: 24px auto;
+    background-color:red;
+  }
+  .items-box{
+    width: 700px;
+    height: 1530px;
+    margin: 0 auto;
+    background-color:black;
+    &__other{
+      height: 738px;
+      background-color:blue;
+    }
+    &__same{
+      height: 738px;
+      margin-bottom: 40px;
+      background-color: green;
+    }
+  }
+  .item-name{
+    height: 48px;
+    width: 100%;
+    background-color:red;
+  }
+  .footer{
+    width: 100%;
+    height: 912px;
+    background-color: yellow;
+  }
+}
