@@ -41,15 +41,6 @@ ActiveRecord::Schema.define(version: 20191205024501) do
     t.index ["good_id"], name: "index_category_goods_on_good_id", using: :btree
   end
 
-  create_table "children", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "category_id"
-    t.integer  "child_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_children_on_category_id", using: :btree
-    t.index ["child_id"], name: "index_children_on_child_id", using: :btree
-  end
-
   create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                     null: false
     t.string   "size",                     null: false
@@ -91,8 +82,6 @@ ActiveRecord::Schema.define(version: 20191205024501) do
   add_foreign_key "categories", "categories", column: "parent_id"
   add_foreign_key "category_goods", "categories"
   add_foreign_key "category_goods", "goods"
-  add_foreign_key "children", "categories"
-  add_foreign_key "children", "categories", column: "child_id"
   add_foreign_key "goods", "areas"
   add_foreign_key "goods", "brands"
   add_foreign_key "goods", "users"

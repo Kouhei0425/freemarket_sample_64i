@@ -1,3 +1,3 @@
 class Brand < ApplicationRecord
-  has_many  :good
+  has_many  :goods
 end

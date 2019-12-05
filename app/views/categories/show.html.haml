@@ -1,7 +1,0 @@
--@first.each do |first|
-  .box
-    =link_to first.name, category_path(first.id)
-    -first.children.each do |second|
-      =link_to second.name, category_path(second.id)
-      -second.children.each do |third|
-        = link_to third.name, category_path(third.id)
