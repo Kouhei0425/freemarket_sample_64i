@@ -24,7 +24,7 @@ body {
       justify-content: space-between;
       position: relative;
       .header-top {
-        background-color: rgba(171, 250, 230, 0.4);
+        background-color: #FFF;
         height: 48px;
         width: 100%;
         margin: 0 auto;
@@ -41,10 +41,10 @@ body {
           }
         }
         .form {
-          height: 40px;
+          height: 36px;
           width: calc(100% - 134px);
           padding: 0 0 0 10px;
-          margin-left: 44px;
+          margin-left: 36px;
           form {
             height: 100%;
             background-color: rgb(245, 245, 245);
@@ -62,7 +62,7 @@ body {
             display: flex;
             .text-field {
               border: none;
-              height: 40px;
+              height: 36px;
               width: 100%;
               font-size: 20px;
               line-height: 50px;
@@ -78,7 +78,7 @@ body {
       }
 
       .header-nav {
-        background-color: rgba(243, 209, 217, 0.404);
+        background-color: #FFF;
         height: 52px;
         width: 100%;
         position: absolute;
@@ -93,18 +93,18 @@ body {
             .header-nav-cat {
               width: 160px;
               text-decoration: none;
+              margin-right: 12px;
               .nav-cat {
+                max-width: 100%;
+                max-height: 100%;
                 color: rgb(234, 53, 45);
                 height: 12px;
-                line-height: 36px;
-                margin-right: 4px;
+                
                 font-size: 14px;
                 font-weight: 600;
+                line-height: 36px;
                 white-space: nowrap;
                 text-align: center;
-                margin: 0;
-                padding: 0;
-                display: block;
                 .icon-cat {
                   height: 12px;
                 }
@@ -116,12 +116,13 @@ body {
             .header-nav-brand {
               width: 160px;
               text-decoration: none;
+              margin-right: 12px;
               .nav-brand {
                 max-width: 100%;
                 max-height: 100%;
                 color: rgb(234, 53, 45);
                 height: 12px;
-                margin-right: 4px;
+                
                 font-size: 14px;
                 font-weight: 600;
                 line-height: 36px;
