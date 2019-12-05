@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191204120800) do
+ActiveRecord::Schema.define(version: 20191205024501) do
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 20191204120800) do
     t.index ["parent_id"], name: "index_categories_on_parent_id", using: :btree
   end
 
-  create_table "children", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "category_id"
-    t.integer  "child_id"
+  create_table "category_goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "category_id", null: false
+    t.integer  "good_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_children_on_category_id", using: :btree
-    t.index ["child_id"], name: "index_children_on_child_id", using: :btree
+    t.index ["category_id"], name: "index_category_goods_on_category_id", using: :btree
+    t.index ["good_id"], name: "index_category_goods_on_good_id", using: :btree
   end
 
   create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 20191204120800) do
   end
 
   add_foreign_key "categories", "categories", column: "parent_id"
-  add_foreign_key "children", "categories"
-  add_foreign_key "children", "categories", column: "child_id"
+  add_foreign_key "category_goods", "categories"
+  add_foreign_key "category_goods", "goods"
   add_foreign_key "goods", "areas"
   add_foreign_key "goods", "brands"
   add_foreign_key "goods", "categories"
