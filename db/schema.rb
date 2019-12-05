@@ -42,21 +42,19 @@ ActiveRecord::Schema.define(version: 20191205024501) do
   end
 
   create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                      null: false
-    t.string   "size",                      null: false
-    t.integer  "price",                     null: false
-    t.text     "method",      limit: 65535, null: false
-    t.text     "ship",        limit: 65535, null: false
-    t.text     "explain",     limit: 65535, null: false
-    t.integer  "category_id",               null: false
-    t.integer  "user_id",                   null: false
-    t.integer  "brand_id",                  null: false
-    t.integer  "area_id",                   null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",                     null: false
+    t.string   "size",                     null: false
+    t.integer  "price",                    null: false
+    t.text     "method",     limit: 65535, null: false
+    t.text     "ship",       limit: 65535, null: false
+    t.text     "explain",    limit: 65535, null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "brand_id",                 null: false
+    t.integer  "area_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["area_id"], name: "index_goods_on_area_id", using: :btree
     t.index ["brand_id"], name: "index_goods_on_brand_id", using: :btree
-    t.index ["category_id"], name: "index_goods_on_category_id", using: :btree
     t.index ["user_id"], name: "index_goods_on_user_id", using: :btree
   end
 
@@ -86,7 +84,6 @@ ActiveRecord::Schema.define(version: 20191205024501) do
   add_foreign_key "category_goods", "goods"
   add_foreign_key "goods", "areas"
   add_foreign_key "goods", "brands"
-  add_foreign_key "goods", "categories"
   add_foreign_key "goods", "users"
   add_foreign_key "images", "goods"
 end
