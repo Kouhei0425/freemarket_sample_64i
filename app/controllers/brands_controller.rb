@@ -3,4 +3,5 @@ class BrandsController < ApplicationController
     @brand = Brand.find(params[:id])
     @goods = @brand.goods
   end
+  
 end
