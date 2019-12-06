@@ -1,0 +1,25 @@
+.single_header{
+  height: 128px;
+  width: 100vw;
+  padding-top: 40px;
+  box-sizing: border-box;
+  &__link{
+    text-align: center;
+  }
+}
+.single_footer{
+  height: 220px;
+  width: 456px;
+  margin: 0 auto;
+  padding: 40px 0;
+  &__clearfix{
+    color: gray;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    &__li{
+      margin-left: 16px;
+    }
+  }
+}
