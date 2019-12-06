@@ -1,0 +1,35 @@
+.single_header
+  %h1.single_header__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
+    
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
+
+.single_footer
+  %ul.single_footer__clearfix
+    %li.single_footer__clearfix__li
+      = link_to "プライバシーポリシー", root_path
+    %li.single_footer__clearfix__li
+      = link_to "メルカリ利用規約", root_path
+    %li.single_footer__clearfix__li
+      = link_to "特定商取引に関する表記", root_path
+  
