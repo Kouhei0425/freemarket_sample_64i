@@ -1,123 +1,346 @@
-.show{
+body{
   background-color:rgb(245, 245, 245);  
-  .header{
-    height: 100px;
-    background-color: pink;
-  }
-  .item-box{
-    width: 620px;
-    padding:24px 40px 40px;
-    margin: 40px auto;
-    background-color: red;
-    &__name{
-      font-size: 30px;
-      text-align: center;
-      font-weight: bold;
+  .show{
+    position: relative;
+    .item-box{
+      width: 620px;
+      padding:24px 40px 40px;
+      margin: 40px auto;
       background-color: white;
-    }
-    &__detail{
-      height: 420px;
-      margin-top: 16px;
-      display: flex;
-      justify-content: space-between;
-      &__img{
-        width: 300px;
-        background-color: blue;
-      }
-      &__user{
-        width: 300px;
-        background-color: green;
-      }
-    }
-    &__price{
-      height: 50px;
-      margin-top: 24px;
-      display: flex;
-      padding-left:200px;
-      &__main{
-        font-size: 50px;
+      &__name{
+        font-size: 30px;
+        text-align: center;
         font-weight: bold;
-        margin-right: 16px;
+        background-color: white;
       }
-      &__tax{
-        font-size: 16px;
-        padding-top: 25px;
+      &__detail{
+        height: 420px;
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        &__img{
+          width: 300px;
+          background-color:rgb(245, 245, 245); 
+          border: solid 1px#EEEEEE; 
+          border-collapse: collapse;
+          &__top{
+            height: 300px;
+          }
+          .small-images{
+            height: 120px;
+            font-size: 0;
+            &__img{
+              height: 58px;
+              width: 58px;
+              display: inline-block;
+            }
+          }
+        }
+        table{
+          width: 298px;
+          height: 418px;
+          border: 1px solid #EEEEEE;
+          border-collapse: collapse;
+          font-size: 14px;
+            tr{
+              width: 299px;
+              border: solid 1px#EEEEEE;
+              th{
+                width: 39%;
+                padding: 8px;
+                border: solid 1px#EEEEEE;
+                background-color:rgb(245, 245, 245); ;
+              }
+              td{
+                padding: 8px;
+
+              }
+            }
+          }
+      }
+      
+      &__price{
+        height: 50px;
+        margin-top: 24px;
+        display: flex;
+        padding-left:200px;
+        &__main{
+          font-size: 50px;
+          font-weight: bold;
+          margin-right: 16px;
+        }
+        &__tax{
+          font-size: 16px;
+          padding-top: 25px;
+        }
+      }
+      &__buy{
+        height: 60px;
+        margin-top: 16px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 60px;
+        background-color:red;
+      }
+      &__caution{
+        height: 21px;
+        margin-top: 16px;
+        color: red;
+        text-align: center;
+        font-size: 13px;
+      }
+      &__description{
+        background-color: white;
+        padding-top:32px;
+        font-size: 18px;
+      }
+      &__footer{
+        height: 33px;
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        &__left{
+          display: flex;
+          justify-content: space-between;
+          width: 300px;
+          font-size: 15px;
+          &__good{
+            background-color: rgb(245, 245, 245);
+            border-radius: 27px;
+            padding: 0 10px;
+            line-height: 33px;
+          }
+          &__bad{
+            background-color: rgb(245, 245, 245);
+            border-radius: 27px;
+            padding: 0 10px;
+            line-height: 33px;
+          }
+        }
+        &__right{
+          color: skyblue;
+        }
       }
     }
-    &__buy{
-      height: 60px;
-      margin-top: 16px;
-      color: white;
-      font-size: 30px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 60px;
-      background-color:black;
+    .comment-box{
+      width: 700px;
+      height: 262px;
+      margin: 8px auto;
+      background-color:white;
+      &__content{
+        width: 652px;
+        height: 214px;
+        padding: 24px;
+        &__caution{
+          height: 28px;
+          padding: 8px;
+          background-color: #fff6de;
+          color: black;
+          font-size: 13px;
+          line-height: 15px;
+        }
+        &__textarea{
+          height: 82px;
+          padding:10px;
+          border: solid 1px #ccc;
+          margin-top: 8px;
+        }
+        &__btn{
+          height: 48px;
+          border: solid 1px #aaa;
+          margin-top: 8px;
+          background-color: #aaa;
+          text-align: center;
+          line-height: 48px;
+          color:white
+        }
+      }
     }
-    &__caution{
-      height: 21px;
-      margin-top: 16px;
-      background-color: orange;
-      color: red;
-      text-align: center;
-    }
-    &__description{
-      height: 500px;
-      background-color: white;
-      padding-top:32px;
-    }
-    &__footer{
-      height: 33px;
-      margin-top: 16px;
+    .link-box{
+      width: 700px;
+      height: 28px;
+      margin: 24px auto 0;
       display: flex;
       justify-content: space-between;
+      font-size: 14px;
+      line-height: 15px;
+      color:skyblue;
       &__left{
-        display: flex;
+        padding-left:14px;
+        width: 301px;
+      }
+      &__right{
+        padding-right: 14px;
+        width: 301px;
+        text-align: right;
       }
     }
-  }
-  .comment-box{
-    width: 700px;
-    height: 262px;
-    margin: 8px auto;
-    background-color: red;
-  }
-  .link-box{
-    width: 700px;
-    height: 28px;
-    margin: 24px auto 0;
-    background-color:red;
-  }
-  .sns-box{
-    width: 700px;
-    height: 82px;
-    padding: 32px 0 24px 0;
-    margin: 24px auto;
-    background-color:red;
-  }
-  .items-box{
-    width: 700px;
-    height: 1530px;
-    margin: 0 auto;
-    background-color:black;
-    &__other{
-      height: 738px;
-      background-color:blue;
+    .sns-box{
+      width: 700px;
+      height: 82px;
+      padding: 32px 0 24px 0;
+      margin: 24px auto;
+      background-color:white;
+      .none{
+        height: 14px;
+      }
+      &__container{
+        height: 52px;
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+          .icon{
+            width: 44px;
+            height: 44px;
+            font-size: 44px;
+          }
+        }
+      }
+        
+      }
+      .items-box{
+        width: 700px;
+        height: 1500px;
+        margin: 0 auto;
+        &__other{
+          height: 738px;
+          &__text{
+            height: 30px;
+            margin: 24px 0 8px 0;
+            font-size: 22px;
+            color:skyblue;
+          }
+          &__img{
+            height: 700px;
+            font-size: 0;
+            .other-good{
+              width: 219px;
+              height: 330px;
+              margin:0 20px 20px 0;
+              display: inline-block;
+              &__img{
+                height: 220px;
+                border: solid 1px rgb(245, 245, 245); ;
+              }
+              &__text{
+                height: 78px;
+                width: 188px;
+                padding: 16px;
+                background-color: #fff;
+                color: black;
+                font-size: 16px;
+                &__name{
+                  height: 48px;
+                }
+                &__price{
+                  height: 16px;
+                  margin-top: 8px;
+                }
+              }
+            }
+            .other-good2{
+              width: 219px;
+              height: 330px;
+              margin:0 0 20px;
+              display: inline-block;
+            }
+          }
+        }
+        &__same{
+          height: 738px;
+          margin-bottom: 40px;
+          &__text{
+            height: 30px;
+            margin: 24px 0 8px 0;
+            font-size: 22px;
+            color:skyblue;
+          }
+          &__img{
+            height: 700px;
+            font-size:0;
+            .same-good{
+              width: 219px;
+              height: 330px;
+              margin:0 20px 20px 0;
+              display: inline-block;
+              &__img{
+                height: 220px;
+                border: solid 1px rgb(245, 245, 245); ;
+              }
+              &__text{
+                height: 78px;
+                width: 188px;
+                padding: 16px;
+                background-color: #fff;
+                color: black;
+                font-size: 16px;
+                &__name{
+                  height: 48px;
+                }
+                &__price{
+                  height: 16px;
+                  margin-top: 8px;
+                }
+              }
+            }
+            .same-good2{
+              width: 219px;
+              height: 330px;
+              margin:0 0 20px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+      .item-name{
+        height: 48px;
+        width: 100%;
+        border-top: solid 1px #eee;
+        &__text{
+          display: flex;
+          justify-content: space-between;
+          height: 16px;
+          padding:16px 0;
+          line-height: 16px;
+          margin: 0 auto;
+          width: 700px;
+          font-size: 14px;
+        }
+      }
+      .footer{
+        width: 100%;
+        height: 912px;
+        background-color: black;
+      }
     }
-    &__same{
-      height: 738px;
-      margin-bottom: 40px;
-      background-color: green;
-    }
+        
+  
+
+
+  .img-main{
+    width: 300px;
+    height: 300px;
   }
-  .item-name{
-    height: 48px;
-    width: 100%;
-    background-color:red;
+  .img-6{
+    width: 220px;
+    height: 220px;
   }
-  .footer{
-    width: 100%;
-    height: 912px;
-    background-color: yellow;
+  .f{
+    color:#3b5998;
   }
-}
+  .t{
+    color:#55acee;
+  }
+  .l{
+    color: #00c300;
+  }
+  .p{
+    color: #BD081C;
+  }
+  
+    
+            
+          
+        
