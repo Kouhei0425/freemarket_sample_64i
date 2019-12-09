@@ -2,7 +2,7 @@
   .header
   .item-box
     .item-box__name
-      goods name
+      = @good.name
     .item-box__detail
       .item-box__detail__img
         .item-box__detail__img__top
@@ -24,7 +24,7 @@
             %th
               出品者
             %td
-              user
+              = @user.name
               %br
               ☺︎4541  ☺︎50  ☺︎6
           %tr
@@ -40,7 +40,7 @@
             %th
               ブランド
             %td
-              brand name
+              = @brand.name
           %tr
             %th
               商品のサイズ
