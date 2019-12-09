@@ -8,13 +8,7 @@ class GoodsController < ApplicationController
   end
 
   def create
-    @good = Good.new(good_params)
-  end
-
-  private
-
-  def good_params
-    params.require(:good).permit(:, {image: []})
+    
   end
 
   
