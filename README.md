@@ -41,8 +41,8 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :brand
 - belongs_to :area
-- has_many :category, through: :category_goods
-- has_many :images
+- has_many :category, through: :category_goods, dependent: :destroy
+- has_many :images, dependent: :destroy
 
 
 
@@ -65,7 +65,7 @@ references|good     | null: false, foreign_key: true|
 |references |parent | foreign_key: { to_table: :categories } |
 
 ### Association
-- has_many :goods, through: :category_goods
+- has_many :goods, through: :category_goods, dependent: :destroy
 - belongs_to :parent, class_name: "Category", optional: true
 - has_many :children, class_name: "Category", foreign_key: :parent_id
 
@@ -98,4 +98,14 @@ references|good     | null: false, foreign_key: true|
 |references| good  | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :good 
+- belongs_to :good
+
+
+
+## Userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|string|name|null: false |
+
+### Association
+- has_many :goods
