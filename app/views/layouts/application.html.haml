@@ -7,42 +7,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header
-      .header-inner
-        .header-top
-          = link_to root_path, class: 'logo' do
-            = image_tag "fmarket_logo_red.svg", size: "134x34", alt: "Mercari", class: "logo-img"
-          .form
-            %form
-              %input{placeholder: "何かお探しですか？", class: "text-field", type: "text", size: "100x1"}/
-              %button.icon-btn
-                %svg.icon-search{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 16 16", :width => "16"}
-                  %path{d: "M11.435 10.063h-.723l-.256-.247a5.92 5.92 0 0 0 1.437-3.87 5.946 5.946 0 1 0-5.947 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723L14.637 16 16 14.637l-4.565-4.574zm-5.489 0A4.111 4.111 0 0 1 1.83 5.946 4.111 4.111 0 0 1 5.946 1.83a4.111 4.111 0 0 1 4.117 4.116 4.111 4.111 0 0 1-4.117 4.117z", fill: "currentColor", "fill-rule": "nonzero"}
-        .header-nav
-          .header-nav-box
-            .header-cat-nav
-              %i.header-nav-cat
-                = link_to categories_path, class: 'nav-cat' do
-                  %svg.icon-cat{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 20 16", :width => "20"}
-                    %path{:d => "M18.799 15.25h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zm0-6h-11.5a1.25 1.25 0 1 1 0-2.5h11.5a1.25 1.25 0 0 1 0 2.5zM2 16a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z", fill: "currentColor", "fill-rule": "nonzero"}
-                  %span カテゴリーから探す
-              %i.header-nav-brand
-                = link_to brands_path, class: 'nav-brand' do
-                  %svg.icon-brand{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 23 16", :width => "23"}
-                    %path{:d => "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule": "nonzero"}
-                  %span ブランドから探す
-            .header-login-nav
-              = link_to "新規会員登録", new_user_registration_path, class: 'btn-red'
-              = link_to "ログイン", new_user_session_path, class: 'header-login'
-    .post-button
-      .btn-post
-        = link_to new_good_path, class: "post-btn" do
-          = image_tag "Red_Circle_full.png", size: "160x160", alt: "NewPost", class:"post-btn-img"
-          .post-btn-text
-            %span 出品
-          .camera-img
-            %svg.img-camera{"aria-hidden" => "true", :height => "54", :viewbox => "0 0 18 16", :width => "60"}
-              %path{:d => "M6.3 0L4.653 1.778H1.8c-.99 0-1.8.8-1.8 1.778v10.666C0 15.2.81 16 1.8 16h14.4c.99 0 1.8-.8 1.8-1.778V3.556c0-.978-.81-1.778-1.8-1.778h-2.853L11.7 0H6.3zM9 13.333c-2.484 0-4.5-1.99-4.5-4.444 0-2.453 2.016-4.445 4.5-4.445s4.5 1.992 4.5 4.445c0 2.453-2.016 4.444-4.5 4.444zm0-1.6c1.59 0 2.88-1.273 2.88-2.844S10.59 6.044 9 6.044c-1.59 0-2.88 1.274-2.88 2.845 0 1.57 1.29 2.844 2.88 2.844z", :fill => "currentColor", "fill-rule" => "nonzero"}
+    
+    
 
 
   = yield
