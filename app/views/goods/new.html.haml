@@ -1,14 +1,50 @@
-.new-img
-  .new-img__item
-    .new-img__item__content
-      .new-img__item__content__gazo
-        = image_tag "show.png",class:"img-10"
-    .new-img__item__text
-      .new-img__item__text__edit
-        編集
-      .new-img__item__text__delete
-        削除
-= form_for @good do |f|
-  = f.file_field :image, :multipul => true
-  = f.submit
-
+.single_header
+  %h1.single_header__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
+-# .new-img
+-#   .new-img__item
+-#     .new-img__item__content
+-#       .new-img__item__content__gazo
+-#         = image_tag "show.png",class:"img-10"
+-#     .new-img__item__text
+-#       .new-img__item__text__edit
+-#         編集
+-#       .new-img__item__text__delete
+-#         削除
+-# = form_for @good do |f|
+-#   = f.file_field :image, :multipul => true
+-#   = f.submit
+.new-box
+  .form-main
+    .form-main__text
+      商品の情報を入力
+    = form_for @good do |f|
+      .form-main__container
+        .form-img-box
+          .form-img-box__text
+            %h 出品画像
+            %h.red 
+              必須
+          %p 最大10枚までアップロードできます
+          .form-img-box__upload
+            .form-img-box__upload__text
+              ドラッグアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード
+        .sell-box
+          .sell-box__text1
+            %h 商品名
+            %h.red 
+              必須
+          = f.text_field :name,placeholder:"商品名 (必須40文字まで）",class:"good-name"
+          .sell-box__text2
+            %h 商品の説明
+            %h.red
+              必須
+          = f.text_area :explain,placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など）例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。",class:"good-explain"
+        .sell-box
+        .sell-box
+        .sell-box
+        .sell-box
+.footer-new
