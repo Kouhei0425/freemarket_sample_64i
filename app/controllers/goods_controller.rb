@@ -1,6 +1,6 @@
 class GoodsController < ApplicationController
   def show
-
+    
   end
   
   def new
@@ -10,7 +10,5 @@ class GoodsController < ApplicationController
   def create
     
   end
-
   
 end
- 
