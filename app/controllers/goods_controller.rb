@@ -1,6 +1,6 @@
 class GoodsController < ApplicationController
   def show
-
+    
   end
   
   def new
@@ -16,7 +16,5 @@ class GoodsController < ApplicationController
   def good_params
     params.require(:good).permit(:, {image: []})
   end
-
   
 end
- 
