@@ -31,11 +31,13 @@
             %th
               = @ca
             %td
-              メンズ
+              = @good.categories[0].name
               %br
-              ＞トップス
+              ＞
+              = @good.categories[1].name
               %br
-              ＞シャツ
+              ＞
+              = @good.categories[2].name
           %tr
             %th
               ブランド
@@ -45,12 +47,12 @@
             %th
               商品のサイズ
             %td
-              S
+              = @good.size
           %tr
             %th
               商品の状態
             %td
-              新品
+              = @good.status
           %tr
             %th
               配送料の負担
