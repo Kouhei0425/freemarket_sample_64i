@@ -70,15 +70,13 @@ background-color: #f5f5f5;
       
     
       .pager {
-      margin: 20px 0 0;
+      margin: 40px 0 0;
       position: relative;
       text-align: center;
       .pager-num {
         max-width: 220px;
         margin: 0 auto;
-        .pager-cell.active {
-          color: #fff;
-          background: #ea352d;
+        
           .pager-cell {
             display: inline-block;
             width: 44px;
@@ -93,6 +91,9 @@ background-color: #f5f5f5;
               color: #333;
             }
           }
+          .pager-cell.active {
+            color: #fff;
+            background: #ea352d;
         }
       }
     }
