@@ -98,4 +98,14 @@ references|good     | null: false, foreign_key: true|
 |references| good  | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :good 
+- belongs_to :good
+
+
+
+## Userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|string|name|null: false |
+
+### Association
+- has_many :goods
