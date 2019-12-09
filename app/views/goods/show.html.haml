@@ -33,11 +33,9 @@
             %td
               = @good.categories[0].name
               %br
-              ＞
-              = @good.categories[1].name
+              ＞#{@good.categories[1].name}
               %br
-              ＞
-              = @good.categories[2].name
+              ＞#{@good.categories[2].name}
           %tr
             %th
               ブランド
@@ -57,25 +55,26 @@
             %th
               配送料の負担
             %td
-              送料込み(出品者負担)
+              = @good.burden
           %tr
             %th
               配送の方法
             %td
-              ゆうゆうメルカリ便
+              = @good.method
           %tr
             %th
               配送元地域
             %td
-              東京都
+              = @good.area.name
           %tr
             %th
               発送日の目安
             %td
-              1~2日で発送
+              #{@good.ship}で発送
     .item-box__price
       .item-box__price__main
-        ¥ 5,000
+        ¥ 
+        = @good.price
       .item-box__price__tax
         (税込) 送料込み
     .item-box__buy
@@ -83,7 +82,7 @@
     .item-box__caution
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
-      ※他にも出品しております☆
+      = @good.explain
       %br
       %br
       ■ブランド名

@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20191205024501) do
     t.integer  "price",                    null: false
     t.text     "method",     limit: 65535, null: false
     t.text     "ship",       limit: 65535, null: false
+    t.text     "status",     limit: 65535, null: false
+    t.text     "burden",     limit: 65535, null: false
     t.text     "explain",    limit: 65535, null: false
     t.integer  "user_id",                  null: false
     t.integer  "brand_id",                 null: false
