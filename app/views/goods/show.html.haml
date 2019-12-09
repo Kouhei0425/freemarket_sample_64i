@@ -29,15 +29,15 @@
               ☺︎4541  ☺︎50  ☺︎6
           %tr
             %th
-              = @ca
+              カテゴリー
             %td
-              = @good.categories[0].name
+              = link_to @good.categories[0].name, category_path(@good.categories[0].id)
               %br
               ＞
-              = @good.categories[1].name
+              = link_to @good.categories[1].name, category_path(@good.categories[1].id)
               %br
               ＞
-              = @good.categories[2].name
+              = link_to @good.categories[2].name, category_path(@good.categories[2].id)
           %tr
             %th
               ブランド
@@ -57,25 +57,26 @@
             %th
               配送料の負担
             %td
-              送料込み(出品者負担)
+              = @good.burden
           %tr
             %th
               配送の方法
             %td
-              ゆうゆうメルカリ便
+              = @good.method
           %tr
             %th
               配送元地域
             %td
-              東京都
+              = @good.area.name
           %tr
             %th
               発送日の目安
             %td
-              1~2日で発送
+              = @good.ship
     .item-box__price
+      ¥
       .item-box__price__main
-        ¥ 5,000
+        = @good.price.to_s(:delimited)
       .item-box__price__tax
         (税込) 送料込み
     .item-box__buy
@@ -83,49 +84,7 @@
     .item-box__caution
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
-      ※他にも出品しております☆
-      %br
-      %br
-      ■ブランド名
-      %br
-      FTC
-      %br
-      %br
-      ■サイズ 
-      %br
-      着丈 65センチ
-      %br
-      肩幅 41センチ
-      %br
-      身幅（脇下採寸） 56センチ
-      %br
-      袖丈 59センチ
-      %br
-      （素人採寸の為、多少の誤差はご了承下さい）
-      %br
-      %br
-      ■カラー
-      %br
-      レッド×ホワイト×ブラック
-      %br
-      %br
-      ■素材
-      %br
-      綿100%
-      %br
-      %br
-      ■状態 
-      %br
-      特に目立つ傷や汚れはありません☆個人保管ですので完璧をお求めの方はお控え下さい☆
-      %br
-      %br
-      ■説明
-      %br
-      素敵なオンブレチェックシャツになります☆
-      %br
-      着心地も良く、着用時のシルエットもとても綺麗だと思います☆
-      %br
-      是非この機会に宜しくお願い致します☆      
+      = @good.explain   
     .item-box__footer
       .item-box__footer__left
         .item-box__footer__left__good
