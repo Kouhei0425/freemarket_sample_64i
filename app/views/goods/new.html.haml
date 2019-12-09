@@ -1,0 +1,13 @@
+.new-img
+  .new-img__item
+    .new-img__item__content
+      .new-img__item__content__gazo
+        = image_tag "show.png",class:"img-10"
+    .new-img__item__text
+      .new-img__item__text__edit
+        編集
+      .new-img__item__text__delete
+        削除
+= form_for @good do |f|
+  = f.file_field :image, :multipul => true
+  = f.submit

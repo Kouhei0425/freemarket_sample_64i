@@ -1,0 +1,46 @@
+body{
+  // background-color: #fff;
+}
+.new-img{
+  width: 116px;
+  height: 172px;
+  margin:200px 0 0 200px;
+  &__item{
+    width: 114px;
+    height: 160px;
+    margin-bottom: 10px;
+    border: solid 1px #eee;
+    display: table;
+    border-collapse: collapse;
+    background-color: rgb(245, 245, 245);  
+    &__content{
+      height: 93px;
+      padding-top:23px ;
+      &__gazo{
+        height: 70px;
+        .img-10{
+          height: 70px;
+          width: 114px;
+        }
+      }
+    }
+    &__text{
+      height: 44px;
+      display: flex;
+      text-align: center;
+      line-height: 44px;
+      color: skyblue;
+      &__edit{
+        width: 50%;
+        height: 100%;
+        border-right: solid 1px #eee;
+      }
+      &__delete{
+        width: 50%;
+        height: 100%;
+      }
+    }
+  }
+}
+      
+  
