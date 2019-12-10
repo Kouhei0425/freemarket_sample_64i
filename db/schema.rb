@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20191205024501) do
 
   create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                     null: false
-    t.string   "size",                     null: false
+    t.string   "size"
     t.integer  "price",                    null: false
     t.text     "method",     limit: 65535, null: false
     t.text     "ship",       limit: 65535, null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20191205024501) do
     t.text     "burden",     limit: 65535, null: false
     t.text     "explain",    limit: 65535, null: false
     t.integer  "user_id",                  null: false
-    t.integer  "brand_id",                 null: false
+    t.integer  "brand_id"
     t.integer  "area_id",                  null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
