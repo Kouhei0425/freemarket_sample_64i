@@ -13,6 +13,19 @@ body{
         font-weight: bold;
         background-color: white;
       }
+      &__word{
+        width: 100%;
+        margin: 8px 0 0;
+        &__box{
+          font-size: 14px;
+          color: #888888c0;
+          line-height: 1.5;
+          table-layout: fixed;
+          overflow-wrap: break-word;
+          a.word-link{
+          }
+        }
+      }
       &__detail{
         height: 420px;
         margin-top: 16px;
