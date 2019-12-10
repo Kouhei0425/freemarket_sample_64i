@@ -189,11 +189,13 @@
               }
               &__yen{
                 .price-flick{
-                  height: 50px;
-                  width: 170px;
+                  height: 30px;
+                  width: 150px;
+                  padding:10px;
                   border-radius: 6px;
                   border: solid 1px #aaa;
                   margin-top: 20px;
+                  text-align: right;
                 }
               }
             }
