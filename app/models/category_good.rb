@@ -1,4 +1,4 @@
 class CategoryGood < ApplicationRecord
-    belongs_to :good
-    belongs_to :category
+    belongs_to :good, optional: true
+    belongs_to :category, optional: true
 end

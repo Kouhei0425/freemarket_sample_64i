@@ -1,35 +1,11 @@
+= render 'toppage/header.html.haml'
 %body
   %main.l-container.cleafix
     .l-content.full-width
       %ul.parts-nav.cleafix
-        %li
-          %a{:href => ""}
-            トップス
-        %li
-          %a{:href => ""}
-            アクセサリー
-        %li
-          %a{:href => ""}
-            ジャケット/シアター
-        %li
-          %a{:href => ""}
-            バック
-        %li
-          %a{:href => ""}
-            パンツ
-        %li
-          %a{:href => ""}
-            レッグウェア
-        %li
-          %a{:href => ""}
-            ワンピース
-        %li
-          %a{:href => ""}
-            小物
-        %li
-          %a{:href => ""}
-            靴
-        
+        - @children.each do |child|
+          %li
+            = link_to child.name, category_path(child.id)
       %section.items-box-container.cleafix
         %h1.items-box-head
           レディースの商品一覧
@@ -62,11 +38,12 @@
             %li.pager-next.visible-pc
               %ul
                 %li.pager-cell
-                  %a{:href => ""}
+                  >
                 %li.pager-cell
-                  %a{:href => ""}
+                  >>
         .spacial-description
           .text-center-spacial-description-title
             %h3.font-white レディース
           .white.spacial-description-text
             %p レディースの着ない服、いらない洋服を売るならメルカリへ。レディースの商品は100万点以上あります。人気のあるカテゴリーはデニム/ジーンズと長財布です。人気の商品は「ブラッパーズ デニム パンツ」や「228 ダコタ（Dakota） 長財布　新品」があります。レディースの買い取りやリサイクル処分、服の整理を検討中の方にお勧めです。
+.footer

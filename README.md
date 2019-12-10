@@ -27,15 +27,15 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|string    |name   |null: false|
-|string    |size   |null: false|
-|integer   |price  |null: false|
-|text      |method |null: false|
-|text      |ship   |null: false|
-|text      |explain|null: false|
-|references|user   |null: false, foreign_key: true|
-|references|brand  |null: false, foreign_key: true|
-|references|area   |null: false, foreign_key: true|
+|name    | string  |null: false|
+|size   | string   |null: false|
+|price      |integer |null: false|
+|method    |text |null: false|
+|ship     |text  |null: false|
+|explain  |text|null: false|
+|user     |references  |null: false, foreign_key: true|
+|brand     | references |null: false, foreign_key: true|
+|area     | references |null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -49,8 +49,8 @@ Things you may want to cover:
 ## good_categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
-references|category | null: false, foreign_key: true|
-references|good     | null: false, foreign_key: true|
+|category| references | null: false, foreign_key: true|
+|good| references    | null: false, foreign_key: true|
 
 ### Association
 - belongs_to :good
@@ -61,8 +61,8 @@ references|good     | null: false, foreign_key: true|
 ## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
-|string     |name   |
-|references |parent | foreign_key: { to_table: :categories } |
+|name     |string   |
+|parent | references | foreign_key: { to_table: :categories } |
 
 ### Association
 - has_many :goods, through: :category_goods, dependent: :destroy
@@ -74,7 +74,7 @@ references|good     | null: false, foreign_key: true|
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|string|name| null: false |
+|name|string| null: false |
 
 ### Association
 - has_many :goods
@@ -84,7 +84,7 @@ references|good     | null: false, foreign_key: true|
 ## areaテーブル
 |Column|Type|Options|
 |------|----|-------|
-|string|name| null: false |
+|name|string| null: false |
 
 ### Association
 - has_many :goods
@@ -94,8 +94,8 @@ references|good     | null: false, foreign_key: true|
 ## imageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|string    | image | null: false |
-|references| good  | null: false, foreign_key: true |
+|image | string | null: false |
+|good| references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :good
@@ -105,15 +105,27 @@ references|good     | null: false, foreign_key: true|
 ## Userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|string|name|null: false |
+|name |string|null: false |
 
 ### Association
 - has_many :goods
 
-
-
 ## buyテーブル
 |Column|Type|Options|
 |------|----|-------|
-|integer|good_id|
+|good-id |references  | null: false, unique: true|
+|user |string | null: false|
+|price |integer |null: false|
+|Evaluation|integer |null: false|
 
+### Association
+- belongs_to :user
+- belongs_to :good
+
+## messageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|message|text|null: false|
+
+### Associaion
+- has_many :message

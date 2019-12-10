@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :brands
-  resources :categories
+  resources :categories, only: [:show]
   resources :goods,  only: [:new, :create, :show]
   
 end
