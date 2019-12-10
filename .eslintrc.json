@@ -1,0 +1,17 @@
+//ESlintの設定ファイル
+
+{
+  "extends": ["eslint:recommended"],
+  "plugins": [],
+  "parserOptions": {},
+  "env": {"browser": true},
+  "globals": {},
+  "rules": {
+  "semi": "error"
+  }
+}
+
+//プロパティ名 ("semi" の部分) はルールの名前で、その値 ("error" の部分) がそのルールの設定です。
+//"error" ... ルール違反を見つけるとエラーにします (赤くなります)。
+//"warn" ..... ルール違反を見つけると警告します (黄色くなります)。
+//"off" ....... ルール違反を見つけても何もしません。

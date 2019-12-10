@@ -79,6 +79,7 @@ background-color: #f5f5f5;
         max-width: 230px;
         margin: 0 auto;
         
+        
           .pager-cell {
             display: inline-block;
             width: 44px;
@@ -98,8 +99,23 @@ background-color: #f5f5f5;
             color: #fff;
             background: #ea352d;
         }
+         
+      }
+        .pager-next.visible-pc {
+          display: inline-block;
+          .pager-cell {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            line-height: 42px;
+        }
       }
     }
+
     .spacial-description {
       margin-top: 30px;
       .text-center-spacial-description-title {
