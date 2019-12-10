@@ -1,3 +1,4 @@
+= render partial: "toppage/header"
 .show
   .header
   .item-box
@@ -84,7 +85,7 @@
     .item-box__caution
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
-      = @good.explain   
+      = simple_format @good.explain   
     .item-box__footer
       .item-box__footer__left
         .item-box__footer__left__good
