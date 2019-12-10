@@ -12,9 +12,6 @@
 -#         編集
 -#       .new-img__item__text__delete
 -#         削除
--# = form_for @good do |f|
--#   = f.file_field :image, :multipul => true
--#   = f.submit
 .new-box
   .form-main
     .form-main__text
@@ -56,14 +53,14 @@
                   必須
               = f.fields_for :category_goods do |c|
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2],["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
+                  = c.select :category_id, [["---","---"],["メンズ", 1],["レディース", 2],["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
+                  = c.select :category_id, [["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
+                  = c.select :category_id, [["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
               .select-details__text
                 %h サイズ
-                %h.gray
+                %h.red
                   必須
               .select-form
                 = f.select :size, [["---","---"],["S", "S"]]

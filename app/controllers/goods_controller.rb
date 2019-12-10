@@ -15,8 +15,8 @@ class GoodsController < ApplicationController
       params[:images][:image].each do |image|
         Image.create(image: image, good_id: @good.id )
       end
-      params[:category_goods][:category_id].each do |category_id|
-        Category_good.create(good_id: @good.id, category_id: category_id)
+      params[:category_goods][:category].each do |category_id|
+        CategoryGood.create(category_id: category_id, good_id: @good.id )
       end
     end
     redirect_to root_path

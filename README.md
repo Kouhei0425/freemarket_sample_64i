@@ -109,3 +109,11 @@ references|good     | null: false, foreign_key: true|
 
 ### Association
 - has_many :goods
+
+
+
+## buyテーブル
+|Column|Type|Options|
+|------|----|-------|
+|integer|good_id|
+
