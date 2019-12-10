@@ -56,11 +56,11 @@
                   必須
               = f.fields_for :category_goods do |c|
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2],["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
+                  = c.select :category_id, [["---","---"],["メンズ", 1],["レディース", 2],["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
+                  = c.select :category_id, [["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
+                  = c.select :category_id, [["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
               .select-details__text
                 %h サイズ
                 %h.gray
