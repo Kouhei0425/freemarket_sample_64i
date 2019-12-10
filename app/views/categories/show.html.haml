@@ -3,34 +3,9 @@
   %main.l-container.cleafix
     .l-content.full-width
       %ul.parts-nav.cleafix
-        %li
-          %a{:href => ""}
-            トップス
-        %li
-          %a{:href => ""}
-            アクセサリー
-        %li
-          %a{:href => ""}
-            ジャケット/シアター
-        %li
-          %a{:href => ""}
-            バック
-        %li
-          %a{:href => ""}
-            パンツ
-        %li
-          %a{:href => ""}
-            レッグウェア
-        %li
-          %a{:href => ""}
-            ワンピース
-        %li
-          %a{:href => ""}
-            小物
-        %li
-          %a{:href => ""}
-            靴
-        
+        - @children.each do |child|
+          %li
+            = link_to child.name, category_path(child.id)
       %section.items-box-container.cleafix
         %h1.items-box-head
           レディースの商品一覧
@@ -63,9 +38,9 @@
             %li.pager-next.visible-pc
               %ul
                 %li.pager-cell
-                  %a{:href => ""}
+                  >
                 %li.pager-cell
-                  %a{:href => ""}
+                  >>
         .spacial-description
           .text-center-spacial-description-title
             %h3.font-white レディース

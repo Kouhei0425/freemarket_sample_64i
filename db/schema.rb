@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20191205024501) do
     t.integer  "good_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["category_id", "good_id"], name: "index_category_goods_on_category_id_and_good_id", unique: true, using: :btree
     t.index ["category_id"], name: "index_category_goods_on_category_id", using: :btree
     t.index ["good_id"], name: "index_category_goods_on_good_id", using: :btree
   end
