@@ -56,23 +56,29 @@
                   必須
               = f.fields_for :category_goods do |c|
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ","1"],["レディース","2"],["ベビー・キッズ","3"]], name: 'categories  [:category_id][]'
+                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2],["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]], name: 'categories[:category_id][]'
+                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
                 .select-form
-                  = c.select :category_id,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]], name: 'categories[:category_id][]'
+                  = c.select :category_id,[["---","---"],["メンズ", 1],["レディース", 2], ["ベビー・キッズ", 3]], multiple: true, name: 'category_goods[category_id][]'
+              .select-details__text
+                %h サイズ
+                %h.gray
+                  必須
+              .select-form
+                = f.select :size, [["---","---"],["S", "S"]]
               .select-details__text
                 %h ブランド
                 %h.gray
                   任意
               .select-form
-                = f.select :size,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+                = f.select :brand_id, [["---","---"],["シャネル", 1]]
               .select-details__text
                 %h 商品の状態
                 %h.red
                   必須
               .select-form
-                = f.select :size,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+                = f.select :status,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
         .sell-box
           .sell-container
             %h 配送について
@@ -82,19 +88,25 @@
                 %h.red
                   必須
               .select-form
-                = f.select :size,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+                = f.select :burden, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+              .select-details__text
+                %h 配送の方法
+                %h.red
+                  必須
+              .select-form
+                = f.select :method, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
               .select-details__text
                 %h 発送元の地域
                 %h.red
                   必須
               .select-form
-                = f.select :size,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+                = f.select :area_id, [["---","---"],["北海道", 1],["青森", 2]]
               .select-details__text
                 %h 発送までの日数
                 %h.red
                   必須
               .select-form
-                = f.select :size,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+                = f.select :ship, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
         .sell-box
           .sell-container
             %h 販売価格(300~9,999,999)
@@ -119,6 +131,7 @@
             またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
             %br
             また、出品をもちまして加盟店規約に同意したことになります。
+          = f.hidden_field :user_id, value: current_user.id
           = f.submit "出品する" ,class: "syuppin-btn"
           = link_to root_path do
             .back-btn
