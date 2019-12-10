@@ -6,10 +6,11 @@ class Good < ApplicationRecord
   has_many :categories, through: :category_goods, dependent: :destroy
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
-  accepts_nested_attributes_for :categories
+  accepts_nested_attributes_for :category_goods
   
   def self.search(keyword)
     Good.where('name LIKE(?)', "%#{keyword}%")
   end
 
 end
+
