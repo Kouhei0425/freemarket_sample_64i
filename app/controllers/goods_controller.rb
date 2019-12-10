@@ -10,21 +10,20 @@ class GoodsController < ApplicationController
   end
 
   def create
-    @good = Good.create(good_params)
+    binding.pry
+    @good = Good.new(good_params)
     if @good.save
       params[:images][:image].each do |image|
         Image.create(image: image, good_id: @good.id )
       end
-      params[:category_goods][:category].each do |category_id|
-        CategoryGood.create(category_id: category_id, good_id: @good.id )
-      end
+      params
     end
     redirect_to root_path
   end
   
   private
   def good_params
-    params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_goods_attribute: [:category_id])
+    params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
   end
 end
 
