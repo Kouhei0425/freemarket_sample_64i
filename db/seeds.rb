@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(
+
   :nick_name => '仮の人',
+
   :email => 'sample@gmail.com',
   :family_name => '本仮屋',
   :first_name => 'ホノカ',

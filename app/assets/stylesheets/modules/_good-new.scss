@@ -130,54 +130,7 @@
              }
              .select-form{
                width: 100%;
-               #good_size{
-                 width: 100%;
-                 height: 50px;
-                 margin-bottom:20px ;
-                 background-color: #fff;
-               }
-               #good_category_goods_attributes_0_category_id{
-                width: 100%;
-                height: 50px;
-                margin-bottom:20px ;
-                background-color: #fff;
-               }
-               #good_brand_id{
-                width: 100%;
-                height: 50px;
-                margin-bottom:20px ;
-                background-color: #fff;
-               }
-               #good_status{
-                width: 100%;
-                height: 50px;
-                margin-bottom:20px ;
-                background-color: #fff;
-               }
-               #good_burden{
-                width: 100%;
-                height: 50px;
-                margin-bottom:20px ;
-                background-color: #fff;
-               }
-               #good_method{
-                width: 100%;
-                height: 50px;
-                margin-bottom:20px ;
-                background-color: #fff;
-               }
-               #good_area_id{
-                width: 100%;
-                height: 50px;
-                margin-bottom:20px ;
-                background-color: #fff;
-               }
-               #good_ship{
-                width: 100%;
-                height: 50px;
-                margin-bottom:20px ;
-                background-color: #fff;
-               }
+              
              }
             .price-form{
               height: 72px;
@@ -258,4 +211,9 @@ h{
   font-size: 14px;
 }
              
-             
+select{
+  width: 100%;
+  height: 50px;
+  margin-bottom:20px ;
+  background-color: #fff;
+}
