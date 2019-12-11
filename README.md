@@ -164,8 +164,8 @@ user_id    | references | null: false |
 |------|----|-------|
 |good_id   | references | null: false, unique: true, foreign_key: true |
 |user_id   | references | null: false|
-|price     | string     | null: false|
-|Evaluation| integer    | null: false|
+|price     | integer    | null: false|
+|evaluation| integer    | null: false|
 
 ### Association
 - belongs_to :user
