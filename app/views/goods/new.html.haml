@@ -51,9 +51,9 @@
                 %h カテゴリー
                 %h.red
                   必須
-              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }
-              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }
-              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }
+              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }, { name: 'category_ids[category_id][]'}
+              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }, { name: 'category_ids[category_id][]'}
+              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }, { name: 'category_ids[category_id][]'}
               .select-details__text
                 %h サイズ
                 %h.red
