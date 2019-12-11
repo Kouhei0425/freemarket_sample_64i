@@ -33,7 +33,7 @@ class SignupController < ApplicationController
     #1ページ目で入力したデータ
     nickname: session[:nickname],
     email: session[:email],
-    password: session[:password]
+    password: session[:password],
     password_confirmation: session[:password_confirmation],
     family_name: session[:family_name],
     first_name: session[:first_name],
@@ -41,7 +41,7 @@ class SignupController < ApplicationController
     first_kana: session[:first_kana],
     birsday_year: session[:birsday_year],
     birsday_month: session[:birsday_month],
-    birthday_date: session[:birthday_date],
+    birthday_date: session[:birthday_date]
     )
   end
   private

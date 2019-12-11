@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20191211084846) do
     t.integer  "good_id",    null: false
     t.integer  "user_id",    null: false
     t.integer  "price",      null: false
-    t.integer  "evaluation", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["good_id"], name: "index_buys_on_good_id", using: :btree
@@ -129,9 +128,17 @@ ActiveRecord::Schema.define(version: 20191211084846) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nick_name",                           null: false
     t.string   "email",                  default: "", null: false
+    t.string   "family_name",                         null: false
+    t.string   "first_name",                          null: false
+    t.string   "family_kana",                         null: false
+    t.string   "first_kana",                          null: false
+    t.date     "birthday_year",                       null: false
+    t.date     "birthday_month",                      null: false
+    t.date     "birthday_date",                       null: false
+    t.string   "phone_number",                        null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "name",                                null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
