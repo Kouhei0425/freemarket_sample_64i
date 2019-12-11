@@ -1,7 +1,7 @@
 .top_ca__ca_block__box__small_box
   .top_ca__ca_block__box__small_box__image
-    =image_tag "bag.jpg",size: "188×188", alt: "text", class: "img-box"
+    =image_tag good.images[0],size: "188×188", alt: "text", class: "img-box"
     .top_ca__ca_block__box__small_box__price
-      ¥8,000
+      = good.price
   .top_ca__ca_block__box__small_box__message
-    新品
+    = good.name
