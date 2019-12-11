@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(
-  :name => '仮の人',
+  :nick_name => '仮の人',
   :email => 'sample@gmail.com',
   :password => 'sample'
+
 )
 
 require 'csv'
@@ -22,7 +23,7 @@ end
 
 Brand.create(:name => 'シャネル')
 Brand.create(:name => 'ナイキ')
-Brand.create(:name => 'ルイ　ヴィトン')
+Brand.create(:name => 'ルイ ヴィトン')
 Brand.create(:name => 'シュプリーム')
 Brand.create(:name => 'アディダス')
 
@@ -83,7 +84,7 @@ Good.create(
   status: '新品、未使用',
   burden: '送料込み(出品者負担)',
   explain: '出品はブラック１枚のみです。
-  表記サイズ　M〜Ｌ
+  表記サイズ M〜Ｌ
   取り外し出来るブラパッド内蔵で、上品なレース調の生地が使用されています。
   
   新品ですが写真撮影のため袋から出しています。
