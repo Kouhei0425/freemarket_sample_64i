@@ -74,12 +74,14 @@ background-color: #f5f5f5;
       .pager {
       margin: 40px 0 0;
       font-size: 0;
+      display: flex;
+      justify-content: space-between;
       position: relative;
     
       
       .pager-num {
         max-width: 230px;
-        margin: 0 auto;
+        margin-left: calc(50% - 115px);
         text-align: center;
         
           .pager-cell {
