@@ -8,10 +8,23 @@ body{
       margin: 40px auto;
       background-color: white;
       &__name{
-        font-size: 30px;
+        font-size: 24px;
         text-align: center;
         font-weight: bold;
         background-color: white;
+      }
+      &__word{
+        width: 100%;
+        margin: 8px 0 0;
+        &__box{
+          font-size: 14px;
+          color: #888888c0;
+          line-height: 1.5;
+          table-layout: fixed;
+          overflow-wrap: break-word;
+          a.word-link{
+          }
+        }
       }
       &__detail{
         height: 420px;
@@ -53,7 +66,18 @@ body{
               }
               td{
                 padding: 8px;
-
+                i{
+                  color: #0099E8;
+                  .fa-chevron-right{
+                    font-size: 10px;
+                  }
+                }
+                a{
+                  font-size: 14px;
+                  font-style: normal;
+                  text-decoration: none;
+                  color: #0099E8;
+                }
               }
             }
           }
@@ -64,6 +88,7 @@ body{
         margin-top: 24px;
         display: flex;
         padding-left:200px;
+        font-size: 50px;
         &__main{
           font-size: 50px;
           font-weight: bold;

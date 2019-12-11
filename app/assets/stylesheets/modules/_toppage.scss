@@ -66,21 +66,23 @@ a{
 
       text-decoration: none;
       display: block;
-      height: 450px;
+      height: 550px;
+      width: 1070px;
       
       
       &__small_box{
 
-        width:200px;
-        height: 220px;
-        border:solid;
+        margin: 10px;
+        box-sizing: border-box;
+        display: inline-block;
+        justify-content: space-between;
 
         .top_ca__ca_block__box__small_box__image{
 
           overflow: hidden;
-          height:150px;
+          height:188px;
           position: relative;
-          width: 100%;
+          width: 188px;
           
 
           .top_ca__ca_block__box__small_box__price{
@@ -89,7 +91,7 @@ a{
             border-radius: 0 14px 14px 0;
             bottom: 8px;
             box-sizing: border-box;
-            color: #fff;
+            color: #ffff;
             display: inline-flex;
             font-size: 17px;
             height: 28px;
@@ -103,8 +105,10 @@ a{
         &__message{
           box-sizing: border-box;
           font-size: 18px;
-          height: 70px;
+          height: 64px;
           padding:0 12px;
+          background-color: white;
+          width:188px;
         }
       }
     }

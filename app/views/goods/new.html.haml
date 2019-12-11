@@ -1,14 +1,145 @@
-.new-img
-  .new-img__item
-    .new-img__item__content
-      .new-img__item__content__gazo
-        = image_tag "show.png",class:"img-10"
-    .new-img__item__text
-      .new-img__item__text__edit
-        編集
-      .new-img__item__text__delete
-        削除
-= form_for @good do |f|
-  = f.file_field :image, :multipul => true
-  = f.submit
-
+.single_header
+  %h1.single_header__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
+-# .new-img
+-#   .new-img__item
+-#     .new-img__item__content
+-#       .new-img__item__content__gazo
+-#         = image_tag "show.png",class:"img-10"
+-#     .new-img__item__text
+-#       .new-img__item__text__edit
+-#         編集
+-#       .new-img__item__text__delete
+-#         削除
+.new-box
+  .form-main
+    .form-main__text
+      商品の情報を入力
+    = form_for @good do |f|
+      .form-main__container
+        .form-img-box
+          .form-img-box__text
+            %h 出品画像
+            %h.red 
+              必須
+          %p 最大10枚までアップロードできます
+          .form-img-box__upload
+            .form-img-box__upload__text
+              = f.fields_for :images do |i|
+                = i.file_field :image, multiple: true, name: 'images[image][]'
+                = i.file_field :image, multiple: true, name: 'images[image][]'
+              ドラッグアンドドロップ
+              %br
+              またはクリックしてファイルをアップロード
+        .sell-box
+          .sell-box__text1
+            %h 商品名
+            %h.red 
+              必須
+          = f.text_field :name,placeholder:"商品名 (必須40文字まで）",class:"good-name"
+          .sell-box__text2
+            %h 商品の説明
+            %h.red
+              必須
+          = f.text_area :explain,placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など）例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。",class:"good-explain"
+        .sell-box
+          .sell-container
+            %h 商品の詳細
+            .select-details
+              .select-details__text
+                %h カテゴリー
+                %h.red
+                  必須
+              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }, { name: 'category_ids[category_id][]'}
+              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }, { name: 'category_ids[category_id][]'}
+              = f.collection_select :category_ids, Category.all, :id, :name, { prompt: '選択してください' }, { name: 'category_ids[category_id][]'}
+              .select-details__text
+                %h サイズ
+                %h.red
+                  必須
+              .select-form
+                = f.select :size, [["---","---"],["S", "S"]]
+              .select-details__text
+                %h ブランド
+                %h.gray
+                  任意
+              .select-form
+                = f.select :brand_id, [["---","---"],["シャネル", 1]]
+              .select-details__text
+                %h 商品の状態
+                %h.red
+                  必須
+              .select-form
+                = f.select :status,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+        .sell-box
+          .sell-container
+            %h 配送について
+            .select-details
+              .select-details__text
+                %h 配送料の負担
+                %h.red
+                  必須
+              .select-form
+                = f.select :burden, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+              .select-details__text
+                %h 配送の方法
+                %h.red
+                  必須
+              .select-form
+                = f.select :method, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+              .select-details__text
+                %h 発送元の地域
+                %h.red
+                  必須
+              .select-form
+                = f.select :area_id, [["---","---"],["北海道", 1],["青森", 2]]
+              .select-details__text
+                %h 発送までの日数
+                %h.red
+                  必須
+              .select-form
+                = f.select :ship, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]]
+        .sell-box
+          .sell-container
+            %h 販売価格(300~9,999,999)
+            .select-details
+              .price-form
+                .price-form__text
+                  %h 価格
+                  %h.red
+                    必須
+                .price-form__yen
+                  %label
+                    ¥
+                  = f.text_field :price, placeholder:"例） 300",class:"price-flick"
+              .price-text
+                販売手数料
+              .price-benefit
+                販売利益
+        .sell-box
+          .sell-box__text5
+            禁止されている出品、行為を必ずご確認ください。
+            %br
+            またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+            %br
+            また、出品をもちまして加盟店規約に同意したことになります。
+          = f.hidden_field :user_id, value: current_user.id
+          = f.submit "出品する" ,class: "syuppin-btn"
+          = link_to root_path do
+            .back-btn
+              もどる
+.footer-new
+  .footer-text
+    %ul
+      %li 
+        プライバシーポリシー
+      %li 
+        メルカリ利用規約
+      %li 
+        特定商取引に関する規約   
+  .footer-rogo
+    = image_tag "show.png",  size: "80x65"
+  .footer-lnc
+    ©︎Mercari,lnc.
+              
