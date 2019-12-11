@@ -7,11 +7,14 @@ Rails.application.routes.draw do
       get "search"
     end
   end
+
   
   resources :users 
   resources :brands
   resources :categories, only: [:show]
-  resources :goods,  only: [:new, :create, :show]
+  resources :goods,  only: [:new, :create, :show] do
+    resources :buys,  only: [:create]
+  end
   resources :signup do
     collection do
       get 'step1'
