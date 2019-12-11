@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## goodテーブル
+## goodsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -47,7 +47,7 @@ Things you may want to cover:
 
 
 
-## good_categoryテーブル
+## category_goodsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |category| references | null: false, foreign_key: true|
@@ -59,7 +59,7 @@ Things you may want to cover:
 
 
 
-## categoryテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name   | string     |
@@ -82,7 +82,7 @@ Things you may want to cover:
 
 
 
-## areaテーブル
+## areasテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string| null: false |
@@ -92,7 +92,7 @@ Things you may want to cover:
 
 
 
-## imageテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image | string     | null: false |
@@ -103,7 +103,7 @@ Things you may want to cover:
 
 
 
-### Userテーブル
+### Usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nick_name             | string | null: false, unique: true |
@@ -128,7 +128,7 @@ Things you may want to cover:
 - has_one  :house
 
 
-### houseテーブル
+### addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |post      | string | null: false |
@@ -141,12 +141,12 @@ Things you may want to cover:
 - has_one    :user
 
 
-### creditテーブル
+### creditsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |number  | date   | null: false |
 |type    | string | null: false |
-|month    | date   | null: false |
+|month   | date   | null: false |
 |year    | date   | null: false |
 |security| string | null: false |
 
@@ -155,7 +155,7 @@ Things you may want to cover:
 
 
 
-## buyテーブル
+## buysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |good_id   | references | null: false, unique: true, foreign_key: true |
@@ -173,7 +173,7 @@ Things you may want to cover:
 
 
 
-## buy_creditテーブル
+## buy_creditsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |number  | date   | null: false |
@@ -187,7 +187,7 @@ Things you may want to cover:
 
 
 
-### buy_houseテーブル
+### buy_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |post      | string | null: false |
