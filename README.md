@@ -125,17 +125,17 @@ Things you may want to cover:
 - has_many :goods
 - has_many :buys
 - has_many :credits
-- has_many  :addresses
+- has_many :addresses
 
 
 ### addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post      | string | null: false |
-|prefecture| string | null: false |
-|city      | string | null: false |
-|address   | string | null: false, unique: true |
-|buil      | string |
+|post       | string | null: false |
+|prefecture | string | null: false |
+|city       | string | null: false |
+|address    | string | null: false, unique: true |
+|buil       | string |
 
 ### Association
 - belongs_to    :user
@@ -168,8 +168,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_one    :good
-- has_many   :addresses
-- has_many   :credits
+- has_one    :buy_address
+- has_one    :buy_credit
 
 
 
@@ -183,7 +183,7 @@ Things you may want to cover:
 |security| string | null: false |
 
 ### Association
-- belongs_to :buy
+- has_one :buy
 
 
 
@@ -197,6 +197,6 @@ Things you may want to cover:
 |buil      | string |
 
 ### Association
-- belongs_to  :user
+- has_one  :buy
 
 
