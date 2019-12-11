@@ -125,7 +125,7 @@ Things you may want to cover:
 - has_many :goods
 - has_many :buys
 - has_many :credits
-- has_one  :house
+- has_many  :addresses
 
 
 ### addressesテーブル
@@ -138,7 +138,7 @@ Things you may want to cover:
 |buil      | string |
 
 ### Association
-- has_one    :user
+- belongs_to    :user
 
 
 ### creditsテーブル
@@ -151,7 +151,7 @@ Things you may want to cover:
 |security| string | null: false |
 
 ### Association
-- has_many    :users
+- belong_to   :user
 
 
 
@@ -168,7 +168,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_one    :good
-- has_many   :houses
+- has_many   :addresses
 - has_many   :credits
 
 
