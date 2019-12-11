@@ -8,7 +8,7 @@
     - else
       .item-box__word__box
         #{@good.name}は、###回の取引実績を持つ
-        #{link_to @good.user.name, root_path, class: 'word-link'}
+        #{link_to @good.user.nick_name, root_path, class: 'word-link'}
         さんから出品されました。
         #{link_to @good.brand.name, root_path, class: 'word-link'}（
         - category_link = @good.categories[2].name + '/' + @good.categories[0].name
@@ -30,7 +30,7 @@
             %th
               出品者
             %td
-              = link_to @good.user.name, root_path
+              = link_to @good.user.nick_name, root_path
               %br
               ☺︎4541  ☻50  ☹6
           %tr
