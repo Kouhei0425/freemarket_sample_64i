@@ -10,7 +10,6 @@ class GoodsController < ApplicationController
   end
 
   def create
-    binding.pry
     @good = Good.new(good_params)
     if @good.save
       params[:images][:image].each do |image|

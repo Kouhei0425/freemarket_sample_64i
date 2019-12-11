@@ -9,6 +9,14 @@
 User.create(
   :nick_name => '仮の人',
   :email => 'sample@gmail.com',
+  :family_name => '本仮屋',
+  :first_name => 'ホノカ',
+  :family_kana => 'モトカリヤ',
+  :first_kana => 'ホノカ',
+  :birthday_year => '1993',
+  :birthday_month => '12',
+  :birthday_date => '11',
+  :phone_number => '08012348888',
   :password => 'sample'
 
 )
