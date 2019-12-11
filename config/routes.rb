@@ -24,4 +24,5 @@ Rails.application.routes.draw do
       get 'step4'
       get 'done'
     end
+  end
 end
