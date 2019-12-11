@@ -121,6 +121,7 @@ Things you may want to cover:
 |reset_password_sent_at| string | null: false |
 |remember_created_at   | string | null: false |
 
+
 ### Association
 - has_many :goods
 - has_many :buys
@@ -136,6 +137,7 @@ Things you may want to cover:
 |city       | string | null: false |
 |address    | string | null: false, unique: true |
 |buil       | string |
+|user_id    | references | null: false |
 
 ### Association
 - belongs_to    :user
@@ -149,6 +151,8 @@ Things you may want to cover:
 |month   | date   | null: false |
 |year    | date   | null: false |
 |security| string | null: false |
+user_id    | references | null: false |
+
 
 ### Association
 - belong_to   :user
@@ -159,8 +163,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |good_id   | references | null: false, unique: true, foreign_key: true |
-|house_id  | references | null: false, foreign_key: true |
-|credit_id | references | null: false, foreign_key: true |
 |user_id   | references | null: false|
 |price     | string     | null: false|
 |Evaluation| integer    | null: false|
@@ -168,8 +170,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_one    :good
-- has_one    :buy_address
-- has_one    :buy_credit
+- has_many   :buy_address
+- has_many   :buy_credit
 
 
 
@@ -177,13 +179,14 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |number  | date   | null: false |
+|buy_id  | references | null: false |
 |type    | string | null: false |
 |month   | date   | null: false |
 |year    | date   | null: false |
 |security| string | null: false |
 
 ### Association
-- has_one :buy
+- belongs_to :buy
 
 
 
@@ -195,8 +198,9 @@ Things you may want to cover:
 |city      | string | null: false |
 |address   | string | null: false, unique: true |
 |buil      | string |
+|buy_id  | references | null: false |
 
 ### Association
-- has_one  :buy
+- belongs_to  :buy
 
 
