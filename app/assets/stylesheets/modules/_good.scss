@@ -8,7 +8,7 @@ body{
       margin: 40px auto;
       background-color: white;
       &__name{
-        font-size: 30px;
+        font-size: 24px;
         text-align: center;
         font-weight: bold;
         background-color: white;
@@ -66,7 +66,18 @@ body{
               }
               td{
                 padding: 8px;
-
+                i{
+                  color: #0099E8;
+                  .fa-chevron-right{
+                    font-size: 10px;
+                  }
+                }
+                a{
+                  font-size: 14px;
+                  font-style: normal;
+                  text-decoration: none;
+                  color: #0099E8;
+                }
               }
             }
           }

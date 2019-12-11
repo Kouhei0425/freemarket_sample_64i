@@ -48,11 +48,10 @@
             %td
               = link_to @good.categories[0].name, category_path(@good.categories[0].id)
               %br
-              ＞
-              = link_to @good.categories[1].name, category_path(@good.categories[1].id)
-              %br
-              ＞
-              = link_to @good.categories[2].name, category_path(@good.categories[2].id)
+                %i.fas.fa-chevron-right
+                  = link_to @good.categories[1].name, category_path(@good.categories[1].id)
+                %i.fas.fa-chevron-right
+                  = link_to @good.categories[2].name, category_path(@good.categories[2].id)
           %tr
             %th
               ブランド
@@ -83,7 +82,7 @@
             %th
               配送元地域
             %td
-              = @good.area.name
+              = link_to @good.area.name, root_path
           %tr
             %th
               発送日の目安
@@ -95,8 +94,7 @@
         = @good.price.to_s(:delimited)
       .item-box__price__tax
         (税込) 送料込み
-    .item-box__buy
-      購入画面に進む
+    = link_to '購入画面に進む', root_path, class: 'item-box__buy'
     .item-box__caution
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
