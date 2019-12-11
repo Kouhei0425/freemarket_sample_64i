@@ -14,7 +14,6 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
     }
   elsif Rails.env.development?
-    config.asset_host = Settings.url
     config.storage :file
   else
     config.enable_processing = false 
