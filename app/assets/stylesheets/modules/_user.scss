@@ -29,8 +29,11 @@
 .mypage {
   margin: 40px auto 0 ;
   width: 1020px;
-  height: 600px;
-  background-color: pink;
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
   .mymain {
     float: right;
     width: 700px;
@@ -42,9 +45,19 @@
         padding: 20px;
       }
       &__todo {
-        background-color: #fff;
-        height: 400px;
+        height: 500px;
+        background: #fff;
+        &__active {
+          display: inline-block;
+          padding: 20px 129px;
         }
+          &__do {
+            background: #eee;
+            display: inline-block;
+            padding: 20px 130px ;
+          
+        }
+      }
     }
     &--purchase {
       margin: 40px 0 0;
@@ -57,20 +70,76 @@
       }
       &__situation li {
         display: inline-block;
-        text-align: center;
+        padding: 20px 125px;
+        font-weight: bold;
       }
       .active {
         background: #fff;
-        width: 50%;
+        padding: 20px 135px;
       }
       &__situation {
         background-color: #eee;
         
       }
-      #mymain--content__situation {
-        display: block;
-      }
+    
+    &--under{
+      &--box {
+        background-color: red;
+        padding: 160px 0 60px;
+        text-align: center;
+      }        
+     }
+    }
   }
+  .myside {
+    float: left;
+    width: 280px;
+    margin: 0 40px 0 0;
+    list-style: none;
+    &--top {
+      &__list{
+        position: relative;
+        display: block;
+        padding: 16px;
+        background: #fff;
+        color: #333;
+        border-top: 1px solid #eee;
+        &__active {
+          font-weight: 600;
+          position: relative;
+          display: block;
+          padding: 16px;
+          background: #eee;
+          color: #333;
+        }
+      }
+    }
+    &--while {
+      margin: 40px 0 0;
+      font-weight: bold;
+      &__list__tag {
+        position: relative;
+        display: block;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        border-top: 1px solid #eee;
+      }
+     }
+    &--under {
+      margin: 40px 0 0;
+      font-weight: bold;
+      &__list {
+        position: relative;
+        display: block;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        border-top: 1px solid #eee;
+      }
+    }
   }
 }
 
