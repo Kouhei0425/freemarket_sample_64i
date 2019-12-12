@@ -13,11 +13,16 @@ CarrierWave.configure do |config|
       aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
       region: 'ap-northeast-1'
     }
-  elsif Rails.env.development?
-    config.storage :file
   else
-    config.enable_processing = false 
+    config.storage :file
+    config.enable_processing = false if Rails.env.test?
   end
-  config.fog_directory  = 'freemarket-sample-64i-image'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket-sample-64i-image'
+
+  case Rails.env
+  when 'development'
+    config.asset_host = 'http://localhost:3000/'
+  when 'production'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket-sample-64i-image'
+  end
+  
 end

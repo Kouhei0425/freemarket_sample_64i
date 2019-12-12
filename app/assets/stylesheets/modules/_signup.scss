@@ -1,9 +1,63 @@
 .single_header2{
   height: 128px;
+  width: 750px;
+  margin: 0 auto;
+  display: flex;
   &__link__img{
     margin-top:40px;
+  }
+  .new-nav{
+    height: 32px;
+    width: 490px;
+    padding: 35px 0 0 60px;
+    
+    ol{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      font-size: 12px;
+      color: gray;
+      .adress{
+        position: absolute;
+        left: 200px;
+      }
+      .pay{
+        position: absolute;
+        left:330px;
+      }
+      .phone{
+        position: absolute;
+        left:100px;
+      }
+    }
+    ol:before {
+      content: '';
+      position: absolute;
+      left: 51%;
+      bottom: -20px;/*線の上下位置*/
+      display: inline-block;
+      width: 455px;/*線の長さ*/
+      height: 2px;/*線の太さ*/
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);/*位置調整*/
+      background-color: gray;/*線の色*/
+    }
+    ul{
+      display: flex;
+      width: 470px;
+      justify-content: space-between;
+      margin: 9px 6px 0 14px;
+      color: gray;
+      font-size:14px
+    }
   }
 }
 .user-new{
   height: 1228px;
+  &__main{
+    width: 700px;
+    height: 100%;
+    margin:0 auto;
+    background-color: #fff;
+  }
 }
