@@ -1,91 +1,40 @@
 = render "toppage/header"
 .buy-show
-  .item-box
-    .item-box__name
+  .buy-box
+    .buy-box__note
       購入内容確認
-    .item-box__word
-    .item-box__detail
-      .item-box__detail__img
-        = image_tag @good.images[0], class: 'item-box__detail__img__top'
-      %table
-        %tbody
-          %tr
-            %th
-              出品者
-            %td
-              = link_to @good.user.nick_name, root_path
-              %br
-              ☺︎4541  ☻50  ☹6
-          %tr
-          - if @good.size.present?
-            %th
-              商品のサイズ
-            %td
-              = @good.size
-          %tr
-            %th
-              商品の状態
-            %td
-              = @good.status
-          %tr
-            %th
-              配送料の負担
-            %td
+    .buy-box__detail
+      .buy-box__detail__img
+        = image_tag @good.images[0].image, class: 'buy-box__detail__img__thumbnail'
+      .buy-box__detail__text
+        .buy-text
+          %ul
+            %li
+              = @good.name
+            %li
               = @good.burden
-          %tr
-            %th
-              配送の方法
-            %td
+            %li
               = @good.method
-          %tr
-            %th
-              配送元地域
-            %td
-              = link_to @good.area.name, root_path
-          %tr
-            %th
-              発送日の目安
-            %td
-              #{@good.ship}で発送
-    .item-box__price
-      ¥
-      .item-box__price__main
-        = @good.price.to_s(:delimited)
-      .item-box__price__tax
-        (税込) 送料込み
-    = link_to '購入画面に進む', good_buys_path(@good.id), class: 'item-box__buy'
-    .item-box__caution
-      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-    .item-box__description
-      = simple_format @good.explain   
-    .item-box__footer
-      .item-box__footer__left
-        .item-box__footer__left__good
-          ♡ いいね！4 
-        .item-box__footer__left__bad
-          🏳不適切な商品の報告
-      .item-box__footer__right
-        🔒あんしん・あんぜんへの取り組み
-  .comment-box
-    .comment-box__content
-      .comment-box__content__caution
-        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      .comment-box__content__textarea
-      .comment-box__content__btn
-        コメントする
-  .link-box
-    .link-box__left
-      新品■XS■マルジェラ 17aw■4連リング■銀製■シルバー■7257
-    .link-box__right
-      ソフトケースタイプ・肌色入り サクラクーピーペンシル 12色
-  .sns-box
-    .none
-    .sns-box__container
-      %a{href: 'https://ja-jp.facebook.com/mercarijp/'}
-        = icon'fab','facebook-square',class:'icon f'
-      %a{href: 'https://twitter.com/mercari_jp?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'}
-        = icon'fab','twitter-square',class:'icon t'
-      %a{href: 'http://line.me/'}
-        = icon'fab','line',class:'icon l'
-      %a{href: 'https://www.pinterest.jp/'}
-        = icon'fab','pinterest-square',class:'icon p'
+            %li
+              = @good.area.name
+        .buy-box__price
+          ¥
+          = @good.price
+          .item-box__price__tax
+    .user-box
+      .user-box__detail
+        .user-box__detail__title
+          配送先情報
+        .user-box__detail__name
+          = current_user.family_name
+          = current_user.first_name
+        .user-box__address
+        %br
+          = @address.post
+          = @address.prefecture + @address.city + @address.address + @address.buil
+          
+    .button-box
+      .button-box__body
+        = link_to '購入する', good_buys_path(@good), class: 'button-box__body__buy'
+    .buy-box__footer
+  .footer

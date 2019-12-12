@@ -20,7 +20,7 @@
         で発送されます。
     .item-box__detail
       .item-box__detail__img
-        = image_tag @good.images[0], class: 'item-box__detail__img__top'
+        = image_tag @good.images[0].image, class: 'item-box__detail__img__top'
         .small-images
           - @good.images.each do |image|
             = image_tag image, class: 'small-images__img'
@@ -39,10 +39,11 @@
             %td
               = link_to @good.categories[0].name, category_path(@good.categories[0].id)
               %br
-                %i.fas.fa-chevron-right
-                  = link_to @good.categories[1].name, category_path(@good.categories[1].id)
-                %i.fas.fa-chevron-right
-                  = link_to @good.categories[2].name, category_path(@good.categories[2].id)
+              %i.fas.fa-chevron-right
+                = link_to @good.categories[1].name, category_path(@good.categories[1].id)
+              %br
+              %i.fas.fa-chevron-right
+                = link_to @good.categories[2].name, category_path(@good.categories[2].id)
           %tr
             %th
               ブランド
