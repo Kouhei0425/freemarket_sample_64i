@@ -1,6 +1,6 @@
 class BuysController < ApplicationController
   def index
-    @good = Good.find(params[:id])
+    @good = Good.find(params[:good_id])
   end
   def create
     buy.create(buy_params)
