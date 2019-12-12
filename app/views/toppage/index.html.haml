@@ -19,9 +19,9 @@
         レディース新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", category_path(@mens.id)
       .top_ca__ca_block__box
-        - @ladies.each do |good|
+        - @ladies_goods.each do |good|
           = render "good", { good: good } 
        
   .top_ca
@@ -30,9 +30,9 @@
         メンズ新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", category_path(@ladies.id)
       .top_ca__ca_block__box
-        - @mens.each do |good|
+        - @mens_goods.each do |good|
           = render "good", { good: good } 
   
   .top_ca
@@ -41,12 +41,10 @@
         家電・スマホ・カメラ新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", category_path(@electronics.id)
       .top_ca__ca_block__box
-        .top_ca__ca_block__box__small_box
-          .top_ca__ca_block__box__small_box__image
-            .top_ca__ca_block__box__small_box__price
-          .top_ca__ca_block__box__small_box__message
+        - @electronics_goods.each do |good|
+          = render "good", { good: good }
   
   .top_ca
     .top_ca__ca_block
@@ -54,13 +52,10 @@
         おもちゃ・ホビー・グッズ新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", category_path(@hobbies.id)
       .top_ca__ca_block__box
-        .top_ca__ca_block__box__small_box
-          .top_ca__ca_block__box__small_box__image
-            .top_ca__ca_block__box__small_box__price
-              
-          .top_ca__ca_block__box__small_box__message
+        - @hobbies_goods.each do |good|
+          = render "good", { good: good }
 
   .top_popularity_ca
     %h2.top_popularity_ca__title 人気のブランド
@@ -79,49 +74,37 @@
         シャネル新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", brand_path(@chanel.id)
       .top_ca__ca_block__box
-        .top_ca__ca_block__box__small_box
-          .top_ca__ca_block__box__small_box__image
-            .top_ca__ca_block__box__small_box__price
-              
-          .top_ca__ca_block__box__small_box__message
+        - @chanel_goods.each do |good|
+          = render "good", { good: good }
   .top_ca
     .top_ca__ca_block
       .top_ca__ca_block__title
         ルイヴィトン新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", brand_path(@louis.id)
       .top_ca__ca_block__box
-        .top_ca__ca_block__box__small_box
-          .top_ca__ca_block__box__small_box__image
-            .top_ca__ca_block__box__small_box__price
-              
-          .top_ca__ca_block__box__small_box__message
+        - @louis_goods.each do |good|
+          = render "good", { good: good }
   .top_ca
     .top_ca__ca_block
       .top_ca__ca_block__title
         シュプリーム新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", brand_path(@supreme.id)
       .top_ca__ca_block__box
-        .top_ca__ca_block__box__small_box
-          .top_ca__ca_block__box__small_box__image
-            .top_ca__ca_block__box__small_box__price
-              
-          .top_ca__ca_block__box__small_box__message
+        - @supreme_goods.each do |good|
+          = render "good", { good: good }
   .top_ca
     .top_ca__ca_block
       .top_ca__ca_block__title
         ナイキ新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          もっと見る
+          = link_to "もっと見る", brand_path(@nike.id)
       .top_ca__ca_block__box
-        .top_ca__ca_block__box__small_box
-          .top_ca__ca_block__box__small_box__image
-            .top_ca__ca_block__box__small_box__price
-              
-          .top_ca__ca_block__box__small_box__message
+        - @nike_goods.each do |good|
+          = render "good", { good: good }
