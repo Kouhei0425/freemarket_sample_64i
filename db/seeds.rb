@@ -9,7 +9,6 @@
 User.create(
 
   :nick_name => '仮の人',
-
   :email => 'sample@gmail.com',
   :family_name => '本仮屋',
   :first_name => 'ホノカ',
@@ -21,6 +20,11 @@ User.create(
   :phone_number => '08012348888',
   :password => 'sample'
 
+)
+
+Image.create(
+  :image => "bag.jpg",
+  :good_id => 1
 )
 
 require 'csv'

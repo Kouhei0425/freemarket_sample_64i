@@ -65,13 +65,13 @@
                 %h.gray
                   任意
               .select-form
-                = f.select :brand_id, [["---","---"],["シャネル", 1]],{ prompt: '---' }
+                = f.select :brand_id, [["シャネル", 1]],{ prompt: '---' }
               .select-details__text
                 %h 商品の状態
                 %h.red
                   必須
               .select-form
-                = f.select :status,[["---","---"],["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
+                = f.select :status,[["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
         .sell-box
           .sell-container
             %h 配送について
@@ -81,25 +81,25 @@
                 %h.red
                   必須
               .select-form
-                = f.select :burden, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
+                = f.select :burden, [["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
               .select-details__text
                 %h 配送の方法
                 %h.red
                   必須
               .select-form
-                = f.select :method, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
+                = f.select :method, [["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
               .select-details__text
                 %h 発送元の地域
                 %h.red
                   必須
               .select-form
-                = f.select :area_id, [["---","---"],["北海道", 1],["青森", 2]],{ prompt: '---' }
+                = f.select :area_id, [["北海道", 1],["青森", 2]],{ prompt: '---' }
               .select-details__text
                 %h 発送までの日数
                 %h.red
                   必須
               .select-form
-                = f.select :ship, [["---","---"],["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
+                = f.select :ship, [["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
         .sell-box
           .sell-container
             %h 販売価格(300~9,999,999)
