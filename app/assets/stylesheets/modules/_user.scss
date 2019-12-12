@@ -23,3 +23,55 @@
     }
   }
 }
+
+//ここからはユーザーのマイページ
+
+.mypage {
+  margin: 40px auto 0 ;
+  width: 1020px;
+  height: 600px;
+  background-color: pink;
+  .mymain {
+    float: right;
+    width: 700px;
+    &--user{
+      &__img {
+        height: 200px;
+        background-color: blue;
+        position: relative;
+        padding: 20px;
+      }
+      &__todo {
+        background-color: #fff;
+        height: 400px;
+        }
+    }
+    &--purchase {
+      margin: 40px 0 0;
+      background-color: #fff;
+      &__head {
+        padding: 0 16px;
+        background-color: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+      }
+      &__situation li {
+        display: inline-block;
+        text-align: center;
+      }
+      .active {
+        background: #fff;
+        width: 50%;
+      }
+      &__situation {
+        background-color: #eee;
+        
+      }
+      #mymain--content__situation {
+        display: block;
+      }
+  }
+  }
+}
+
+
