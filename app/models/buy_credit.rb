@@ -1,3 +1,3 @@
 class BuyCredit < ApplicationRecord
-  belongs_to :buy
+  has_one :buy
 end

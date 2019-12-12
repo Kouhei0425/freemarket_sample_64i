@@ -22,10 +22,6 @@ User.create(
 
 )
 
-Image.create(
-  :image => "bag.jpg",
-  :good_id => 1
-)
 
 require 'csv'
 CSV.foreach('db/categories_list.csv') do |row|
@@ -89,25 +85,6 @@ Area.create(:name => '宮崎県')
 Area.create(:name => '鹿児島県')
 Area.create(:name => '沖縄県')
 
-Good.create(
-  name: 'ドレスアップ姿勢フィットインナー',
-  size: 'M',
-  price: '1200',
-  method: 'ゆうゆうメルカリ便',
-  ship: '1~2日',
-  status: '新品、未使用',
-  burden: '送料込み(出品者負担)',
-  explain: '出品はブラック１枚のみです。
-  表記サイズ M〜Ｌ
-  取り外し出来るブラパッド内蔵で、上品なレース調の生地が使用されています。
-  
-  新品ですが写真撮影のため袋から出しています。
-  
-  自宅保管品につき、細かいことを気になさる方や完璧な商品をお求めの方はご購入をご遠慮ください。',
-  user_id: '1',
-  brand_id: '1',
-  area_id: '12'
-)
 
 CategoryGood.create(category_id: '1', good_id: '1')
 CategoryGood.create(category_id: '14', good_id: '1')

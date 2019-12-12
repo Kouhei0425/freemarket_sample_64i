@@ -2,6 +2,10 @@ class GoodsController < ApplicationController
   before_action :move_to_sign_up, except: :show
   def show
     @good = Good.find(params[:id])
+    before = params[:id] - 1;
+    @before = Good.find(before)
+    after = params[:id] + 1;
+    @after = Good.find(after)
   end
   
   def new
@@ -25,7 +29,8 @@ class GoodsController < ApplicationController
   
   private
   def good_params
-    params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
+    params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 
+      :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
   end
 
   def move_to_sign_up
