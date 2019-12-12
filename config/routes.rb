@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :brands
   resources :categories, only: [:show]
   resources :goods,  only: [:new, :create, :show] do
-    resources :buys,  only: [:create]
+    resources :buys,  only: [:index, :create]
   end
   resources :signup do
     collection do
