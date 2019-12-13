@@ -46,7 +46,7 @@
         .user-box__address
         %br
           = @address.post
-          = @address.prefecture + @address.city + @address.address + @address.buil
+          = @address.presence + @address.city + @address.address + @address.buil
           
     .button-box
       .button-box__body

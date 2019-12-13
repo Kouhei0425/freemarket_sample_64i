@@ -85,15 +85,14 @@
               生年月日を入力してください
           .user-caution
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-        .step1-next
-          .step1-next__text
-            「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
-          .step1-next__btn
-            次へ進む
-          .about-register
-            本人情報の登録について＞
-          .english
-            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+          .step1-next
+            .step1-next__text
+              「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+            = f.submit '次へ進む',class:'step1-next__btn'
+            .about-register
+              本人情報の登録について＞
+            .english
+              This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
 .footer-new
   .footer-text
     %ul
