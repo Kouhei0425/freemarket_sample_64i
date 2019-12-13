@@ -18,7 +18,6 @@ body{
         height: 150px;
         margin-top: 16px;
         margin-left: 40px;
-        text-align: center;
         display: flex;
         justify-content: space-between;
         &__img{
@@ -38,7 +37,50 @@ body{
           }
         }
       }
-      
+      .price-box__detail{
+        width: 620px;
+        margin: 0 auto;
+        padding-top: 40px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        &__text{
+          height: 150px;
+          width: calc(100% - 150px);
+          margin-top: 20px;
+          padding: 0 40px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        &__price{
+          width: 100%;
+          margin-top: 16px;
+          padding: 0 40px;
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+      .credit-box{
+        width: 620px;
+        margin: 0 auto;
+        padding-top: 40px;
+        background-color: white;
+        &__detail{
+          height: 150px;
+          width: calc(100% - 150px);
+          margin-top: 16px;
+          padding: 0 40px;
+          &__title{
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__name{
+            
+            font-size: 16px;
+          }
+        }
+      }
       .user-box{
         width: 620px;
         margin: 0 auto;
@@ -51,9 +93,8 @@ body{
           padding: 0 40px;
           &__title{
             width: 100%;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            text-align: center;
           }
           &__name{
             
@@ -71,8 +112,10 @@ body{
             height: 60px;
             margin-top: 16px;
             margin-bottom: 40px;
+            margin-left: 120px;
+            margin-right: 120px;
             color: white;
-            font-size: 30px;
+            font-size: 18px;
             font-weight: bold;
             text-align: center;
             line-height: 60px;
