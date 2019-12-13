@@ -60,6 +60,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'bullet'
   gem 'rubocop', require: false
+  gem 'nested_form'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

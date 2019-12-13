@@ -21,6 +21,21 @@
           ¥
           = @good.price
           .item-box__price__tax
+    .price-box__detail
+      .price-box__detail__text
+        支払い金額
+      .price-box__detail__price
+        ¥
+        = @good.price
+        .price-text
+    .credit-box
+      .credit-box__detail
+        .credit-box__detail__title
+          支払い方法
+        .user-box__detail__name
+          VISA  ************5678
+        .user-box__address
+          HONOKA MOTOKARIYA
     .user-box
       .user-box__detail
         .user-box__detail__title
@@ -35,6 +50,16 @@
           
     .button-box
       .button-box__body
-        = link_to '購入する', good_buys_path(@good), class: 'button-box__body__buy'
+      = nested_form_for @buy, url: good_buys_path, method: :create do |f|
+        = f.hidden_field :good_id, value: @good.id
+        = f.hidden_field :user_id, value: current_user.id
+        = f.hidden_field :price, value: @good.price
+        -# = f.fields_for :buy_addresses do |a|
+        -#   = a.hidden_field :post, value: current_user.addresses.post
+        -#   = a.hidden_field :prefecture, value: current_user.addresses.prefecture
+        -#   = a.hidden_field :city, value: current_user.addresseses.city
+        -#   = a.hidden_field :address, value: current_user.addresses.address
+        -#   = a.hidden_field :buil, value: current_user.addresses.buil
+        = f.submit '購入する', class: 'button-box__body__buy'
     .buy-box__footer
   .footer
