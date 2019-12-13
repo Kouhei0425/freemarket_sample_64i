@@ -33,6 +33,8 @@
         .credit-box__detail__title
           支払い方法
         .user-box__detail__name
+          クレジットカード
+        %br
           VISA  ************5678
         .user-box__address
           HONOKA MOTOKARIYA
@@ -46,7 +48,7 @@
         .user-box__address
         %br
           = @address.post
-          = @address.presence + @address.city + @address.address + @address.buil
+          = @address.prefecture + @address.city + @address.address + @address.buil
           
     .button-box
       .button-box__body

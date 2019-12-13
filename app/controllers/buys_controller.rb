@@ -2,7 +2,7 @@ class BuysController < ApplicationController
 
   def index
     @good = Good.find(params[:good_id])
-    @address = Address.where( user_id: current_user.id)[0]
+    @address = Address.where(user_id: current_user.id)[0]
     @buy = Buy.new
     @buy.buy_addresses.build
   end
