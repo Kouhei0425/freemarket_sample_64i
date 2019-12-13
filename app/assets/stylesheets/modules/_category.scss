@@ -14,11 +14,6 @@ background-color: #f5f5f5;
     border-width: 0;
     background-repeat: no-repeat;
     
-    &:after {
-      content: "";
-      clear: both;
-      display: block;
-    }
     .l-content.full-width {
       width: 100%;
         .parts-nav.cleafix {
@@ -42,11 +37,6 @@ background-color: #f5f5f5;
       .items-box-container.cleafix {
         margin: 0;
         padding: 0;
-        &:after {
-          content: "";
-          clear: both;
-          display: block;
-        }
         .items-box-head {
           font-size: 18px;
           font-weight: bold;
@@ -56,11 +46,6 @@ background-color: #f5f5f5;
         .items-box-content.cleafix.category-brand-list {
           width: 92%;
           margin: 0 auto;
-          &:after {
-            content: "";
-            clear: both;
-            display: block;
-          }
             .items-box {
               width: calc(33.3333% - 2.666666px);
               margin: 0 4px 4px 0;
