@@ -1,2 +1,56 @@
-
-  
+.single_header2
+  %h1.single_header2__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header2__link__img"
+  .new-nav
+    %ol
+      %li
+        会員情報
+      %li.phone
+        電話番号認証
+      %li.adress
+        お届け先住所入力
+      %li.pay
+        支払い方法
+      %li
+        完了
+    %ul
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+.number-confirm
+  .number-confirm__container
+    .number-confirm__container__text
+      電話番号の確認
+    = form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'second-main__box'} do |f|
+      .number-form-box
+        .number-form-box__container
+          %label 電話番号の確認
+          = f.text_field :phone_number, placeholder:'携帯電話の番号を入力'
+          .number-form-box__container__text
+            本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          = f.submit 'SMSを送信する' ,class: 'sms-btn'
+          .number-form-box__container__caution
+            ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .confirm-reason
+            電話番号の確認が必要な理由＞
+.footer-new
+  .footer-text
+    %ul
+      %li 
+        プライバシーポリシー
+      %li 
+        メルカリ利用規約
+      %li 
+        特定商取引に関する規約   
+  .footer-rogo
+    = image_tag "show.png",  size: "80x65"
+  .footer-lnc
+    ©︎Mercari,lnc.
