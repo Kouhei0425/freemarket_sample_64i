@@ -1,4 +1,5 @@
 = render 'toppage/header.html.haml'
+= render "toppage/button.html.haml"
 .category
   .large--box
     .large--box--top
@@ -7,8 +8,13 @@
           %li
             = link_to child.name, category_path(child.id)
     .large--box--middle
-      レディーズの商品一覧
-      .large--box--main
+      = @category.name
+      の商品一覧
+    .large--box--main
+      .large--box--item
+        -@category.goods.each do |good|
+          = render "good", { good: good }
+      
     .page
       .page--num
         %ul
@@ -35,7 +41,7 @@
     .category--name
       .category--name__box
         %h3.category--name__box__text
-          レディース
+          = @category.name
       .category--name__suggest
         %p レディースの着ない服、いらない洋服を売るならメルカリへ。レディースの商品は100万点以上あります。人気のあるカテゴリーはデニム/ジーンズと長財布です。人気の商品は「ブラッパーズ デニム パンツ」や「228 ダコタ（Dakota） 長財布　新品」があります。レディースの買い取りやリサイクル処分、服の整理を検討中の方にお勧めです。
 

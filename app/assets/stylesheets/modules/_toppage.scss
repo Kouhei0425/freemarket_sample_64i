@@ -34,7 +34,6 @@ a{
   &__ca_block{
     padding: 10px 0 60px;
     margin-bottom: 30px;
-
     margin: 0 200px;
   
     &__title{
@@ -72,7 +71,7 @@ a{
       
       &__small_box{
 
-        margin: 10px;
+        margin: 0 12px 12px 0;
         box-sizing: border-box;
         display: inline-block;
         justify-content: space-between;
@@ -87,12 +86,12 @@ a{
 
           .top_ca__ca_block__box__small_box__price{
             align-items: center;
-            background: rgba(0,0,0,.4);
+            background: rgba(0,0,0,0.1);
             border-radius: 0 14px 14px 0;
             bottom: 8px;
             box-sizing: border-box;
             color: #ffff;
-            display: inline-flex;
+            
             font-size: 17px;
             height: 28px;
             letter-spacing: .02em;
@@ -104,8 +103,8 @@ a{
         }
         &__message{
           box-sizing: border-box;
-          font-size: 18px;
-          height: 64px;
+          font-size: 14px;
+          height: 58px;
           padding:0 12px;
           background-color: white;
           width:188px;
