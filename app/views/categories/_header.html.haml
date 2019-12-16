@@ -33,6 +33,7 @@
       = link_to "メルカリ", root_path
       ＞
       = link_to "カテゴリー一覧", root_path
+      
       - if @parent.nil?
         ＞ 
         = link_to category.name, category_path(category.id)
@@ -47,7 +48,7 @@
         ＞ 
         = link_to category.parent.name, category_path(category.parent.id)
         ＞ 
-        = link_to category.name, category_path(category.id)
+        = link_to category.name, category_path(category.id), class: "pankuzu-ca-last"
       
         
 

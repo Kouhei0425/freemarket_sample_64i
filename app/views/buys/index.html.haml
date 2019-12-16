@@ -56,12 +56,12 @@
         = f.hidden_field :good_id, value: @good.id
         = f.hidden_field :user_id, value: current_user.id
         = f.hidden_field :price, value: @good.price
-        -# = f.fields_for :buy_addresses do |a|
-        -#   = a.hidden_field :post, value: current_user.addresses.post
-        -#   = a.hidden_field :prefecture, value: current_user.addresses.prefecture
-        -#   = a.hidden_field :city, value: current_user.addresseses.city
-        -#   = a.hidden_field :address, value: current_user.addresses.address
-        -#   = a.hidden_field :buil, value: current_user.addresses.buil
-        = f.submit '購入する', class: 'button-box__body__buy'
-    .buy-box__footer
+          = f.fields_for :buy_addresses do |a|
+    -#         = a.hidden_field :post, value: current_user.addresses.post
+    -#         = a.hidden_field :prefecture, value: current_user.addresses.prefecture
+    -#         = a.hidden_field :city, value: current_user.addresseses.city
+    -#         = a.hidden_field :address, value: current_user.addresses.address
+    -#         = a.hidden_field :buil, value: current_user.addresses.buil
+          -# = f.submit '購入する', class: 'button-box__body__buy'
+    -# .buy-box__footer
   .footer
