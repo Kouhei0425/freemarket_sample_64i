@@ -19,7 +19,7 @@
         レディース新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          = link_to "もっと見る", category_path(@mens.id)
+          = link_to "もっと見る", category_path(@ladies.id)
       .top_ca__ca_block__box
         - @ladies_goods.each do |good|
           = render "good", { good: good } 
@@ -30,7 +30,7 @@
         メンズ新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          = link_to "もっと見る", category_path(@ladies.id)
+          = link_to "もっと見る", category_path(@mens.id)
       .top_ca__ca_block__box
         - @mens_goods.each do |good|
           = render "good", { good: good } 

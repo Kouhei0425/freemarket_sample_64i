@@ -19,6 +19,6 @@ class BuysController < ApplicationController
 
   private
   def buy_params
-    params.require(:buy).permit(:good_id, :user_id, :price, :buy_addresses_attributes, :buy_credit_attributes )
+    params.require(:buy).permit(:good_id, :user_id, :price, :buy_addresses_attributes, :buy_credits_attributes )
   end
 end

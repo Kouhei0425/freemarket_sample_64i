@@ -11,6 +11,11 @@
        .large--box--top li {
          display: inline-block;
          margin: 16px 16px 0 0;
+         color:skyblue;
+         &--top li,a{
+          color: #0099e8;
+          text-decoration: none;
+         }
       }
      &--middle {
        font-size: 22px;
