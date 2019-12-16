@@ -26,6 +26,7 @@ body {
       -webkit-box-pack: justify;
       justify-content: space-between;
       position: relative;
+    
       .header-top {
         background-color: #FFF;
         height: 48px;
@@ -194,7 +195,18 @@ body {
         }
       }
     }
-
+    .header-ca-nav{
+      border-top: 1px solid #eee;
+      webkit-box-shadow : 0 3px 3px 0 rgba(0,0,0,0.16);
+      backgroud-color: #fff;
+      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+      margin: 0 auto;
+      padding: 16px 0;
+      font-size: 14px;
+      .pankuze-ca-last{
+        
+      }
+    }
   }
   .post-button {
     position: fixed;
