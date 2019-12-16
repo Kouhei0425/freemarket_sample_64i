@@ -86,7 +86,7 @@
         = @good.price.to_s(:delimited)
       .item-box__price__tax
         (税込) 送料込み
-    = link_to '購入画面に進む', new_good_buy_path(@good.id), class: 'item-box__buy'
+    = link_to '購入画面に進む', good_buys_path(@good.id), class: 'item-box__buy'
     .item-box__caution
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description

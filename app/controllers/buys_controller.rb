@@ -10,13 +10,14 @@ class BuysController < ApplicationController
   def create
     @buy = Buy.new(buy_params)
     if @buy.save
-      BuyAddress.create(post: params[:buy_addresses][:post], prefecture: params[:buy_addresses][:prefecture], city: params[:buy_addresses][:city],
-      address: params[:buy_addresses][:address], buil: params[:buy_address][:buil], buy_id: buy.id )
+      redirect_to root_path
+      # BuyAddress.create(post: params[:buy_addresses][:post], prefecture: params[:buy_addresses][:prefecture], city: params[:buy_addresses][:city],
+      # address: params[:buy_addresses][:address], buil: params[:buy_address][:buil], buy_id: buy.id )
     end
   end
 
   private
   def buy_params
-    params.require(:buy).permit(:good_id, :user_id, :price, buy_addresses_attributes: [], buy_credit_attributes: [] )
+    params.require(:buy).permit(:good_id, :user_id, :price, buy_addresses_attributes: [:id, :post, :city, :address, :buil], buy_credit_attributes: [] )
   end
 end
