@@ -7,10 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(
-  :name => '仮の人',
+
+  :nick_name => '仮の人',
   :email => 'sample@gmail.com',
+  :family_name => '本仮屋',
+  :first_name => 'ホノカ',
+  :family_kana => 'モトカリヤ',
+  :first_kana => 'ホノカ',
+  :birthday_year => '1993',
+  :birthday_month => '12',
+  :birthday_date => '11',
+  :phone_number => '08012348888',
   :password => 'sample'
+
 )
+
 
 require 'csv'
 CSV.foreach('db/categories_list.csv') do |row|
@@ -22,7 +33,7 @@ end
 
 Brand.create(:name => 'シャネル')
 Brand.create(:name => 'ナイキ')
-Brand.create(:name => 'ルイ　ヴィトン')
+Brand.create(:name => 'ルイ ヴィトン')
 Brand.create(:name => 'シュプリーム')
 Brand.create(:name => 'アディダス')
 
@@ -74,25 +85,6 @@ Area.create(:name => '宮崎県')
 Area.create(:name => '鹿児島県')
 Area.create(:name => '沖縄県')
 
-Good.create(
-  name: 'ドレスアップ姿勢フィットインナー',
-  size: 'M',
-  price: '1200',
-  method: 'ゆうゆうメルカリ便',
-  ship: '1~2日',
-  status: '新品、未使用',
-  burden: '送料込み(出品者負担)',
-  explain: '出品はブラック１枚のみです。
-  表記サイズ　M〜Ｌ
-  取り外し出来るブラパッド内蔵で、上品なレース調の生地が使用されています。
-  
-  新品ですが写真撮影のため袋から出しています。
-  
-  自宅保管品につき、細かいことを気になさる方や完璧な商品をお求めの方はご購入をご遠慮ください。',
-  user_id: '1',
-  brand_id: '1',
-  area_id: '12'
-)
 
 CategoryGood.create(category_id: '1', good_id: '1')
 CategoryGood.create(category_id: '14', good_id: '1')

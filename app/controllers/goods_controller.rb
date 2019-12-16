@@ -1,4 +1,5 @@
 class GoodsController < ApplicationController
+  before_action :move_to_sign_up, except: :show
   def show
     @good = Good.find(params[:id])
   end
@@ -10,7 +11,6 @@ class GoodsController < ApplicationController
   end
 
   def create
-    binding.pry
     @good = Good.new(good_params)
     if @good.save
       params[:images][:image].each do |image|
@@ -25,7 +25,12 @@ class GoodsController < ApplicationController
   
   private
   def good_params
-    params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
+    params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 
+      :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
+  end
+
+  def move_to_sign_up
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
 

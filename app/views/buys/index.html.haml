@@ -1,0 +1,67 @@
+= render "toppage/header"
+.buy-show
+  .buy-box
+    .buy-box__note
+      購入内容確認
+    .buy-box__detail
+      .buy-box__detail__img
+        = image_tag @good.images[0].image, class: 'buy-box__detail__img__thumbnail'
+      .buy-box__detail__text
+        .buy-text
+          %ul
+            %li
+              = @good.name
+            %li
+              = @good.burden
+            %li
+              = @good.method
+            %li
+              = @good.area.name
+        .buy-box__price
+          ¥
+          = @good.price
+          .item-box__price__tax
+    .price-box__detail
+      .price-box__detail__text
+        支払い金額
+      .price-box__detail__price
+        ¥
+        = @good.price
+        .price-text
+    .credit-box
+      .credit-box__detail
+        .credit-box__detail__title
+          支払い方法
+        .user-box__detail__name
+          クレジットカード
+        %br
+          VISA  ************5678
+        .user-box__address
+          HONOKA MOTOKARIYA
+    .user-box
+      .user-box__detail
+        .user-box__detail__title
+          配送先情報
+        .user-box__detail__name
+          = current_user.family_name
+          = current_user.first_name
+        .user-box__address
+        %br
+          = @address.post
+          = @address.prefecture + @address.city + @address.address + @address.buil
+          
+    .button-box
+      .button-box__body
+      = form_for @buy, url: good_buys_path, method: :create do |f|
+        = f.hidden_field :good_id, value: @good.id
+        = f.hidden_field :user_id, value: current_user.id
+        = f.hidden_field :price, value: @good.price
+        = f.fields_for :buy_addresses do |a|
+          = a.hidden_field :post, value: current_user.addresses[0].post
+          = a.hidden_field :prefecture, value: current_user.addresses[0].prefecture
+          = a.hidden_field :city, value: current_user.addresses[0].city
+          = a.hidden_field :address, value: current_user.addresses[0].address
+          = a.hidden_field :buil, value: current_user.addresses[0].buil
+        = f.submit '購入する', class: 'button-box__body__buy'
+    .buy-box__footer
+  .footer

@@ -1,0 +1,520 @@
+.single_header2{
+  height: 128px;
+  width: 750px;
+  margin: 0 auto;
+  display: flex;
+  &__link__img{
+    margin-top:40px;
+  }
+  .new-nav{
+    height: 32px;
+    width: 490px;
+    padding: 35px 0 0 60px;
+    ol{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      font-size: 12px;
+      color: gray;
+      .adress{
+        position: absolute;
+        left: 200px;
+      }
+      .pay{
+        position: absolute;
+        left:330px;
+      }
+      .phone{
+        position: absolute;
+        left:100px;
+      }
+    }
+    ol:before {
+      content: '';
+      position: absolute;
+      left: 51%;
+      bottom: -20px;/*線の上下位置*/
+      display: inline-block;
+      width: 455px;/*線の長さ*/
+      height: 2px;/*線の太さ*/
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);/*位置調整*/
+      background-color: gray;/*線の色*/
+    }
+    ul{
+      display: flex;
+      width: 470px;
+      justify-content: space-between;
+      margin: 9px 6px 0 14px;
+      color: gray;
+      font-size:14px
+    }
+  }
+}
+.user-new{
+  &__main{
+    width: 700px;
+    height: 100%;
+    margin:0 auto;
+    background-color: #fff;
+    &__text{
+      height: 33px;
+      padding: 32px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      border-bottom: 1px solid rgb(245, 245, 245);  
+    }
+    &__form{
+      width: 668px;
+      padding: 24px 16px 40px;
+      &__content{
+        width: 347px;
+        height: 100%;
+        margin: 0 auto;
+        &__text{
+          display: flex;
+          &__nickname{
+            width: 309px;
+            height: 28px;
+            padding:10px 16px 8px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius:3px;
+          }
+        }
+        .item{
+          margin-top: 20px;
+        }
+        .caution-text{
+          color:gray;
+          font-size: 14px;
+          margin-top:8px;
+        }
+        #user_password{
+          margin-top:13px;
+        }
+        .current-user{
+          height: 87px;
+          margin-top: 24px;
+          &__text{
+            font-weight: bold;
+          }
+          &__main{
+            font-size: 14px;
+            margin-top: 8px;
+          }
+        }
+        .user-name{
+          height: 70px;
+          margin-top: 24px;
+          &__kanji{
+            margin-top: 8px;
+            #user_family_name{
+              height: 28px;
+              width: 131.5px;
+              padding: 10px 16px 8px;
+              margin-right: 8px;
+              border: 1px #ccc solid;
+              border-radius:6px;
+            }
+            #user_first_name{
+              height: 28px;
+              width: 131.5px;
+              padding: 10px 16px 8px;
+              border: 1px #ccc solid;
+              border-radius:6px;
+            }
+          }
+        }
+        .user-kana{
+          margin-top: 24px;
+          #user_family_kana{
+            height: 28px;
+            width: 131.5px;
+            padding: 10px 16px 8px;
+            margin-top: 8px;
+            margin-right: 8px;
+            border: 1px #ccc solid;
+            border-radius:6px;
+          }
+          #user_first_kana{
+            height: 28px;
+            width: 131.5px;
+            padding: 10px 16px 8px;
+            margin-top: 8px;
+            border: 1px #ccc solid;
+            border-radius:6px;
+          }
+        }
+        .birthday{
+          margin-top: 24px;
+          #user_birthday_year{
+            height: 48px;
+            width: 76px;
+            margin-top: 8px;
+            border: 1px #ccc solid;
+            border-radius: 3px;
+            margin-bottom: 10px;
+          }
+          #user_birthday_month{
+            height: 48px;
+            width: 76px;
+            margin-top: 8px;
+            border: 1px #ccc solid;
+            border-radius: 3px;
+            margin-bottom: 10px;
+          }
+          #user_birthday_date{
+            height: 48px;
+            width: 76px;
+            margin-top: 8px;
+            border: 1px #ccc solid;
+            border-radius: 3px;
+            margin-bottom: 10px;
+          }
+          &__caution{
+            color: red;
+            font-size: 14px;
+          }
+        }
+        .user-caution{
+          margin-top: 8px;
+          color:gray;
+          font-size: 14px;
+        }
+      }
+    }
+    .step1-next{
+      height: 237px;
+      margin-top: 40px;
+      &__text{
+        font-size: 14px;
+        text-align: center;
+      }
+      &__btn{
+        height: 48px;
+        width: 100%;
+        margin-top: 24px;
+        background-color:#ea352d;
+        text-align: center;
+        color:white;
+        line-height: 48px;
+        cursor: pointer;
+      }
+      .about-register{
+        height: 21px;
+        margin-top: 24px;
+        text-align: right;
+        color:skyblue;
+        font-size: 14px;
+      }
+      .english{
+        height: 36px;
+        width: 311px;
+        padding: 8px 16px;
+        margin-top: 24px;
+        background-color:rgb(245, 245, 245);
+        font-size: 11px;
+        color:gray;
+      }
+    }
+  }
+}
+
+.red2{
+  background-color: red;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #fff;
+  height: 18px;
+  width: 30px;
+  text-align: center;
+}
+.check-text{
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.number-confirm{
+  height: 442px;
+  &__container{
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    &__text{
+      font-size: 22px;
+      font-weight:bold;
+      width: 636px;
+      padding:32px;
+      border-bottom: 1px solid rgb(245, 245, 245); 
+      text-align: center;
+    }
+    .number-form-box{
+      height: 282px;
+      width: 668px;
+      padding: 24px 16px 40px;
+      &__container{
+        height: 100%;
+        width: 343px;
+        margin: 0 auto;
+        label{
+          font-size: 14px;
+          font-weight: bold;
+        }
+        #user_phone_number{
+          width: 309px;
+          height: 28px;
+          padding: 10px 16px 8px;
+          margin-top:8px;
+          border:solid 1px #ccc;
+          border-radius: 3px;
+        }
+        &__text{
+          height: 42px;
+          margin-top: 8px;
+          font-size: 14px;
+        }
+        .sms-btn{
+          height: 48px;
+          width: 341px;
+          background-color:#ea352d;
+          color:white;
+          margin-top: 24px;
+          font-size: 13px;
+          cursor: pointer;
+        }
+        &__caution{
+          margin-top: 8px;
+          font-size: 14px;
+        }
+        .confirm-reason{
+          margin-top: 24px;
+          font-size: 14px;
+          text-align: right;
+          color:skyblue;
+        }
+      }
+    }
+  }
+}
+
+.address-box{
+  &__container{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    &__text{
+      font-size: 22px;
+      padding: 32px;
+      border-bottom:1px solid rgb(245, 245, 245);
+      text-align: center;
+      font-weight: bold;
+    }
+    #new_user{
+      width: 343px;
+      margin: 30px auto 0;
+      input{
+        margin-top:10px;
+      }
+      #user_family_name{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+      }
+      #user_first_name{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_family_kana{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+      }
+      #user_first_kana{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_post{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_prefecture{
+        width: 100%;
+        margin-top:10px;
+        border: 1px #ccc solid;
+      }
+      #user_address_city{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_address{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_buil{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_phone_number{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      .address-next{
+        width: 100%;
+        height: 46px;
+        background-color: #ea352d;
+        color:white;
+        margin-bottom:50px;
+      }
+    }
+  }
+}
+.gray2{
+  background-color:gray;
+  font-size: 12px;
+  color:white;
+  border-radius: 3px;
+  padding: 0 3px;
+  height: 18px;
+}
+
+.pay-box{
+  &__container{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    // height: 500px;
+    &__text{
+      font-size: 22px;
+      padding: 32px;
+      border-bottom:1px solid rgb(245, 245, 245);
+      text-align: center;
+      font-weight: bold;
+    }
+    .fourth-main__box{
+      width: 343px;
+      margin: 30px auto 0;
+      #user_credit_number{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-top: 5px;
+      }
+      #user_credit_month{
+        width: 30%;
+        margin-top: 5px;
+      }
+      .month{
+        margin-right: 150px;
+      }
+      #user_credit_year{
+        width: 30%;
+      }
+      #user_credit_security{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin: 5px 0;
+      }
+      .pay-question{
+        text-align: right;
+        color:skyblue;
+        font-size: 15px;
+      }
+      .credit-next{
+        width: 100%;
+        height: 46px;
+        background-color: #ea352d;
+        color:white;
+        margin:50px 0;
+      }
+    }
+    .credit-marks{
+      display: flex;
+      .c-icon{
+        width: 60px;
+        height: 40px;
+        margin-bottom: 30px;
+      }
+      .c-icon2{
+        height: 22px;
+        margin-top: 10px;
+        // margin-left: 5px;
+      }
+      .c-icon3{
+        height: 22px;
+        margin-top: 10px;
+        margin-left: 7px;
+      }
+      .c-icon4{
+        height: 30px;
+        width: 50px;
+        margin-top: 5px;
+      }
+      .c-icon5{
+        height: 24px;
+        width: 35px;
+        margin-top: 8px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.done-box{
+  height: 450px;
+  background-color: #fff;
+  width: 700px;
+  margin:0 auto;
+}
+.done-message{
+  text-align: center;
+  margin-top:100px;
+  padding-bottom:100px;
+}
+.start-mercari{
+  text-align: center;
+  width: 310px;
+  height: 46px;
+  background-color: #ea352d;
+  color:white;
+  margin:0 auto;
+  line-height: 46px;
+}

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191205024501) do
+ActiveRecord::Schema.define(version: 20191211084846) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "post",       null: false
+    t.string   "prefecture", null: false
+    t.string   "city",       null: false
+    t.string   "address",    null: false
+    t.string   "buil",       null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
 
   create_table "areas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -22,6 +34,40 @@ ActiveRecord::Schema.define(version: 20191205024501) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "buy_addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "post",       null: false
+    t.string   "prefecture", null: false
+    t.string   "city",       null: false
+    t.string   "address",    null: false
+    t.string   "buil"
+    t.integer  "buy_id",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buy_id"], name: "index_buy_addresses_on_buy_id", using: :btree
+  end
+
+  create_table "buy_credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "number",     null: false
+    t.integer  "buy_id",     null: false
+    t.string   "type",       null: false
+    t.integer  "month",      null: false
+    t.integer  "year",       null: false
+    t.string   "security",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buy_id"], name: "index_buy_credits_on_buy_id", using: :btree
+  end
+
+  create_table "buys", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "good_id",    null: false
+    t.integer  "user_id",    null: false
+    t.integer  "price",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["good_id"], name: "index_buys_on_good_id", using: :btree
+    t.index ["user_id"], name: "index_buys_on_user_id", using: :btree
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -40,6 +86,18 @@ ActiveRecord::Schema.define(version: 20191205024501) do
     t.index ["category_id", "good_id"], name: "index_category_goods_on_category_id_and_good_id", unique: true, using: :btree
     t.index ["category_id"], name: "index_category_goods_on_category_id", using: :btree
     t.index ["good_id"], name: "index_category_goods_on_good_id", using: :btree
+  end
+
+  create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "number",     null: false
+    t.string   "type",       null: false
+    t.integer  "month",      null: false
+    t.integer  "year",       null: false
+    t.string   "security",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
   end
 
   create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -70,9 +128,17 @@ ActiveRecord::Schema.define(version: 20191205024501) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nick_name",                           null: false
     t.string   "email",                  default: "", null: false
+    t.string   "family_name",                         null: false
+    t.string   "first_name",                          null: false
+    t.string   "family_kana",                         null: false
+    t.string   "first_kana",                          null: false
+    t.integer  "birthday_year",                       null: false
+    t.integer  "birthday_month",                      null: false
+    t.integer  "birthday_date",                       null: false
+    t.string   "phone_number",                        null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "name",                                null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -82,9 +148,15 @@ ActiveRecord::Schema.define(version: 20191205024501) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "buy_addresses", "buys"
+  add_foreign_key "buy_credits", "buys"
+  add_foreign_key "buys", "goods"
+  add_foreign_key "buys", "users"
   add_foreign_key "categories", "categories", column: "parent_id"
   add_foreign_key "category_goods", "categories"
   add_foreign_key "category_goods", "goods"
+  add_foreign_key "credits", "users"
   add_foreign_key "goods", "areas"
   add_foreign_key "goods", "brands"
   add_foreign_key "goods", "users"

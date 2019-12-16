@@ -1,0 +1,134 @@
+body{
+  background-color:rgb(245, 245, 245);  
+  .buy-show{
+    position: relative;
+    .buy-box{
+      width: 620px;
+      margin: 40px auto 0;
+      padding-top: 12px;
+      background-color: white;
+      &__note{
+        font-size: 24px;
+        margin: 24px auto;
+        text-align: center;
+        font-weight: bold;
+        background-color: white;
+      }
+      &__detail{
+        height: 150px;
+        margin-top: 16px;
+        margin-left: 40px;
+        display: flex;
+        justify-content: space-between;
+        &__img{
+          width: 150px;
+          background-color:rgb(245, 245, 245); 
+          border: solid 1px#EEEEEE; 
+          border-collapse: collapse;
+          &__thumbnail{
+            height: 150px;
+          }
+        }
+        &__text{
+          width: calc(100% - 150px);
+          padding: 0 40px 0 40px;
+          .buy-text{
+            
+          }
+        }
+      }
+      .price-box__detail{
+        width: 620px;
+        margin: 0 auto;
+        padding-top: 40px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        &__text{
+          height: 150px;
+          width: calc(100% - 150px);
+          margin-top: 20px;
+          padding: 0 40px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        &__price{
+          width: 100%;
+          margin-top: 16px;
+          padding: 0 40px;
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+      .credit-box{
+        width: 620px;
+        margin: 0 auto;
+        padding-top: 40px;
+        background-color: white;
+        &__detail{
+          height: 150px;
+          width: calc(100% - 150px);
+          margin-top: 16px;
+          padding: 0 40px;
+          &__title{
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__name{
+            
+            font-size: 16px;
+          }
+        }
+      }
+      .user-box{
+        width: 620px;
+        margin: 0 auto;
+        padding-top: 40px;
+        background-color: white;
+        &__detail{
+          height: 150px;
+          width: calc(100% - 150px);
+          margin-top: 16px;
+          padding: 0 40px;
+          &__title{
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__name{
+            
+            font-size: 16px;
+          }
+        }
+      }
+      .button-box{
+        width: 620px;
+        height: 120px;
+        margin: 40px auto 0;
+        &__body{
+          width: 100%;
+          &__buy{
+            height: 60px;
+            margin-top: 16px;
+            margin-bottom: 40px;
+            margin-left: 120px;
+            margin-right: 120px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 60px;
+            background-color:red;
+            display: block;
+          }
+        }
+        &__right{
+          padding-right: 14px;
+          width: 301px;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

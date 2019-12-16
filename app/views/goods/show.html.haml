@@ -8,7 +8,7 @@
     - else
       .item-box__word__box
         #{@good.name}は、###回の取引実績を持つ
-        #{link_to @good.user.name, root_path, class: 'word-link'}
+        #{link_to @good.user.nick_name, root_path, class: 'word-link'}
         さんから出品されました。
         #{link_to @good.brand.name, root_path, class: 'word-link'}（
         - category_link = @good.categories[2].name + '/' + @good.categories[0].name
@@ -20,43 +20,35 @@
         で発送されます。
     .item-box__detail
       .item-box__detail__img
-        .item-box__detail__img__top
-          = image_tag "show.png",class:"img-main"
+        = image_tag @good.images[0].image, class: 'item-box__detail__img__top'
         .small-images
-          .small-images__img
-          .small-images__img
-          .small-images__img
-          .small-images__img
-          .small-images__img
-          .small-images__img
-          .small-images__img
-          .small-images__img
-          .small-images__img
-          .small-images__img
+          - @good.images.each do |image|
+            = image_tag image.image, class: 'small-images__img'
       %table
         %tbody
           %tr
             %th
               出品者
             %td
-              = link_to @good.user.name, root_path
+              = link_to @good.user.nick_name, root_path
               %br
-              ☺︎4541  ☺︎50  ☺︎6
+              ☺︎4541  ☻50  ☹6
           %tr
             %th
               カテゴリー
             %td
               = link_to @good.categories[0].name, category_path(@good.categories[0].id)
               %br
-                %i.fas.fa-chevron-right
-                  = link_to @good.categories[1].name, category_path(@good.categories[1].id)
-                %i.fas.fa-chevron-right
-                  = link_to @good.categories[2].name, category_path(@good.categories[2].id)
+              %i.fas.fa-chevron-right
+                = link_to @good.categories[1].name, category_path(@good.categories[1].id)
+              %br
+              %i.fas.fa-chevron-right
+                = link_to @good.categories[2].name, category_path(@good.categories[2].id)
           %tr
             %th
               ブランド
             %td
-              = @good.brand.name
+              = link_to @good.brand.name, brand_path(@good.id)
           %tr
           - if @good.size.present?
             %th
@@ -94,7 +86,7 @@
         = @good.price.to_s(:delimited)
       .item-box__price__tax
         (税込) 送料込み
-    = link_to '購入画面に進む', root_path, class: 'item-box__buy'
+    = link_to '購入画面に進む', good_buys_path(@good.id), class: 'item-box__buy'
     .item-box__caution
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
@@ -241,4 +233,4 @@
         メルカリ >
       %li
         FTC☆オンブレチェックシャツ☆オンブレシャツ☆チェックシャツ☆ボタンシャツ☆
-  .footer
+  = render 'toppage/footer.html.haml'

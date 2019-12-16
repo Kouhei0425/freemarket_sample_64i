@@ -106,21 +106,21 @@ Things you may want to cover:
 ### Usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nick_name             | string | null: false, unique: true |
-|email                 | string | null: false, unique: true |
-|family_name           | string | null: false |
-|first_name            | string | null: false |
-|family_kana           | string | null: false |
-|first_kana            | string | null: false |
-|birthday_year         | date   | null: false |
-|birthday_month        | date   | null: false |
-|birthday_date         | date   | null: false |
-|phone number          | string | null: false, unique: true |
-|encrypted_password    | string | null: false |
-|reset_password_token  | string | null: false, unique: true |
-|reset_password_sent_at| string | null: false |
-|remember_created_at   | string | null: false |
 
+|nick_name             | string   | null: false, unique: true |
+|email                 | string   | null: false, unique: true |
+|family_name           | string   | null: false |
+|first_name            | string   | null: false |
+|family_kana           | string   | null: false |
+|first_kana            | string   | null: false |
+|birthday_year         | date     | null: false |
+|birthday_month        | date     | null: false |
+|birthday_date         | date     | null: false |
+|phone number          | string   | null: false, unique: true |
+|encrypted_password    | string   | null: false |
+|reset_password_token  | string   | null: false, unique: true |
+|reset_password_sent_at| datetime | null: false |
+|remember_created_at   | string   | null: false |
 
 ### Association
 - has_many :goods
@@ -135,9 +135,9 @@ Things you may want to cover:
 |post       | string | null: false |
 |prefecture | string | null: false |
 |city       | string | null: false |
-|address    | string | null: false, unique: true |
+|address    | string | null: false |
 |buil       | string |
-|user_id    | references | null: false |
+|user_id    | references | null: false,foreign_key: true |
 
 ### Association
 - belongs_to    :user
@@ -151,7 +151,7 @@ Things you may want to cover:
 |month   | date   | null: false |
 |year    | date   | null: false |
 |security| string | null: false |
-user_id    | references | null: false |
+|user_id    | references | null: false,foreign_key: true |
 
 
 ### Association
@@ -163,7 +163,7 @@ user_id    | references | null: false |
 |Column|Type|Options|
 |------|----|-------|
 |good_id   | references | null: false, unique: true, foreign_key: true |
-|user_id   | references | null: false|
+|user_id   | references | null: false,foreign_key: true|
 |price     | integer    | null: false|
 |evaluation| integer    | null: false|
 
@@ -175,11 +175,15 @@ user_id    | references | null: false |
 
 
 
+
+
+
 ## buy_creditsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |number  | date   | null: false |
-|buy_id  | references | null: false |
+|buy_id  | references | null: false, foreign_key: true|
+
 |type    | string | null: false |
 |month   | date   | null: false |
 |year    | date   | null: false |
@@ -196,11 +200,13 @@ user_id    | references | null: false |
 |post      | string | null: false |
 |prefecture| string | null: false |
 |city      | string | null: false |
-|address   | string | null: false, unique: true |
+|address   | string | null: false |
 |buil      | string |
-|buy_id  | references | null: false |
+|buy_id  | references | null: false, foreign_key: true|
+
 
 ### Association
 - belongs_to  :buy
+
 
 

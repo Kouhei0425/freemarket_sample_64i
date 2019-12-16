@@ -1,0 +1,58 @@
+.image-footer
+  .image-footer__container
+    .image-footer__container__text
+      .text1 スマホで簡単フリマアプリ
+      .text2 今すぐ無料ダウンロード
+      .image-footer__container__text__link
+        = image_tag "footer3.png",class:"icon-img"
+        = image_tag "appstore.png",class:"icon-img2"
+        = image_tag "google.png",class:"icon-img3"
+    .image-footer__container__img
+.top-footer
+  .top-footer__linkbox
+    %ul.top-footer__linkbox__about
+      .subject 
+        メルカリについて
+      %li 会社概要 (運営会社)
+      %li 採用情報
+      %li プレスリリース
+      %li 公式ブログ
+      %li メルカリロゴ利用ガイドライン
+      .foot-sns
+        %a{href: 'https://twitter.com/mercari_jp?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'}
+          = icon'fab','twitter',class:'f-icon'
+        %a{href: 'https://ja-jp.facebook.com/mercarijp'}
+          = icon'fab','facebook-square',class:'f-icon'
+    %ul.top-footer__linkbox__help
+      .subject 
+        ヘルプ＆ガイド
+      %li メルカリガイド
+      %li らくらくメルカリ便
+      %li ゆうゆうメルカリ便
+      %li 大型メルカリ便
+      %li 車体取引ガイド
+      %li メルカリあんしん・あんぜん宣言！
+      %li 偽ブランド品撲滅への取り組み
+      %li メルカリボックス
+    %ul.top-footer__linkbox__privacy
+      .subject 
+        プライバシーと利用規約
+      %li プライバシーポリシー
+      %li メルカリ利用規約
+      %li あんしんスマホサポート制度に関する利用規約
+      %li コンプライアンスポリシー
+    %ul.top-footer__linkbox__privacy2
+      %li 個人データの安全管理に係る基本方針
+      %li 特定商取引に関する表記
+      %li 資金決済法に基づく表示
+      %li 法令遵守と犯罪抑止のために
+    %ul.top-footer__linkbox__country
+      .subject 
+        国
+      %li 日本
+      %li United States
+  .top-footer__footer
+    %a{href: 'https://www.mercari.com/jp/'}
+      = image_tag "footer.png",class:"footer-img"
+    .top-footer__footer__text
+      © Mercari, Inc.

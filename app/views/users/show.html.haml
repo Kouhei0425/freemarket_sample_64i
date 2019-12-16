@@ -1,0 +1,48 @@
+= render 'toppage/header.html.haml'
+= render "toppage/button.html.haml"
+.mypage
+  .mymain
+    .mymain--user
+      .mymain--user__img
+        .mymain--user__img__block
+          .mymain--user__img__block__face
+            = image_tag"sample1.jpeg", size:'60x60'
+          
+          .mymain--user__img__name
+            仮の人
+          .mymain--user__img__name__text
+            %div
+              評価者
+              %span
+                0
+            %div
+              出品数
+              %span
+                0
+      .mymain--user__todo
+        %ul.mymain--user__todo
+          %li.mymain--user__todo__active
+            お知らせ
+          %li.mymain--user__todo__do
+            やることリスト
+          .mymain--user__todo__list
+          .mymain--user__todo__btn
+            %a
+              一覧を見る
+
+    .mymain--purchase
+      %h4.mymain--purchase__head
+        購入した商品
+      %ul.mymain--purchase__situation
+        %li.active
+          %h5
+            取引中
+        %li
+          %h5
+            過去の取引
+      .mymain--purchase--under
+        %ul.mymain--purchase--under
+          %li.mymain--purchase--under--box
+            取引中の商品がありません
+  = render 'side.html.haml'
+= render 'toppage/footer.html.haml'

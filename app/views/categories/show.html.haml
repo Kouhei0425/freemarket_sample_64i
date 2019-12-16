@@ -1,49 +1,49 @@
-= render 'toppage/header.html.haml'
-%body
-  %main.l-container.cleafix
-    .l-content.full-width
-      %ul.parts-nav.cleafix
+= render 'header', { category: @category }
+= render "toppage/button.html.haml"
+.category
+  .large--box
+    .large--box--top
+      %ul
         - @children.each do |child|
           %li
             = link_to child.name, category_path(child.id)
-      %section.items-box-container.cleafix
-        %h1.items-box-head
-          レディースの商品一覧
-        .items-box-content.cleafix.category-brand-list
-          %section.items-box
-            %a{:href => ""}
-              %figure>
-                .items-box-photo
-                  %img{:alt => "画像", "data-src" => "../images/sample1.jpeg", :src => "../images/sample1.jpeg"}/
-                  .itens-box-body
-                    %h3.items-box-name.font-2
-                    .items-box-num
-                      .items-box-price.font-5
-                      .font-2
-                        %i.icon-like-boder
-                        %span 
+    .large--box--middle
+      = @category.name
+      の商品一覧
+    .large--box--main
+      .large--box--item
+        -@category.goods.each do |good|
+          = render "good", { good: good }
+      
+    .page
+      .page--num
+        %ul
+          %li.page--choose__active
+            1
+          %li.page--choose
+            %a
+              2
+          %li.page--choose
+            %a
+              3
+          %li.page--choose
+            %a
+              4
+          %li.page--choose
+            %a
+              5
+      .page--next
+        %li.page--next__1btn
+          = icon "fas","chevron-right", class: "icon"
+        %li.page--next__2btn
+          = icon "fas","chevron-right", class: "icon"
+          = icon "fas","chevron-right", class: "icon"
+    .category--name
+      .category--name__box
+        %h3.category--name__box__text
+          = @category.name
+      .category--name__suggest
+        %p レディースの着ない服、いらない洋服を売るならメルカリへ。レディースの商品は100万点以上あります。人気のあるカテゴリーはデニム/ジーンズと長財布です。人気の商品は「ブラッパーズ デニム パンツ」や「228 ダコタ（Dakota） 長財布　新品」があります。レディースの買い取りやリサイクル処分、服の整理を検討中の方にお勧めです。
 
-        %ul.pager
-          %li.pager-num
-            %ul
-              %li.pager-cell.active 1
-              %li.pager-cell
-                %a{:href => ""} 2
-              %li.pager-cell
-                %a{:href => ""} 3
-              %li.pager-cell
-                %a{:href => ""} 4
-              %li.pager-cell
-                %a{:href => ""} 5
-            %li.pager-next.visible-pc
-              %ul
-                %li.pager-cell
-                  >
-                %li.pager-cell
-                  >>
-        .spacial-description
-          .text-center-spacial-description-title
-            %h3.font-white レディース
-          .white.spacial-description-text
-            %p レディースの着ない服、いらない洋服を売るならメルカリへ。レディースの商品は100万点以上あります。人気のあるカテゴリーはデニム/ジーンズと長財布です。人気の商品は「ブラッパーズ デニム パンツ」や「228 ダコタ（Dakota） 長財布　新品」があります。レディースの買い取りやリサイクル処分、服の整理を検討中の方にお勧めです。
-.footer
+
+= render 'toppage/footer.html.haml'
