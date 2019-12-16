@@ -20,6 +20,7 @@
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
           = link_to "もっと見る", category_path(@ladies.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @ladies_goods.each do |good|
           = render "good", { good: good } 
@@ -31,6 +32,7 @@
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
           = link_to "もっと見る", category_path(@mens.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @mens_goods.each do |good|
           = render "good", { good: good } 
@@ -41,7 +43,8 @@
         家電・スマホ・カメラ新着アイテム
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
-          = link_to "もっと見る", category_path(@electronics.id)
+          = link_to "もっと見る ", category_path(@electronics.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @electronics_goods.each do |good|
           = render "good", { good: good }
@@ -53,6 +56,7 @@
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
           = link_to "もっと見る", category_path(@hobbies.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @hobbies_goods.each do |good|
           = render "good", { good: good }
@@ -75,6 +79,7 @@
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
           = link_to "もっと見る", brand_path(@chanel.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @chanel_goods.each do |good|
           = render "good", { good: good }
@@ -85,6 +90,7 @@
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
           = link_to "もっと見る", brand_path(@louis.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @louis_goods.each do |good|
           = render "good", { good: good }
@@ -95,6 +101,7 @@
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
           = link_to "もっと見る", brand_path(@supreme.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @supreme_goods.each do |good|
           = render "good", { good: good }
@@ -105,6 +112,7 @@
         .top_ca__ca_block__name
         .top_ca__ca_block__more_see
           = link_to "もっと見る", brand_path(@nike.id)
+          = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @nike_goods.each do |good|
           = render "good", { good: good }
