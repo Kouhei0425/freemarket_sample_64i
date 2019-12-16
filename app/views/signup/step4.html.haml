@@ -1,0 +1,72 @@
+.single_header2
+  %h1.single_header2__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header2__link__img"
+  .new-nav
+    %ol
+      %li
+        会員情報
+      %li.phone
+        電話番号認証
+      %li.adress
+        お届け先住所入力
+      %li.pay
+        支払い方法
+      %li
+        完了
+    %ul
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+.pay-box
+  .pay-box__container
+    .pay-box__container__text
+      支払い方法
+    = form_for @user, url: done_signup_index_path, method: :get, html: {class: 'fourth-main__box'} do |f|
+      = f.fields_for :credit do |c|
+        .user-new__main__form__content__text
+          %h カード番号
+          .red2 必須
+        = c.text_field  :number,placeholder:"半角数字のみ"
+        .credit-marks
+          = image_tag 'visa.png' ,class:'c-icon'
+          = image_tag 'mastercard.png' ,class:'c-icon2'
+          = image_tag 'saison.png' ,class:'c-icon3'
+          = image_tag 'jcb.png' ,class:'c-icon4'
+          = image_tag 'amex.png' ,class:'c-icon5'
+          = image_tag 'diners.png' ,class:'c-icon5'
+          = image_tag 'discover.png' ,class:'c-icon5'
+        .user-new__main__form__content__text
+          %h 有効期限
+          .red2 必須
+        = c.select :month,  [["12","1"],["11","2"]]
+        %label.month 月
+        = c.select :year ,  [["19","1"],["20","2"]]
+        %label 年
+        .user-new__main__form__content__text
+          %h セキュリティーコード
+          .red2 必須
+        = c.text_field :security, placeholder:"カード背面４桁もしくは３桁の番号"
+        .pay-question
+          ？カード裏面の番号とは
+        = f.submit "次へ進む",class:"credit-next"
+.footer-new
+  .footer-text
+    %ul
+      %li 
+        プライバシーポリシー
+      %li 
+        メルカリ利用規約
+      %li 
+        特定商取引に関する規約   
+  .footer-rogo
+    = image_tag "show.png",  size: "80x65"
+  .footer-lnc
+    ©︎Mercari,lnc.

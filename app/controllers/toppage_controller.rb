@@ -16,7 +16,6 @@ class ToppageController < ApplicationController
     @nike_goods = @nike.goods.first(10)
     @supreme = Brand.find(4)
     @supreme_goods = @supreme.goods.first(10)
-    
   end
 
   def search

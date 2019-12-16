@@ -1,0 +1,51 @@
+.single_header2
+  %h1.single_header2__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header2__link__img"
+  .new-nav
+    %ol
+      %li
+        会員情報
+      %li.phone
+        電話番号認証
+      %li.adress
+        お届け先住所入力
+      %li.pay
+        支払い方法
+      %li
+        完了
+    %ul
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+      %li
+        ●
+.pay-box.done-box
+  .pay-box__container
+    .pay-box__container__text
+      会員登録完了
+    .done-message
+      ありがとうございます。
+      %br
+      会員登録が完了しました。
+    = link_to root_path do
+      .start-mercari
+        メルカリをはじめる
+.footer-new
+  .footer-text
+    %ul
+      %li 
+        プライバシーポリシー
+      %li 
+        メルカリ利用規約
+      %li 
+        特定商取引に関する規約   
+  .footer-rogo
+    = image_tag "show.png",  size: "80x65"
+  .footer-lnc
+    ©︎Mercari,lnc.
