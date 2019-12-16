@@ -84,10 +84,16 @@ end
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem "font-awesome-sass"
 gem 'carrierwave'
-
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'kaminari'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+
+gem 'payjp'
 
 group :test, :development do
   gem 'capybara'
