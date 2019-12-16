@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   
-  resources :users 
+  resources :users
   resources :brands
   resources :categories, only: [:show]
   resources :goods,  only: [:new, :create, :show] do

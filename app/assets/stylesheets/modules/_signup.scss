@@ -194,11 +194,13 @@
       }
       &__btn{
         height: 48px;
+        width: 100%;
         margin-top: 24px;
         background-color:#ea352d;
         text-align: center;
         color:white;
         line-height: 48px;
+        cursor: pointer;
       }
       .about-register{
         height: 21px;
@@ -232,4 +234,85 @@
 .check-text{
   font-size: 14px;
   margin-left: 5px;
+}
+
+.number-confirm{
+  height: 442px;
+  &__container{
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    &__text{
+      font-size: 22px;
+      font-weight:bold;
+      width: 636px;
+      padding:32px;
+      border-bottom: 1px solid rgb(245, 245, 245); 
+      text-align: center;
+    }
+    .number-form-box{
+      height: 282px;
+      width: 668px;
+      padding: 24px 16px 40px;
+      &__container{
+        height: 100%;
+        width: 343px;
+        margin: 0 auto;
+        label{
+          font-size: 14px;
+          font-weight: bold;
+        }
+        #user_phone_number{
+          width: 309px;
+          height: 28px;
+          padding: 10px 16px 8px;
+          margin-top:8px;
+          border:solid 1px #ccc;
+          border-radius: 3px;
+        }
+        &__text{
+          height: 42px;
+          margin-top: 8px;
+          font-size: 14px;
+        }
+        .sms-btn{
+          height: 48px;
+          width: 341px;
+          background-color:#ea352d;
+          color:white;
+          margin-top: 24px;
+          font-size: 13px;
+          cursor: pointer;
+        }
+        &__caution{
+          margin-top: 8px;
+          font-size: 14px;
+        }
+        .confirm-reason{
+          margin-top: 24px;
+          font-size: 14px;
+          text-align: right;
+          color:skyblue;
+        }
+      }
+    }
+  }
+}
+
+.address-box{
+  height: 1076px;
+  &__container{
+    height: 1076px;
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    &__text{
+      font-size: 22px;
+      padding: 32px;
+      border-bottom:1px solid rgb(245, 245, 245);
+      text-align: center;
+      font-weight: bold;
+    }
+  }
 }

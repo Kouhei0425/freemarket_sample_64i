@@ -1,15 +1,34 @@
 = render 'toppage/header.html.haml'
+= render "toppage/button.html.haml"
 .mypage
   .mymain
     .mymain--user
       .mymain--user__img
-        
+        .mymain--user__img__block
+          .mymain--user__img__block__face
+            = image_tag"sample1.jpeg", size:'60x60'
+          
+          .mymain--user__img__name
+            仮の人
+          .mymain--user__img__name__text
+            %div
+              評価者
+              %span
+                0
+            %div
+              出品数
+              %span
+                0
       .mymain--user__todo
         %ul.mymain--user__todo
           %li.mymain--user__todo__active
             お知らせ
           %li.mymain--user__todo__do
             やることリスト
+          .mymain--user__todo__list
+          .mymain--user__todo__btn
+            %a
+              一覧を見る
 
     .mymain--purchase
       %h4.mymain--purchase__head
@@ -25,55 +44,5 @@
         %ul.mymain--purchase--under
           %li.mymain--purchase--under--box
             取引中の商品がありません
-  .myside
-    %nav.myside--top
-      %li.myside--top__list__active
-        マイページ
-      %li.myside--top__list
-        お知らせ
-      %li.myside--top__list
-        やることリスト
-      %li.myside--top__list
-        いいね！一覧
-      %li.myside--top__list
-        出品する
-      %li.myside--top__list
-        出品した商品 出品中
-      %li.myside--top__list
-        出品した商品 取引中
-      %li.myside--top__list
-        購入した商品 売却済み
-      %li.myside--top__list
-        購入した商品 取引中
-      %li.myside--top__list
-        購入した商品 過去の取引
-      %li.myside--top__list
-        ニュース一覧
-      %li.myside--top__list
-        ガイド
-      %li.myside--top__list
-        お問い合わせ
-    %h3.myside--while
-      メルペイ
-    %ul.myside--while__list
-      %li.myside--while__list__tag
-        売り上げ・振込申請
-      %li.myside--while__list__tag
-        ポイント申請
-    %h3.myside--under
-      設定
-    %ul.myside--under__list
-      プロフィール
-    %ul.myside--under__list
-      発送先・お届け先住所変更
-    %ul.myside--under__list
-      支払い方法
-    %ul.myside--under__list
-      メール/パスワード
-    %ul.myside--under__list
-      本人情報
-    %ul.myside--under__list
-      電話番号の確認
-    %ul.myside--under__list
-      ログアウト
-  
+  = render 'side.html.haml'
+= render 'toppage/footer.html.haml'

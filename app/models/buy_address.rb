@@ -1,3 +1,3 @@
 class BuyAddress < ApplicationRecord
-  has_one  :buy
+  belongs_to  :buy
 end
