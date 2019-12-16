@@ -8,7 +8,7 @@ class BuysController < ApplicationController
   end
 
   def create
-    @buy = Buy.create(buy_params)
+    @buy = Buy.new(buy_params)
     if @buy.save
       buy_address = params[:buy][:buy_addresses_attributes][:'0']
       BuyAddress.create(post: buy_address[:post], prefecture: buy_address[:prefecture], city: buy_address[:city],
