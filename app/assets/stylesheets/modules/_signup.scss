@@ -301,9 +301,7 @@
 }
 
 .address-box{
-  height: 1076px;
   &__container{
-    height: 1076px;
     width: 700px;
     background-color: white;
     margin: 0 auto;
@@ -314,5 +312,209 @@
       text-align: center;
       font-weight: bold;
     }
+    #new_user{
+      width: 343px;
+      margin: 30px auto 0;
+      input{
+        margin-top:10px;
+      }
+      #user_family_name{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+      }
+      #user_first_name{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_family_kana{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+      }
+      #user_first_kana{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_post{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_prefecture{
+        width: 100%;
+        margin-top:10px;
+        border: 1px #ccc solid;
+      }
+      #user_address_city{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_address{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_address_buil{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #user_phone_number{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      .address-next{
+        width: 100%;
+        height: 46px;
+        background-color: #ea352d;
+        color:white;
+        margin-bottom:50px;
+      }
+    }
   }
+}
+.gray2{
+  background-color:gray;
+  font-size: 12px;
+  color:white;
+  border-radius: 3px;
+  padding: 0 3px;
+  height: 18px;
+}
+
+.pay-box{
+  &__container{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    // height: 500px;
+    &__text{
+      font-size: 22px;
+      padding: 32px;
+      border-bottom:1px solid rgb(245, 245, 245);
+      text-align: center;
+      font-weight: bold;
+    }
+    .fourth-main__box{
+      width: 343px;
+      margin: 30px auto 0;
+      #user_credit_number{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-top: 5px;
+      }
+      #user_credit_month{
+        width: 30%;
+        margin-top: 5px;
+      }
+      .month{
+        margin-right: 150px;
+      }
+      #user_credit_year{
+        width: 30%;
+      }
+      #user_credit_security{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin: 5px 0;
+      }
+      .pay-question{
+        text-align: right;
+        color:skyblue;
+        font-size: 15px;
+      }
+      .credit-next{
+        width: 100%;
+        height: 46px;
+        background-color: #ea352d;
+        color:white;
+        margin:50px 0;
+      }
+    }
+    .credit-marks{
+      display: flex;
+      .c-icon{
+        width: 60px;
+        height: 40px;
+        margin-bottom: 30px;
+      }
+      .c-icon2{
+        height: 22px;
+        margin-top: 10px;
+        // margin-left: 5px;
+      }
+      .c-icon3{
+        height: 22px;
+        margin-top: 10px;
+        margin-left: 7px;
+      }
+      .c-icon4{
+        height: 30px;
+        width: 50px;
+        margin-top: 5px;
+      }
+      .c-icon5{
+        height: 24px;
+        width: 35px;
+        margin-top: 8px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.done-box{
+  height: 450px;
+  background-color: #fff;
+  width: 700px;
+  margin:0 auto;
+}
+.done-message{
+  text-align: center;
+  margin-top:100px;
+  padding-bottom:100px;
+}
+.start-mercari{
+  text-align: center;
+  width: 310px;
+  height: 46px;
+  background-color: #ea352d;
+  color:white;
+  margin:0 auto;
+  line-height: 46px;
 }
