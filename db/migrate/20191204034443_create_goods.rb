@@ -11,7 +11,7 @@ class CreateGoods < ActiveRecord::Migration[5.0]
       t.text        :burden,        null: false
       t.text        :explain,       null: false
       t.references  :user,          null: false, foreign_key: true
-      t.references  :brand,         foreign_key: true
+      t.references  :brand,         null: true, foreign_key: true
       t.references  :area,          null: false, foreign_key: true
       t.timestamps
     end
