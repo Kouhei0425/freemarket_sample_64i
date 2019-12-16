@@ -190,21 +190,19 @@
 
 .top-footer{
   height: 369px;
-  width: 1400px;
+  width: 100%;
   padding: 18px 20px 10px;
   background-color:rgb(34, 34, 34);
   &__linkbox{
     height: 296px;
     width: 1020px;
     margin: 0 auto;
-    // background-color: red;
     display: flex;
     color:#ccc;
     &__about{
       width: 167px;
       height: 240px;
       padding-right: 40px;
-      // background-color: blue;
       li{
         font-size: 12px;
       margin-bottom: 15px;
@@ -215,7 +213,6 @@
       height: 278px;
       padding-right: 40px;
       width: 190px;
-      // background-color: pink;
       li{
         font-size: 12px;
       margin-bottom: 15px;
@@ -226,7 +223,6 @@
       height: 166px;
       width: 200px;
       padding-right: 20px;
-      // background-color:orange;
       li{
         font-size: 12px;
       margin-bottom: 15px;
@@ -248,7 +244,6 @@
       height: 86px;
       width: 72px;
       padding-right: 20px;
-      // background-color: greenyellow;
       li{
         font-size: 12px;
       margin-bottom: 15px;
@@ -265,7 +260,6 @@
     height: 31px;
     width: 1020px;
     margin: 30px 190px 20px;
-    // background-color: yellow;
     display: flex;
     &__text{
       margin-left: 350px;
@@ -281,7 +275,6 @@
 .foot-sns{
   margin-top: 30px;
   height: 30px;
-  // background-color:pink;
   .f-icon{
     font-size: 30px;
     color: white;

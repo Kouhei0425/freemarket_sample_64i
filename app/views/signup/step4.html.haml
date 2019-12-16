@@ -36,6 +36,7 @@
           .red2 必須
         = c.text_field  :number,placeholder:"半角数字のみ"
         .credit-marks
+          = c.hidden_field :type, value: "visa"
           = image_tag 'visa.png' ,class:'c-icon'
           = image_tag 'mastercard.png' ,class:'c-icon2'
           = image_tag 'saison.png' ,class:'c-icon3'
