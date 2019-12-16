@@ -13,6 +13,7 @@ class BuysController < ApplicationController
       buy_address = params[:buy][:buy_addresses_attributes][:'0']
       BuyAddress.create(post: buy_address[:post], prefecture: buy_address[:prefecture], city: buy_address[:city],
       address: buy_address[:address], buil: buy_address[:buil], buy_id: @buy.id )
+      redirect_to root_path
     end
   end
 
