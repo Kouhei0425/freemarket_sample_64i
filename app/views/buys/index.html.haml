@@ -57,7 +57,7 @@
         = f.hidden_field :user_id, value: current_user.id
         = f.hidden_field :price, value: @good.price
         = f.fields_for :buy_addresses do |a|
-          = a.hidden_field :posts, value: current_user.addresses[0].post
+          = a.hidden_field :post, value: current_user.addresses[0].post
           = a.hidden_field :prefecture, value: current_user.addresses[0].prefecture
           = a.hidden_field :city, value: current_user.addresses[0].city
           = a.hidden_field :address, value: current_user.addresses[0].address
