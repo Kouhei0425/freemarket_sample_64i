@@ -74,6 +74,7 @@ class SignupController < ApplicationController
     security: user_params[:security]
     )
   end
+  
   private
   
   def user_params

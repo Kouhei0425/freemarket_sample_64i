@@ -4,6 +4,8 @@ class Buy < ApplicationRecord
   has_many   :buy_addresses
   has_many   :buy_credits
   accepts_nested_attributes_for :buy_addresses
-  accepts_nested_attributes_for :buy_credits
+  
+  
+  validates_associated :buy_addresses
 
 end

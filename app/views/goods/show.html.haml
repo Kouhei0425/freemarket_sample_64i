@@ -23,7 +23,7 @@
         = image_tag @good.images[0].image, class: 'item-box__detail__img__top'
         .small-images
           - @good.images.each do |image|
-            = image_tag image, class: 'small-images__img'
+            = image_tag image.image, class: 'small-images__img'
       %table
         %tbody
           %tr
@@ -233,4 +233,4 @@
         メルカリ >
       %li
         FTC☆オンブレチェックシャツ☆オンブレシャツ☆チェックシャツ☆ボタンシャツ☆
-  .footer
+  = render 'toppage/footer.html.haml'

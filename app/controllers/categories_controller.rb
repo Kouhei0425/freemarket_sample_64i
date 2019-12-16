@@ -3,6 +3,5 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @children = @category.children
     @parent = @category.parent
-  end
-
+  end  
 end
