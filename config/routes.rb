@@ -13,8 +13,17 @@ Rails.application.routes.draw do
   resources :brands
   resources :categories, only: [:show]
   resources :goods,  only: [:new, :create, :show] do
-    resources :buys,  only: [:index, :create]
+  resources :buys,  only: [:index, :create]
   end
+  resources :credit_card, only: [:create, :show, :edit] do
+    collection do
+      post 'delete', to: 'credit_card#delete'
+      post 'show'
+    end
+    member do
+      get 'confirmation'
+    end
+  end 
   resources :signup do
     collection do
       get 'step1'
