@@ -35,7 +35,8 @@
         .user-box__detail__name
           クレジットカード
         %br
-          VISA  ************5678
+          %form{:action => "/pay", :method => "post"}
+            %script.payjp-button{"data-key" => "", :src => "https://checkout.pay.jp/"}
         .user-box__address
           HONOKA MOTOKARIYA
     .user-box
