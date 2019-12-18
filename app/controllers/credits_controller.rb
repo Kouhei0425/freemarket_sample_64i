@@ -2,9 +2,7 @@ class CreditsController < ApplicationController
 
   require "payjp"
 
-  
-  def pay #データベース作成
-    
+  def new #データベース作成
   end
 
   def delete #データベースを削除
