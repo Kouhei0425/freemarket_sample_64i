@@ -25,7 +25,7 @@ class CreditsController < ApplicationController
     end
   end
 
-  def delete #データベースを削除します
+  def delete #データベースを削除
     card = Credit.where(user_id: current_user.id).first
     if card.blank?
     else
@@ -37,7 +37,7 @@ class CreditsController < ApplicationController
       redirect_to action: "new"
   end
 
-  def show #データpayjpに送り情報を取り出します
+  def show #データpayjpに送り情報を取り出し
     card = Credit.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
