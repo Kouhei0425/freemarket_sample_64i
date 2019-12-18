@@ -68,6 +68,7 @@ class SignupController < ApplicationController
       if @card.save
       else
         redirect_to step4_signup_index_path
+        flash[:alert] = 'クレジットカード登録に失敗しました'
       end
     end
   end
