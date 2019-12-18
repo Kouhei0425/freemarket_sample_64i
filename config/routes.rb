@@ -15,15 +15,15 @@ Rails.application.routes.draw do
   resources :goods,  only: [:new, :create, :show] do
   resources :buys,  only: [:index, :create]
   end
-  resources :credit_card, only: [:create, :show, :edit] do
+
+  resources :credit, only: [:new, :show] do
     collection do
-      post 'delete', to: 'credit_card#delete'
-      post 'show'
+      post 'show', to: 'credit#show'
+      post 'pay', to: 'credit#pay'
+      post 'delete', to: 'credit#delete'
     end
-    member do
-      get 'confirmation'
-    end
-  end 
+  end
+  
   resources :signup do
     collection do
       get 'step1'

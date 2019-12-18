@@ -3,16 +3,16 @@ $(document).on('turbolinks:load', function() {
   Payjp.setPublicKey('pk_test_26b39b7573f5729ae2218fa4');
 
   // Formがsubmitされた時にイベント発火させ、それぞれform要素のvalueを取り出します
-  $(document).on("click", "#submit-button", function(e) {
+  $(document).on("click", "#token_submit", function(e) {
 
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
 
     var card = {
-        number: $("#payment_card_no").val(),
-        cvc: $("#payment_card_cvc").val(),
-        exp_month: $("#payment_expiration_date_1i").val(),
-        exp_year: $("#payment_expiration_date_2i").val(),
+        number: $("#card_no").val(),
+        cvc: $("#cvc").val(),
+        exp_month: $("#exp_month").val(),
+        exp_year: $("#exp_year").val(),
     };
 
     // Payjp.createTokenというメソッドを使ってトークンを作成
