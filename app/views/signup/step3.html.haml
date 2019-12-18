@@ -29,7 +29,7 @@
   .address-box__container
     .address-box__container__text
       住所入力
-    = form_for @user, url: signup_index_path, method: :post, html: {class: 'third-main__box'} do |f|
+    = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'third-main__box'} do |f|
       .user-new__main__form__content__text
         %h お名前
         .red2 必須
@@ -48,7 +48,7 @@
         .user-new__main__form__content__text
           %h 都道府県
           .red2 必須
-        = a.select :prefecture, [["北海道","1"],["青森","2"]]
+        = a.select :prefecture, [["北海道",1],["青森",2]]
         .user-new__main__form__content__text
           %h 市区町村
           .red2 必須
