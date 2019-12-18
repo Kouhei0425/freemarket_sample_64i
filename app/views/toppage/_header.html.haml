@@ -21,10 +21,9 @@
             = link_to brand_path(1), class: 'nav-brand' do
               %svg.icon-brand{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 23 16", :width => "23"}
                 %path{:d => "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule": "nonzero"}
-              %span ブランドから探す
+                             %span ブランドから探す
         .header-login-nav
           -if user_signed_in?
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
             %ul.header-user-nav
               %li.header-user-nav__lists
                 %a.header-user-nav__lists__likes{:href => "https://www.mercari.com/jp/mypage/like/history/"}
@@ -46,84 +45,6 @@
                       %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
                   %span マイページ
 
-            .l-right
-              %ul.pc-header-user-nav
-                %li.liked-items-link
-                  %a.pc-header-menu-link{:href => "https://www.mercari.com/jp/mypage/like/history/"}
-                    %i.icon-like-border
-                    %span いいね！一覧
-                %li{"data-id" => "pc-header-user-nav", "data-key" => "notification_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-                  %a.pc-header-menu-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/notification/"}
-                    %i.icon-bell
-                    %span お知らせ
-                    .pc-header-nav-count
-                      1
-                  %ul.pc-header-user-box.pc-header-notification-box.mypage-item-list{"data-id" => "pc-header-user-items"}
-                    %li
-                      %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
-                        
-                %li{"data-id" => "pc-header-user-nav", "data-key" => "todo_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
-                  %a.pc-header-menu-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/todo/"}
-                    %i.icon-check
-                    %span やることリスト
-                  %ul.pc-header-user-box.pc-header-todo-box.mypage-item-list{"data-id" => "pc-header-user-items"}
-                    %li.mypage-item-not-found.bold 現在、やることリストはありません
-                %li
-                  %a.pc-header-user-icon.pc-header-menu-link{:href => "https://www.mercari.com/jp/mypage/"}
-                    %figure
-                      %div
-                        %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
-                    %span マイページ
-                  .pc-header-user-box.pc-header-mypage-box
-                    .pc-header-mypage-state.text-center
-                      %figure
-                        %div
-                          %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
-                        %figcaption ひろ太郎
-                      %ul.pc-header-mypage-review-listing
-                        %li
-                          %a.pc-header-link{:href => "https://www.mercari.com/jp/mypage/review/history/"} 評価: 0
-                        %li
-                          %a.pc-header-link{:href => "https://www.mercari.com/jp/mypage/listings/listing/"} 出品数: 0
-                      %ul.pc-header-mypage-sales-point
-                        %li
-                          %a.pc-header-link.clearfix{:href => "https://www.mercari.com/jp/mypage/sales/"}
-                            .l-left
-                              売上金
-                            .l-right
-                              ¥0
-                              %i.icon-arrow-right
-                        %li
-                          %a.pc-header-link.clearfix{:href => "https://www.mercari.com/jp/mypage/point/"}
-                            .l-left ポイント
-                            .l-right
-                              P0
-                              %i.icon-arrow-right
-                    %ul.mypage-nav-list
-                      %li
-                        %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/like/history/"}
-                          いいね！一覧
-                          %i.icon-arrow-right
-                      %li
-                        %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/listings/listing/"}
-                          出品した商品 - 出品中
-                          %i.icon-arrow-right
-                      %li
-                        %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/listings/in_progress/"}
-                          出品した商品 - 取引中
-                          %i.icon-arrow-right
-                      %li
-                        %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/listings/completed/"}
-                          出品した商品 - 売却済み
-                          %i.icon-arrow-right
-                      %li
-                        %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/purchase/"}
-                          購入した商品 - 取引中
-                          %i.icon-arrow-right
-                      %li
-                        %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/purchased/"}
-                          購入した商品 - 過去の取引
-                          %i.icon-arrow-right
           -else
             = link_to "新規会員登録", step1_signup_index_path, class: 'btn-red'
             = link_to "ログイン", new_user_session_path, class: 'header-login'
