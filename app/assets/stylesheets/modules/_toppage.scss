@@ -34,14 +34,15 @@
   &__ca_block{
     padding: 10px 0 60px;
     margin-bottom: 30px;
-    margin: 0 200px;
+    width: 1020px;
+    margin: 0 auto;
   
     &__title{
 
       font-size:24px;
       font-weight: 600;
-      position: relative;
-        
+      display: flex;
+      justify-content: space-between;
       .top_ca__ca_block__name{
         padding: 5px 16px 5px 5px;
         font-size: 17px;
@@ -53,7 +54,6 @@
         bottom: 15px;
         right: 5px;
         font-size:15px;
-        position: absolute;
         color: rgb(0, 149, 238);
         cursor: pointer;
         &_see a{

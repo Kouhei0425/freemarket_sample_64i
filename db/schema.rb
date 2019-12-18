@@ -49,14 +49,11 @@ ActiveRecord::Schema.define(version: 20191216095955) do
   end
 
   create_table "buy_credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "number",     null: false
-    t.integer  "buy_id",     null: false
-    t.string   "type",       null: false
-    t.integer  "month",      null: false
-    t.integer  "year",       null: false
-    t.string   "security",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "buy_id",      null: false
+    t.string   "card_id",     null: false
+    t.string   "customer_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["buy_id"], name: "index_buy_credits_on_buy_id", using: :btree
   end
 

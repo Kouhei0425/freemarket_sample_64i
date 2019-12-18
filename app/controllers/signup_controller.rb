@@ -1,5 +1,7 @@
 class SignupController < ApplicationController
-
+  
+  require "payjp"
+  
   def step1
     #新規インスタンス作成
     @user = User.new
@@ -27,7 +29,7 @@ class SignupController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     #新規インスタンス作成
     @user = User.new
-    #addressモデルと関連づける(fields_forを記述したビューを呼び出すアクションに記述する)
+    @credit = Credit.new
     @user.build_address
   end
 

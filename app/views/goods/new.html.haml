@@ -25,13 +25,13 @@
               必須
           %p 最大10枚までアップロードできます
           .form-img-box__upload
-            .form-img-box__upload__text
+            %label.form-img-box__upload__text
               = f.fields_for :images do |i|
-                = i.file_field :image, multiple: true, name: 'images[image][]'
-                = i.file_field :image, multiple: true, name: 'images[image][]'
-              ドラッグアンドドロップ
-              %br
-              またはクリックしてファイルをアップロード
+                = i.file_field :image, multiple: true, name: 'images[image][]', class:'img'
+                
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
         .sell-box
           .sell-box__text1
             %h 商品名
@@ -51,6 +51,7 @@
                 %h カテゴリー
                 %h.red
                   必須
+                .select-details__text
               = f.collection_select :category_ids, Category.where(" id < ?", 14 ), :id, :name, { prompt: '---' }, { name: 'category_ids[category_id][]'}
               = f.collection_select :category_ids, Category.where("parent_id > ? and parent_id < ? ", 0, 14 ), :id, :name, { prompt: '---' }, { name: 'category_ids[category_id][]'}
               = f.collection_select :category_ids, Category.where("parent_id > ?", 13), :id, :name, { prompt: '---' }, { name: 'category_ids[category_id][]'}
@@ -59,7 +60,7 @@
                 %h.red
                   必須
               .select-form
-                = f.select :size, [["S", "S"]],{ prompt: '---' }
+                = f.select :size, [["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"],["S", "S"],["M", "M"],["L", "L"],["XL(LL)", "XL(LL)"],["2XL(3L)", "2XL(3L)"],["3XL(4L)", "3XL(4L)"],["4XL(5L)以上", "4XL(5L以上)"],["FREE SIZE", "FREE SIZE)"]],{ prompt: '---' }
               .select-details__text
                 %h ブランド
                 %h.gray
@@ -81,13 +82,14 @@
                 %h.red
                   必須
               .select-form
-                = f.select :burden, [["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)","着払い(購入者負担)"]],{ prompt: '選択してください' }
-              .select-details__text
-                %h 配送の方法
-                %h.red
-                  必須
-              .select-form
-                = f.select :method, [["メンズ","メンズ"],["レディース","レディース"]],{ prompt: '---' }
+                = f.select :burden, [["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)","着払い(購入者負担)"]],{ prompt: '---' },id:'burden'
+              .method-select.hidden
+                .select-details__text
+                  %h 配送の方法
+                  %h.red
+                    必須
+                .select-form
+                  = f.select :method, [["未定","未定"],["らくらくメルカリ便","らくらくメルカリ便"],["ゆうメール","ゆうメール"],["レターパック","レターパック"],["普通郵便(定形、定形外)","普通郵便(定形、定形外)"],["クロネコヤマト","クロネコヤマト"],["ゆうパック","ゆうパック"],["クリックポスト","クリックポスト"],["ゆうパケット","ゆうパケット"]],{ prompt: '---' }
               .select-details__text
                 %h 発送元の地域
                 %h.red
@@ -99,7 +101,7 @@
                 %h.red
                   必須
               .select-form
-                = f.select :ship, [["1〜２日で発送","1〜２日で発送"],["２〜３日で発送","２〜３日で発送"], ["４〜７日で発送","４〜7日で発送"]],{ prompt: '選択してください' }
+                = f.select :ship, [["1〜２日で発送","1〜２日で発送"],["２〜３日で発送","２〜３日で発送"], ["４〜７日で発送","４〜7日で発送"]],{ prompt: '---' }
         .sell-box
           .sell-container
             %h 販売価格(300~9,999,999)
@@ -113,8 +115,10 @@
                   %label
                     ¥
                   = f.text_field :price, placeholder:"例） 300",class:"price-flick"
-              .price-text
-                販売手数料
+              .buyfee
+                販売手数料(10%)
+                .buyfee--side
+                  -
               .price-benefit
                 販売利益
         .sell-box
@@ -143,3 +147,4 @@
   .footer-lnc
     ©︎Mercari,lnc.
               
+       
