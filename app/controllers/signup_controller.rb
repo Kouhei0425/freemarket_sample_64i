@@ -33,9 +33,12 @@ class SignupController < ApplicationController
     session[:buil] = address[:buil]
     @user = User.new
     @user.addresses.build
+    @credit = Credit.new
+    
   end
 
   def done
+    
     credit = params[:user][:credit]
     session[:number] = credit[:number]
     session[:type] = credit[:type]
