@@ -2,25 +2,24 @@ class CreditsController < ApplicationController
 
   require "payjp"
 
-  def new
-    card = Credit.where(user_id: current_user.id)
-    redirect_to action: "show" if card.exists?
-  end
-
+  
   def pay #データベース作成
     Payjp.api_key = ENV["sk_test_605a7c3b85b5bd3e70552922"]
     if params['payjp-token'].blank?
-      redirect_to root_path
+      redirect_to step4_signup_index_path
     else
+      ##ここでuserを保存する(あとでdoneに移す)
+      ##user = User.create()
+      ##if user.save
       customer = Payjp::Customer.create(
       card: params['payjp-token'],
-      metadata: {user_id: current_user.id}
+      metadata: {user_id: user.id}
       ) #念の為metadataにuser_idを入れましたがなくてもOK
-      @card = Credit.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = Credit.new(user_id: user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to 
+        redirect_to done_signup_index_path
       else
-        redirect_to action: "pay"
+        redirect_to step4_signup_index_path
       end
     end
   end
