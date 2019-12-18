@@ -20,8 +20,8 @@ Rails.application.routes.draw do
       get 'step1'
       get 'step2'
       get 'step3'
-      get 'step4'
-      get 'done'
+      # get 'step4' #ここで、データ入力が完了
+      get 'done'  #登録完了後のページ
     end
   end
 end

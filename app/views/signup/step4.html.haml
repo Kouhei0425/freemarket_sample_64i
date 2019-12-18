@@ -29,14 +29,14 @@
   .pay-box__container
     .pay-box__container__text
       支払い方法
-    = form_for @user, url: done_signup_index_path, method: :get, html: {class: 'fourth-main__box'} do |f|
+    = form_for @user, url: signup_index_path, method: :post, html: {class: 'fourth-main__box'} do |f|  #クリエイトアクションのURLを指定
       = f.fields_for :credit do |c|
         .user-new__main__form__content__text
           %h カード番号
           .red2 必須
         = c.text_field  :number,placeholder:"半角数字のみ"
         .credit-marks
-          = c.hidden_field :type, value: "visa"
+          = c.hidden_field :company, value: "visa"
           = image_tag 'visa.png' ,class:'c-icon'
           = image_tag 'mastercard.png' ,class:'c-icon2'
           = image_tag 'saison.png' ,class:'c-icon3'

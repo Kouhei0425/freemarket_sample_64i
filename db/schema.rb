@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191211084846) do
+ActiveRecord::Schema.define(version: 20191216095955) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "post",       null: false
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20191211084846) do
 
   create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "number",     null: false
-    t.string   "type",       null: false
+    t.string   "company",    null: false
     t.integer  "month",      null: false
     t.integer  "year",       null: false
     t.string   "security",   null: false
