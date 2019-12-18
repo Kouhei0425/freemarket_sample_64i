@@ -154,6 +154,24 @@ body {
             position: absolute;
             right: 0;
             display: flex;
+            .header-user-nav{
+              display: flex;
+              &__lists{
+                &__likes{
+
+                }
+                &__note{
+
+                }
+                &__todo{
+
+                }
+                &__mypage{
+                  display: flex;
+                }
+              }
+            }
+
             .btn-red {
               height: 30px;
               width: 104px;

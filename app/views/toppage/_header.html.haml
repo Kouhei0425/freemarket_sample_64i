@@ -24,7 +24,31 @@
               %span ブランドから探す
         .header-login-nav
           -if user_signed_in?
+<<<<<<< Updated upstream
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
+=======
+            %ul.header-user-nav
+              %li.header-user-nav__lists
+                %a.header-user-nav__lists__likes{:href => "https://www.mercari.com/jp/mypage/like/history/"}
+                  %i.far.fa-heart
+                  %span いいね！一覧
+              %li{"data-id" => "header-user-nav__lists__note", "data-key" => "notification_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
+                %a.header-user-nav__lists__note-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/notification/"}
+                  %i.far.fa-bell
+                  %span お知らせ
+                      
+              %li{"data-id" => "header-user-nav__lists__todo", "data-key" => "todo_list", "data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/"}
+                %a.header-user-nav__lists__todo-link{"data-url" => "https://www.mercari.com/jp/mypage/notification_and_todo_json/", :href => "https://www.mercari.com/jp/mypage/todo/"}
+                  %i.fas.fa-check
+                  %span やることリスト
+              %li
+                %a.header-user-nav__lists__mypage{:href => "https://www.mercari.com/jp/mypage/"}
+                  %figure
+                    %div
+                      %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
+                  %span マイページ
+
+>>>>>>> Stashed changes
           -else
             = link_to "新規会員登録", step1_signup_index_path, class: 'btn-red'
             = link_to "ログイン", new_user_session_path, class: 'header-login'
