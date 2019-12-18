@@ -29,28 +29,24 @@
             = link_to "新規会員登録", step1_signup_index_path, class: 'btn-red'
             = link_to "ログイン", new_user_session_path, class: 'header-login'
   .header-ca-nav
-    %span
-      = link_to "メルカリ", root_path
-      ＞
-      = link_to "カテゴリー一覧", root_path
+    .header-ca-nav-pankuze
+      %span
+        = link_to "メルカリ", root_path
+        %i.fas.fa-angle-right
+        = link_to "カテゴリー一覧", root_path
       
-      - if @parent.nil?
-        ＞ 
-        = link_to category.name, category_path(category.id)
-      -elsif @parent.parent.present?
-        ＞
-        = link_to category.parent.parent.name, category_path(category.parent.parent.id)
-        ＞ 
-        = link_to category.parent.name, category_path(category.parent.id)
-        ＞ 
-        = link_to category.name, category_path(category.id)
-      -else 
-        ＞ 
-        = link_to category.parent.name, category_path(category.parent.id)
-        ＞ 
-        = link_to category.name, category_path(category.id), class: "pankuzu-ca-last"
-      
-        
-
-
-      
+        - if @parent.nil?
+          %i.fas.fa-angle-right
+          = link_to category.name, category_path(category.id), class: "pankuzu-ca-last"
+        -elsif @parent.parent.present?
+          %i.fas.fa-angle-right
+          = link_to category.parent.parent.name, category_path(category.parent.parent.id)
+          %i.fas.fa-angle-right
+          = link_to category.parent.name, category_path(category.parent.id)
+          %i.fas.fa-angle-right
+          = link_to category.name, category_path(category.id), class: "pankuzu-ca-last"
+        -else 
+          %i.fas.fa-angle-right
+          = link_to category.parent.name, category_path(category.parent.id)
+          %i.fas.fa-angle-right
+          = link_to category.name, category_path(category.id), class: "pankuzu-ca-last"
