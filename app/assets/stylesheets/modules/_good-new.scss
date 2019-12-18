@@ -140,7 +140,7 @@
                 margin-top: 30px;
               }
               &__yen{
-                .price-flick{
+                .price-input{
                   height: 30px;
                   width: 150px;
                   padding:10px;
@@ -155,11 +155,20 @@
               height: 14px;
               padding:24px 0;
               border-top:solid 1px #aaa;
-            }   
-            .price-benefit{
-              height: 34px;
-              padding: 24px 0;
-              border-top: solid 1px #aaa;
+              display: flex;
+              justify-content: space-between;
+              &--profit{
+                height: 34px;
+                padding: 24px 0;
+                font-size: 16px;
+                border-top: solid 1px #aaa;
+                display: flex;
+                justify-content: space-between;
+                font-weight: bold;
+                &__hyphen {
+                  font-size: 34px;
+                }
+             }
             }
           }
         }
@@ -229,8 +238,5 @@ select{
   display: none;
 }
 .hidden{
-  display: none;
-}
-.box {
   display: none;
 }
