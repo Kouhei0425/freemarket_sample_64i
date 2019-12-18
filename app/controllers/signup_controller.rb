@@ -1,5 +1,7 @@
 class SignupController < ApplicationController
-
+  
+  require "payjp"
+  
   def step1
     @user = User.new
   end
