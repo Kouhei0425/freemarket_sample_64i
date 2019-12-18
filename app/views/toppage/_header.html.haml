@@ -24,10 +24,7 @@
               %span ブランドから探す
         .header-login-nav
           -if user_signed_in?
-<<<<<<< HEAD
-<<<<<<< Updated upstream
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
-=======
             %ul.header-user-nav
               %li.header-user-nav__lists
                 %a.header-user-nav__lists__likes{:href => "https://www.mercari.com/jp/mypage/like/history/"}
@@ -49,8 +46,6 @@
                       %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
                   %span マイページ
 
->>>>>>> Stashed changes
-=======
             .l-right
               %ul.pc-header-user-nav
                 %li.liked-items-link
@@ -129,8 +124,6 @@
                         %a.mypage-nav-list-item{:href => "https://www.mercari.com/jp/mypage/purchased/"}
                           購入した商品 - 過去の取引
                           %i.icon-arrow-right
-
->>>>>>> 6e6abede257abbddaae30ed2af1560883e13dbe6
           -else
             = link_to "新規会員登録", step1_signup_index_path, class: 'btn-red'
             = link_to "ログイン", new_user_session_path, class: 'header-login'
