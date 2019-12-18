@@ -96,6 +96,7 @@ gem 'dotenv-rails'
 gem 'payjp'
 gem 'dotenv-rails'
 
+
 group :test, :development do
   gem 'capybara'
 end 

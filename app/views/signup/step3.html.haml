@@ -29,17 +29,17 @@
   .address-box__container
     .address-box__container__text
       住所入力
-    = form_for @user, url: step4_signup_index_path, method: :get, html: {class: 'third-main__box'} do |f|
+    = form_for @user, url: signup_index_path, method: :post, html: {class: 'third-main__box'} do |f|
       .user-new__main__form__content__text
         %h お名前
         .red2 必須
-      = f.text_field :family_name, placeholder:"例）山田"
-      = f.text_field :first_name, placeholder:"例）彩"
+      -# = f.text_field :family_name, placeholder:"例）山田"
+      -# = f.text_field :first_name, placeholder:"例）彩"
       .user-new__main__form__content__text
         %h お名前カナ
         .red2 必須
-      = f.text_field :family_kana, placeholder:"例）ヤマダ"
-      = f.text_field :first_kana, placeholder:"例）アヤ"
+      -# = f.text_field :family_kana, placeholder:"例）ヤマダ"
+      -# = f.text_field :first_kana, placeholder:"例）アヤ"
       = f.fields_for :address do |a|
         .user-new__main__form__content__text
           %h 郵便番号
@@ -64,7 +64,7 @@
       .user-new__main__form__content__text
         %h 電話
         .gray2 任意
-      = f.text_field :phone_number, placeholder: "例) 09012345678"
+      -# = f.text_field :phone_number, placeholder: "例) 09012345678"
       = f.submit "次へ進む",class:"address-next"
 .footer-new
   .footer-text

@@ -47,9 +47,9 @@
             = f.password_field :password, placeholder: 'パスワード6文字以上',class: "user-new__main__form__content__text__nickname"
             .caution-text
               ※英字と数字の両方を含めて設定してください
-            = f.check_box :password
-            %label.check-text
-              パスワードを表示する
+            -# = f.check_box :password
+            -# %label.check-text
+            -#   パスワードを表示する
           .current-user
             .current-user__text
               本人確認
@@ -72,13 +72,13 @@
             .user-new__main__form__content__text
               %h 生年月日
               .red2 必須
-            = f.select :birthday_year,[["2019","1"],["2018","2"]],{ prompt: '--' }
+            = f.select :birthday_year,[["2019","2019"],["2018","2018"]],{ prompt: '--' }
             %label
               年
-            = f.select :birthday_month,[["12","1"],["11","2"]],{ prompt: '--' }
+            = f.select :birthday_month,[["12","12"],["11","11"]],{ prompt: '--' }
             %label
               月
-            = f.select :birthday_date,[["31","1"],["30","2"]],{ prompt: '--' }
+            = f.select :birthday_date,[["31","31"],["30","30"]],{ prompt: '--' }
             %label
               日
             .birthday__caution

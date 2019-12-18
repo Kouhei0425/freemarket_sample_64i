@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191211084846) do
+ActiveRecord::Schema.define(version: 20191216095955) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "post",       null: false
@@ -86,11 +86,14 @@ ActiveRecord::Schema.define(version: 20191211084846) do
   end
 
   create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "customer_id", null: false
-    t.string   "card_id",     null: false
-    t.integer  "user_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "number",     null: false
+    t.string   "company",    null: false
+    t.integer  "month",      null: false
+    t.integer  "year",       null: false
+    t.string   "security",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
   end
 
