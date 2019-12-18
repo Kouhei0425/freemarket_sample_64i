@@ -1,7 +1,7 @@
 .top_image{
   height: 390px;
   width: 100vw;
-  background-image: url(image.jpg);
+  background-image: image-url("image.jpg");
   background-size: cover;
 }
 .top_popularity_ca{
@@ -38,7 +38,6 @@
     margin: 0 auto;
   
     &__title{
-
       font-size:24px;
       font-weight: 600;
       display: flex;
@@ -114,7 +113,7 @@
   } 
 }
 .image-footer{
-  background-image: url(footer2.png);
+  background-image: image-url("footer2.png");
   background-size:cover;
   height: 260px;
   width: 1440px;

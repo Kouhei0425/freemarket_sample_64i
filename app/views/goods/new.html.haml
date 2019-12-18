@@ -114,13 +114,13 @@
                 .price-form__yen
                   %label
                     ¥
-                  = f.text_field :price, placeholder:"例） 300",class:"price-flick"
+                  = f.text_field :price, placeholder:"例） 300",class:"price-input"
               .buyfee
                 販売手数料(10%)
-                .buyfee--side
-                  -
-              .price-benefit
+                %h1.buyfee--hyphen -
+              .buyfee--profit
                 販売利益
+                %h1.buyfee--profit__hyphen -
         .sell-box
           .sell-box__text5
             禁止されている出品、行為を必ずご確認ください。
