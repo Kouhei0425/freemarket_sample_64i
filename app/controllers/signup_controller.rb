@@ -8,7 +8,7 @@ class SignupController < ApplicationController
   end
 
   def step2
-    #step1で入力された値をsessionで保存
+    
     session[:nick_name] = user_params[:nick_name]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -19,41 +19,20 @@ class SignupController < ApplicationController
     session[:birthday_year] = user_params[:birthday_year]
     session[:birthday_month] = user_params[:birthday_month]
     session[:birthday_date] = user_params[:birthday_date]
-    binding.pry
-    #新規インスタンス作成
+
     @user = User.new
   end
 
   def step3
-    #step2で入力された値をsessionで保存
     session[:phone_number] = user_params[:phone_number]
-    #新規インスタンス作成
+    
     @user = User.new
     @credit = Credit.new
     @user.build_address
   end
 
-  # def step4
-    #step3で入力された値をsessionで保存
-    # session[:id] = user_params[:address_attributes[:id]]
-    # session[:post] = user_params[:address_attributes[:post]]
-    # session[:prefecture] = user_params[:address_attributes[:prefecture]]
-    # session[:city] = user_params[:address_attributes[:city]]
-    # session[:address] = user_params[:address_attributes[:address]]
-    # session[:buil] = user_params[:address_attributes[:buil]]
-    #新規インスタンス作成
-    # @user = User.new
-    #creditモデルと関連づける(fields_forを記述したビューを呼び出すアクションに記述する)
-    # @user.build_credit
-  # end
-  
-  def done
-    sign_in User.find(session[:user_id]) unless user_signed_in?
-  end
-
-  def create
-    binding.pry
-    @user = User.new(
+  def step4
+    @user = User.create(
       nick_name: session[:nick_name],
       email: session[:email],
       password: session[:password],
@@ -66,13 +45,36 @@ class SignupController < ApplicationController
       birthday_date: session[:birthday_date],
       phone_number: session[:phone_number]
     )
-    @user.build_address(user_params[:address_attributes])
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to done_signup_index_path
+    Address.create( 
+      post: user_params[:address_attributes][:post],
+      prefecture: user_params[:address_attributes][:prefecture],
+      city: user_params[:address_attributes][:city],
+      address: user_params[:address_attributes][:address],
+      buil: user_params[:address_attributes][:buil],
+      user_id: @user.id
+    )
+    sign_in User.find(@user.id) 
+  end
+  
+  def done
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    if params['payjp-token'].blank?
+      redirect_to step4_signup_index_path
     else
-      render '/signup/step1'
+      customer = Payjp::Customer.create(
+      card: params['payjp-token']
+      )
+      @card = Credit.create(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      if @card.save
+      else
+        redirect_to step4_signup_index_path
+        flash[:alert] = 'クレジットカード登録に失敗しました'
+      end
     end
+  end
+
+  def create
+    
   end
 
   private
@@ -90,8 +92,7 @@ class SignupController < ApplicationController
       :birthday_month,
       :birthday_date,
       :phone_number,
-      #addressテーブルのカラム
-      address_attributes: [:id,:post,:prefecture,:city,:address,:buil]
+      address_attributes: [:post,:prefecture,:city,:address,:buil]
     )
   end
 end
