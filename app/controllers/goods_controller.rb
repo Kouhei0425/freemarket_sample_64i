@@ -23,10 +23,8 @@ class GoodsController < ApplicationController
         redirect_to root_path
       end
     end
-    
   end
 
- 
   private
   def good_params
     params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 
