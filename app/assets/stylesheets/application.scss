@@ -8,7 +8,9 @@
 @import "modules/good";
 @import "modules/good-new";
 @import "modules/good.edit";
+@import "modules/good-image";
 @import "modules/signup";
+@import "modules/signin";
 @import "modules/buy";
 
 body {
@@ -95,7 +97,7 @@ body {
           display: flex;
           .header-cat-nav {
             height: 100%;
-            
+
             display: flex;
             .header-nav-cat {
               width: 160px;
@@ -208,7 +210,7 @@ body {
                 width: 112px;
                 display: flex;
                 text-decoration: none;
-                margin: 0 14px;
+                margin-left: 0 14px;
                 position: relative;
                 img{
                   border-radius: 50%;

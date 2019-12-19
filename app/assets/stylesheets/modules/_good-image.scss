@@ -1,0 +1,48 @@
+//js imageのやつ
+.dropzone-container1{
+  display: flex;
+}
+.dropzone-container2{
+  display: flex;
+  display: none;
+}
+.dropzone-area{
+  height: 162px;
+  margin-top: 16px;
+  background-color: #f5f5f5;
+  border:dotted 1px gray;
+  text-align: center;
+  cursor: pointer;
+}
+.dropzone-area2{
+  height: 162px;
+  margin-top: 16px;
+  background-color: #f5f5f5;
+  border:dotted 1px gray;
+  text-align: center;
+  cursor: pointer;
+}
+.input_area{
+  display: none;
+}
+#preview{
+  margin-top: 16px;
+  display: flex;
+}
+#preview2{
+  margin-top: 16px;
+  display: flex;
+}
+.img_view{
+  margin-top: 15px;
+  margin-left: 27px;
+  margin-right: 27px;
+}
+.btn_wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.dropzone-box{
+  width: 100%;
+  display: inline-block;
+}
