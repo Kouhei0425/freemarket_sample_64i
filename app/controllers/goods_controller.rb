@@ -12,15 +12,18 @@ class GoodsController < ApplicationController
 
   def create
     @good = Good.new(good_params)
-    if @good.save
-      params[:images][:image].each do |image|
-        Image.create(image: image, good_id: @good.id )
+    respond_to do |format|
+      if @good.save
+        params[:images][:image].each do |image|
+          Image.create(image: image, good_id: @good.id )
+        end
+        params[:category_ids][:category_id].each do |category_id|
+          CategoryGood.create(category_id: category_id, good_id: @good.id)
+        end
+        redirect_to root_path
       end
-      params[:category_ids][:category_id].each do |category_id|
-        CategoryGood.create(category_id: category_id, good_id: @good.id)
-      end
-      redirect_to root_path
     end
+    
   end
   
   private

@@ -45,15 +45,20 @@ class SignupController < ApplicationController
       birthday_date: session[:birthday_date],
       phone_number: session[:phone_number]
     )
-    Address.create( 
-      post: user_params[:address_attributes][:post],
-      prefecture: user_params[:address_attributes][:prefecture],
-      city: user_params[:address_attributes][:city],
-      address: user_params[:address_attributes][:address],
-      buil: user_params[:address_attributes][:buil],
-      user_id: @user.id
-    )
-    sign_in User.find(@user.id) 
+    if @user.save
+      Address.create( 
+        post: user_params[:address_attributes][:post],
+        prefecture: user_params[:address_attributes][:prefecture],
+        city: user_params[:address_attributes][:city],
+        address: user_params[:address_attributes][:address],
+        buil: user_params[:address_attributes][:buil],
+        user_id: @user.id
+      )
+      sign_in User.find(@user.id) 
+    else
+      flash[:alert] = '登録情報の記入に間違いがある可能性があります'
+      redirect_to :back
+    end
   end
   
   def done
