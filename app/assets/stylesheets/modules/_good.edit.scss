@@ -1,0 +1,51 @@
+.bigbox{
+  background-color: rgb(245, 245, 245);
+  
+  &--edit{
+    margin: 10vh 35%;
+  }
+  .item--edit__box{
+    margin: 24px 0 24px 0;
+    background: #fff;
+    padding: 8px 16px 8px 16px;
+    width: 670px;
+    text-align: center;
+    &__top {
+      margin: 16px 0 16px 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out .3s;
+      transition: all ease-out .3s;
+      cursor: pointer;
+      
+    }
+    &__or{
+      display: inline-block;
+      display: block;
+      text-align: center;
+      margin: 16px 0 16px 0;
+    }
+    &__stop {
+      background: silver;
+      color:#fff;
+      margin: 16px 0 16px 0;
+      line-height: 48px;
+      font-size: 14px;
+    }
+    &__delete {
+      background: silver;
+      color:#fff;
+      margin: 16px 0 16px 0;
+      line-height: 48px;
+      font-size: 14px;
+    }
+ }
+
+
+}

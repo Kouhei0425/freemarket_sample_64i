@@ -1,4 +1,6 @@
 $(function(){
+
+
   $("#burden").on("change", function() {
     var value = $(this).val();
     if (value) {
@@ -8,14 +10,18 @@ $(function(){
       $('.method-select').addClass("hidden");
     }
   });
+  
+  
+
   $('.price-input').on('keyup', function(){
     var price = $(this).val();
     if (price){
-      var tax = price/10;
-      var profit = tax * 9;
+      var tax = Math.round(price/10);
+      var profit = Math.round(tax * 9);
       $('.buyfee--hyphen').text(tax);
-      $('.buyfee--profit__hyphen').text(profit)
-      $('.price-form__yen').text();
+      $('.buyfee--hyphen').prepend('¥');
+      $('.buyfee--profit__hyphen').text(profit);
+      $('.buyfee--profit__hyphen').prepend('¥');
     }else{
       $('.buyfee--hyphen').text("-");
       $('.buyfee--profit__hyphen').text("-");

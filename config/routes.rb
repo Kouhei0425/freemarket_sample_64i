@@ -8,12 +8,15 @@ Rails.application.routes.draw do
     end
   end
 
-  
+  resources :brands
   resources :users
   resources :brands
   resources :categories, only: [:show]
-  resources :goods,  only: [:new, :create, :show] do
   resources :buys,  only: [:index, :create]
+  resources :goods,  only: [:new, :create, :show, :edit] do
+    collection do
+      get 'selledit'
+    end
   end
 
   resources :credit, only: [:new, :show] do
