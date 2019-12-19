@@ -20,7 +20,7 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.16);
     .header-inner {
       height: 100px;
-      width: 70%;
+      width: 72%;
       max-width: 1020px;
       margin: 0 auto;
       display: flex;
@@ -94,6 +94,7 @@ body {
           display: flex;
           .header-cat-nav {
             height: 100%;
+            
             display: flex;
             .header-nav-cat {
               width: 160px;
@@ -146,6 +147,7 @@ body {
           }
           .header-login-nav {
             height: 100%;
+            max-width: 540px;
             vertical-align: baseline;
             border-width: 0px;
             border-style: initial;
@@ -153,21 +155,73 @@ body {
             border-image: initial;
             position: absolute;
             right: 0;
+            display: inline-block;
             display: flex;
-            .header-user-nav{
+            &__lists{
+              height: 44px;
               display: flex;
-              &__lists{
-                &__likes{
-
+              font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+              &__likes{
+                text-decoration: none;
+                margin-right: 14px;
+                font-size: 19px;
+                padding-top: 4px;
+                .fa-heart{
+                  color: rgb(204, 204, 204);
                 }
-                &__note{
-
+                span{
+                  font-size: 14px;
+                  color: #333333;
+                  margin-left: 6px;
                 }
-                &__todo{
-
+              }
+              &__note{
+                text-decoration: none;
+                margin: 0 14px;
+                font-size: 19px;
+                padding-top: 4px;
+                .fa-bell{
+                  color: rgb(204, 204, 204);
                 }
-                &__mypage{
-                  display: flex;
+                span{
+                  font-size: 14px;         
+                  color: #333333;         
+                  margin-left: 6px;
+                }
+              }
+              &__todo{
+                text-decoration: none;
+                margin: 0 14px;
+                font-size: 19px;
+                padding-top: 4px;
+                .fa-check{
+                  color: rgb(204, 204, 204);
+                }
+                span{
+                  font-size: 14px;
+                  color: #333333;
+                  margin-left: 6px;
+                }
+              }
+              &__mypage{
+                width: 112px;
+                display: flex;
+                text-decoration: none;
+                margin: 0 14px;
+                position: relative;
+                img{
+                  border-radius: 50%;
+                  position: absolute;
+                  left: 0;
+                }
+                span{
+                  font-size: 14px;
+                  color: #333333;
+                  text-decoration: none;
+                  margin-left: 6px;
+                  position: absolute;
+                  top: 6px;
+                  left: 32px;
                 }
               }
             }
