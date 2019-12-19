@@ -24,18 +24,14 @@
             %h.red 
               必須
           %p 最大10枚までアップロードできます
-          = f.fields_for :images do |image|
-            .dropzone-container1
-              #preview
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                .dropzone-area
-                .input_area
-                  = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-            .dropzone-container2
-              #preview2
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                .dropzone-area2
+          .form-img-box__upload
+            %label.form-img-box__upload__text
+              = f.fields_for :images do |i|
+                = i.file_field :image, multiple: true, name: 'images[image][]', class:'img'
                 
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
         .sell-box
           .sell-box__text1
             %h 商品名
@@ -136,10 +132,10 @@
             %br
             また、出品をもちまして加盟店規約に同意したことになります。
           = f.hidden_field :user_id, value: current_user.id
-          = f.submit "出品する" ,class: "syuppin-btn"
+          = f.submit "変更する" ,class: "syuppin-btn"
           = link_to root_path do
             .back-btn
-              もどる
+              キャンセル
 .footer-new
   .footer-text
     %ul
