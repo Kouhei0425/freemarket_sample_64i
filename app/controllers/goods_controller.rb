@@ -11,6 +11,7 @@ class GoodsController < ApplicationController
   end
 
   def create
+    binding.pry
     @good = Good.new(good_params)
     if @good.save
       params[:images][:image].each do |image|
@@ -41,10 +42,10 @@ class GoodsController < ApplicationController
     gon.good_images_binary_datas = []
     if Rails.env.production?
       client = Aws::S3::Client.new(
-                             region: 'ap-northeast-1',
-                             access_key_id: Rails.application.credentials.aws[:access_key_id],
-                             secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-                             )
+        region: 'ap-northeast-1',
+        access_key_id: Rails.application.credentials.aws[:access_key_id],
+        secret_access_key: Rails.application.credentials.aws[:secret_access_key],
+      )
       @good.images.each do |image|
         binary_data = client.get_object(bucket: 'freemarket-sample-64i-image', key: image.image_url.file.path).body.read
         gon.good_images_binary_datas << Base64.strict_encode64(binary_data)
@@ -66,10 +67,17 @@ class GoodsController < ApplicationController
 
 
   def update
-   
+    
     @good = Good.find(params[:id])
     @good.update(good_params)
     if @good.update(good_params)
+      images = Image.where( good_id: @good.id )
+      images.each do |image|
+        image.destroy
+      end
+      params[:images][:image].each do |image|
+        Image.create(image: image, good_id: @good.id)
+      end
       categories = CategoryGood.where( good_id: @good.id)
       categories.each do |category|
         category.destroy
@@ -82,8 +90,8 @@ class GoodsController < ApplicationController
   end
 
 
-
   private
+  
   def good_params
     params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 
       :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
