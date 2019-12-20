@@ -11,7 +11,7 @@ class GoodsController < ApplicationController
   end
 
   def create
-    binding.pry
+
     @good = Good.new(good_params)
     if @good.save
       params[:images][:image].each do |image|
@@ -67,17 +67,22 @@ class GoodsController < ApplicationController
 
 
   def update
-    
+    binding.pry
     @good = Good.find(params[:id])
     @good.update(good_params)
     if @good.update(good_params)
-      images = Image.where( good_id: @good.id )
-      images.each do |image|
-        image.destroy
+      if params[:images][:image]
+        params[:images][:image].each do |image|
+          Image.create(image: image, good_id: @good.id)
+        end
       end
-      params[:images][:image].each do |image|
-        Image.create(image: image, good_id: @good.id)
+      if params[:destroy][:ids]
+        params[:destroy][:ids].each do |id|
+         image = Image.find(id)
+         image.destroy
+        end
       end
+      
       categories = CategoryGood.where( good_id: @good.id)
       categories.each do |category|
         category.destroy
@@ -86,12 +91,12 @@ class GoodsController < ApplicationController
         CategoryGood.create(category_id: category_id, good_id: @good.id)
       end
     end
-      
+    redirect_to good_path(@good.id)
   end
 
 
   private
-  
+
   def good_params
     params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 
       :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
@@ -100,8 +105,7 @@ class GoodsController < ApplicationController
   def move_to_sign_up
     redirect_to new_user_session_path unless user_signed_in?
   end
-
-
+  
 end
 
 
