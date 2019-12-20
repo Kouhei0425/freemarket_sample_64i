@@ -92,13 +92,13 @@
       = simple_format good.explain 
   .item--edit__box
     .item--edit__box__top
-      = link_to '商品の編集', selledit_goods_path(good.id), class: 'item--box__edit'
+      = link_to '商品の編集', edit_good_path(good.id), class: 'item--box__edit'
     .item--edit__box__or
       or
     .item--edit__box__stop
       出品を一旦停止する
     .item--edit__box__delete
-      この商品を削除する
+      = link_to 'この商品を削除する', good_path(good.id), method: :delete
 
 
   

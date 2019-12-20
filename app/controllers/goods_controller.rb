@@ -12,17 +12,22 @@ class GoodsController < ApplicationController
 
   def create
     @good = Good.new(good_params)
-    respond_to do |format|
-      if @good.save
-        params[:images][:image].each do |image|
-          Image.create(image: image, good_id: @good.id )
-        end
-        params[:category_ids][:category_id].each do |category_id|
-          CategoryGood.create(category_id: category_id, good_id: @good.id)
-        end
-        redirect_to root_path
+    if @good.save
+      params[:images][:image].each do |image|
+        Image.create(image: image, good_id: @good.id )
       end
+      params[:category_ids][:category_id].each do |category_id|
+        CategoryGood.create(category_id: category_id, good_id: @good.id)
+      end
+      redirect_to root_path
     end
+
+  end
+
+  def destroy
+    @good = Good.find(params[:id])
+    @good.destroy
+    redirect_to user_path(current_user.id)
   end
 
   def edit
@@ -30,8 +35,33 @@ class GoodsController < ApplicationController
   end
 
   def selledit
-    @good = Good.new
+    @good = Good.find(params[:id])
   end
+
+  def update
+    good = Good.find(params[:id])
+    good.update(good_params)
+    if good.update(good_params)
+      images = Image.where( good_id: good.id)
+      images.each do |image|
+        image.destroy
+      end
+      params[:images][:image].each do |image|
+        Image.create(image: image, good_id: good.id )
+      end
+      categories = CategoryGood.where( good_id: good.id)
+      categories.each do |category|
+        category.destroy
+      end
+      params[:category_ids][:category_id].each do |category_id|
+        CategoryGood.create(category_id: category_id, good_id: good.id)
+      end
+
+      redirect_to root_path
+    end
+  end
+
+
 
   private
   def good_params
