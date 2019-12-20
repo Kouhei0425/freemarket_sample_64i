@@ -67,7 +67,6 @@ class GoodsController < ApplicationController
 
 
   def update
-    binding.pry
     @good = Good.find(params[:id])
     @good.update(good_params)
     if @good.update(good_params)
