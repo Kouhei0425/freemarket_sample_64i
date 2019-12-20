@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   end
   resources :brands
   resources :categories, only: [:show]
-  resources :goods,  only: [:new, :create, :show, :edit] do
+  resources :goods,  only: [:new, :create, :show, :edit, :update] do
     resources :buys,  only: [:index, :create]
-    collection do
+    member do
       get 'selledit'
     end
   end
