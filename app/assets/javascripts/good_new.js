@@ -8,6 +8,7 @@ $( function(){
   var preview = $('#preview');
   var preview2 = $('#preview2');
 
+  
   $(document).on('change', 'input[type= "file"].upload-image',function(event) {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
