@@ -386,7 +386,7 @@
   }
   .address__content{
     width: 700px;
-    height: 180px;
+    height: 1083px;
     background-color: #fff;
     position: relative;
     &__head{
@@ -400,8 +400,13 @@
       }
     }
     &__form{
+      height: 1083px;
+      background-color: #fff;
       padding: 40px 40px 64px;
       .form-group{
+        align-items: center;
+        margin-left: 24%;
+        margin-bottom: 28px;
         label{
           font-size: 14px;
           font-weight: 600;
@@ -420,7 +425,7 @@
         }
         .form-arbitrary{
           background: #ccc;
-          margin: 0 0 0 8px;
+          margin: 0 24% 0 8px;
           padding: 2px 4px;
           border-radius: 2px;
           color: #fff;
@@ -429,7 +434,9 @@
           display: inline-block;
         }
         .input-default{
-          height: 48px;
+          height: 28px;
+          width: 323px;
+          margin: 5px 0;
           padding: 10px 16px 8px;
           border-radius: 4px;
           border: 1px solid #ccc;
@@ -437,6 +444,24 @@
           line-height: 1.5;
           font-size: 16px;
         }
+        .select-prefecture{
+          width: 76%;
+        }
+      }
+      .btn-red{
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 58%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        margin-left: 24%;
       }
     }
   }
