@@ -1,7 +1,10 @@
 = render "header"
 = render "button"
 .toppage
-  .top_image
+  .fadeSlider
+    %span.fadeSlider_01
+    %span.fadeSlider_02
+    %apan.fadeSlider_03
   .top_popularity_ca
     %h2.top_popularity_ca__title 人気のカテゴリー
     %ul.top_popularity_ca__tags
@@ -117,3 +120,4 @@
         - @nike_goods.each do |good|
           = render "good", { good: good }
 = render "footer"
+      

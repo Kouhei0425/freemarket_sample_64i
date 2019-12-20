@@ -25,7 +25,7 @@ $( function(){
 
     if(images.length >= 5) {
       dropzone2.css({
-        'display': 'block'
+        'display': 'inline-block'
       })
       dropzone.css({
         'display': 'none'

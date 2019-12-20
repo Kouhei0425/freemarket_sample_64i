@@ -1,7 +1,4 @@
 //js imageのやつ
-.dropzone-container{
-  display: flex;
-}
 .input_area{
   height: 162px;
   width: 100%;
@@ -12,16 +9,24 @@
   cursor: pointer;
 }
 #preview{
-  height: 162px;
-  margin-top: 16px;
   display: flex;
 }
+
 #upload-image{
   display: none;
 }
 .img_view{
+  margin-top: 16px;
   margin-left: 27px;
   margin-right: 27px;
+  display: inline-block;
+}
+.dropzone-container{
+  display: flex;
+}
+.dropzone-area{
+  width: 100%;
+  display: inline-block;
 }
 .dropzone-area2{
   display: none;
@@ -30,4 +35,6 @@
   display: flex;
   justify-content: space-between;
 }
+
+
 

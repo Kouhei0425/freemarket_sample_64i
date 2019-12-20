@@ -15,11 +15,30 @@
             %h.red 
               必須
           %p 最大10枚までアップロードできます
-          = f.fields_for :images do |image|
-            .preview-box
-              #preview
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", data:{id: 0}
+          = f.fields_for :images, @good.images.first do |image|
+            .item__img__dropzone.clearfix
+              #preview-edit
+              -# １〜５枚目プレビュー表示
+              .item__img__dropzone__input
+                = image.label :image, for: "upload-image" do
+                  .input-area
+                    = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+                  .item__img__dropzone2__input2__description__text
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
+                    
+            .item__img__dropzone2.clearfix
+              #preview2-edit
+              -# ６〜１０枚目プレビュー表示
+              .item__img__dropzone2__input2
+                = image.label :image, for: "upload-image" do
+                  .input-area
+                    = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
+                  .item__img__dropzone2__input2__description__text
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード
                 
         
         .sell-box
@@ -122,7 +141,7 @@
             %br
             また、出品をもちまして加盟店規約に同意したことになります。
           = f.hidden_field :user_id, value: current_user.id
-          = f.submit "変更する" ,class: "syuppin-btn"
+          = f.submit "変更する" ,class: "good-edit-btn"
           = link_to root_path do
             .back-btn
               キャンセル

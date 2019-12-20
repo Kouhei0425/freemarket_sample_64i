@@ -7,16 +7,16 @@ class BuysController < ApplicationController
     @buy = Buy.new
     @buy.buy_addresses.build
 
-    credit = Credit.where(user_id: current_user.id).first
-    if credit.blank?
-      redirect_to root_path
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      #保管した顧客IDでpayjpから情報取得
-      customer = Payjp::Customer.retrieve(credit.customer_id)
-      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
-      @default_card_information = customer.cards.retrieve(credit.card_id)
-    end
+    # credit = Credit.where(user_id: current_user.id).first
+    # if credit.blank?
+    #   redirect_to root_path
+    # else
+    #   Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    #   #保管した顧客IDでpayjpから情報取得
+    #   customer = Payjp::Customer.retrieve(credit.customer_id)
+    #   #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+    #   @default_card_information = customer.cards.retrieve(credit.card_id)
+    # end
   end
 
   def create
