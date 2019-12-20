@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191211084846) do
+ActiveRecord::Schema.define(version: 20191220063707) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "post",       null: false
@@ -49,11 +49,14 @@ ActiveRecord::Schema.define(version: 20191211084846) do
   end
 
   create_table "buy_credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "buy_id",      null: false
-    t.string   "card_id",     null: false
-    t.string   "customer_id", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "number",     null: false
+    t.integer  "buy_id",     null: false
+    t.string   "type",       null: false
+    t.integer  "month",      null: false
+    t.integer  "year",       null: false
+    t.string   "security",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["buy_id"], name: "index_buy_credits_on_buy_id", using: :btree
   end
 
@@ -86,11 +89,14 @@ ActiveRecord::Schema.define(version: 20191211084846) do
   end
 
   create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "customer_id", null: false
-    t.string   "card_id",     null: false
-    t.integer  "user_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "number",     null: false
+    t.string   "company",    null: false
+    t.integer  "month",      null: false
+    t.integer  "year",       null: false
+    t.string   "security",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
   end
 
@@ -119,6 +125,15 @@ ActiveRecord::Schema.define(version: 20191211084846) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["good_id"], name: "index_images_on_good_id", using: :btree
+  end
+
+  create_table "sns_credentials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -155,4 +170,5 @@ ActiveRecord::Schema.define(version: 20191211084846) do
   add_foreign_key "goods", "brands"
   add_foreign_key "goods", "users"
   add_foreign_key "images", "goods"
+  add_foreign_key "sns_credentials", "users"
 end

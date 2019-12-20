@@ -1,26 +1,25 @@
-= render "toppage/header"
+.single_header
+  %h1.single_header__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
 .buy-show
   .buy-box
     .buy-box__note
-      購入内容確認
+      購入内容の確認
     .buy-box__detail
-      .buy-box__detail__img
-        = image_tag @good.images[0].image, class: 'buy-box__detail__img__thumbnail'
-      .buy-box__detail__text
-        .buy-text
-          %ul
-            %li
-              = @good.name
-            %li
-              = @good.burden
-            %li
-              = @good.method
-            %li
-              = @good.area.name
-        .buy-box__price
-          ¥
-          = @good.price
-          .item-box__price__tax
+      .buy-box__detail__container
+        .buy-box__detail__container__img
+          = image_tag @good.images[0].image, class: 'buy-box__detail__container__img__thumbnail'
+        .buy-box__detail__container__text
+          .buy-text
+            %ul
+              %li
+                = @good.name
+          .buy-box__price
+            ¥
+            = @good.price
+            = @good.burden
+            .item-box__price__tax
     .price-box__detail
       .price-box__detail__text
         支払い金額
@@ -28,28 +27,38 @@
         ¥
         = @good.price
         .price-text
+    .point-use
+      .point-use__check
+      .point-use__text
+        ポイントを使用 (所持ポイント: P0)
     .credit-box
       .credit-box__detail
         .credit-box__detail__title
           支払い方法
-        .user-box__detail__name
+        .credit-box__detail__name
           クレジットカード
-        %br
-          VISA  ************5678
-        .user-box__address
-          HONOKA MOTOKARIYA
+          .credit-box__detail__name__number
+          ************5678
+          .credit-box__detail__name__date
+            有効期限 08 / 20
+          .credit-box__detail__name__tipe
+            = image_tag 'visa.png' ,class:'card-tipe'
+      .change-btn
+        変更する
     .user-box
       .user-box__detail
         .user-box__detail__title
-          配送先情報
+          配送先
         .user-box__detail__name
+          〒
+          = @address.post
+        .user-box__address
+          = @address.prefecture + @address.city + @address.address + @address.buil
+          %br
           = current_user.family_name
           = current_user.first_name
-        .user-box__address
-        %br
-          = @address.post
-          = @address.prefecture + @address.city + @address.address + @address.buil
-          
+      .change-btn
+        変更する
     .button-box
       .button-box__body
       = form_for @buy, url: good_buys_path, method: :create do |f|
@@ -64,4 +73,16 @@
           = a.hidden_field :buil, value: current_user.address.buil
         = f.submit '購入する', class: 'button-box__body__buy'
     .buy-box__footer
-  .footer
+.footer-new
+  .footer-text
+    %ul
+      %li 
+        プライバシーポリシー
+      %li 
+        メルカリ利用規約
+      %li 
+        特定商取引に関する規約   
+  .footer-rogo
+    = image_tag "show.png",  size: "80x65"
+  .footer-lnc
+    ©︎Mercari,lnc.

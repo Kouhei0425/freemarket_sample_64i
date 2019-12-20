@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "toppage#index"
   resources :toppage do
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   end
   resources :brands
   resources :categories, only: [:show]
-  resources :goods,  only: [:new, :create, :show, :edit, :update] do
+  resources :goods,  except: [:index] do
     resources :buys,  only: [:index, :create]
     member do
       get 'selledit'
