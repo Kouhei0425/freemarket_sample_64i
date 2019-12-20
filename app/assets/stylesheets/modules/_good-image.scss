@@ -1,8 +1,8 @@
 //js imageのやつ
-.preview-box{
+.dropzone-container{
   display: flex;
 }
-.dropzone-box{
+.input_area{
   height: 162px;
   width: 100%;
   margin-top: 16px;
@@ -12,14 +12,22 @@
   cursor: pointer;
 }
 #preview{
+  height: 162px;
+  margin-top: 16px;
   display: flex;
 }
-.upload-image{
+#upload-image{
   display: none;
 }
 .img_view{
   margin-left: 27px;
   margin-right: 27px;
-
+}
+.dropzone-area2{
+  display: none;
+}
+.btn_wrapper{
+  display: flex;
+  justify-content: space-between;
 }
 

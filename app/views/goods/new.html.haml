@@ -2,16 +2,7 @@
   %h1.single_header__link
     = link_to root_path do
       = image_tag "fmarket_logo_red.svg",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
--# .new-img
--#   .new-img__item
--#     .new-img__item__content
--#       .new-img__item__content__gazo
--#         = image_tag "show.png",class:"img-10"
--#     .new-img__item__text
--#       .new-img__item__text__edit
--#         編集
--#       .new-img__item__text__delete
--#         削除
+
 .new-box
   .form-main
     .form-main__text
@@ -24,12 +15,17 @@
             %h.red 
               必須
           %p 最大10枚までアップロードできます
-          = f.fields_for :images do |image|
-            .preview-box
+          = f.fields_for :product_images do |image|
+            .dropzone-container.clearfix
               #preview
-              = image.label :image, class: "dropzone-box", for: "upload-image" do
-                = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image"
-              
+              .dropzone-area
+                = image.label :image, class: "dropzone-box", for: "upload-image" do
+                  .input_area
+                    = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                    %p ここをクリックしてください
+              #preview2
+              .dropzone-area2
+                = image.label :image, class: "dropzone-box", for: "upload-image" 
 
         .sell-box
           .sell-box__text1

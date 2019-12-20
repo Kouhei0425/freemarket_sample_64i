@@ -9,6 +9,17 @@
       = link_to user_path(current_user.id) do
         %span マイページ
       %i.fas.fa-angle-right
-      -# - if current_page?()
+    - if current_page?(profile_user_path(current_user.id))
+      %span.last-pankz プロフィール
+    - if current_page?(address_user_path(current_user.id))
+      %span.last-pankz 発送先・お届け先住所変更
+    - if current_page?(payment_user_path(current_user.id))
+      %span.last-pankz 支払い方法
+    - if current_page?(email_user_path(current_user.id))
+      %span.last-pankz メール/パスワード
+    - if current_page?(identification_user_path(current_user.id))
+      %span.last-pankz 本人情報の登録
+    - if current_page?(phone_user_path(current_user.id))
+      %span.last-pankz 電話番号の確認
     - if current_page?(logout_user_path(current_user.id))
       %span.last-pankz ログアウト

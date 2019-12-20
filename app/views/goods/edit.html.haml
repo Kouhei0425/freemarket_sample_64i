@@ -1,6 +1,141 @@
-= render "toppage/header"
-.bigbox
-  .bigbox--edit
-    = render "good_edit", { good: @good }
-= render 'toppage/footer.html.haml'
+.single_header
+  %h1.single_header__link
+    = link_to root_path do
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
 
+.new-box
+  .form-main
+    .form-main__text
+      商品の情報を入力
+    = form_for @good do |f|
+      .form-main__container
+        .form-img-box
+          .form-img-box__text
+            %h 出品画像
+            %h.red 
+              必須
+          %p 最大10枚までアップロードできます
+          = f.fields_for :images do |image|
+            .preview-box
+              #preview
+              = image.label :image, class: "dropzone-box", for: "upload-image" do
+                = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", data:{id: 0}
+                
+        
+        .sell-box
+          .sell-box__text1
+            %h 商品名
+            %h.red 
+              必須
+          = f.text_field :name,placeholder:"商品名 (必須40文字まで）",class:"good-name"
+          .sell-box__text2
+            %h 商品の説明
+            %h.red
+              必須
+          = f.text_area :explain,placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など）例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。",class:"good-explain"
+        .sell-box
+          .sell-container
+            %h 商品の詳細
+            .select-details
+              .select-details__text
+                %h カテゴリー
+                %h.red
+                  必須
+                .select-details__text
+                  .category--js.zero
+                    = f.collection_select :category_ids, Category.where(" id < ?", 14 ), :id, :name, { prompt: '---' }, { name: 'category_ids[category_id][]'}
+                  .category--js.one
+                    = f.collection_select :category_ids, Category.where("parent_id > ? and parent_id < ? ", 0, 14 ), :id, :name, { prompt: '---' }, { name: 'category_ids[category_id][]'}
+                  .category--js.two
+                    = f.collection_select :category_ids, Category.where("parent_id > ?", 13), :id, :name, { prompt: '---' }, { name: 'category_ids[category_id][]'}
+              .select-details__text
+                %h サイズ
+                %h.red
+                  必須
+              .select-form
+                = f.select :size, [["XXS以下", "XXS以下"],["XS(SS)", "XS(SS)"],["S", "S"],["M", "M"],["L", "L"],["XL(LL)", "XL(LL)"],["2XL(3L)", "2XL(3L)"],["3XL(4L)", "3XL(4L)"],["4XL(5L)以上", "4XL(5L以上)"],["FREE SIZE", "FREE SIZE)"]],{ prompt: '---' }
+              .select-details__text
+                %h ブランド
+                %h.gray
+                  任意
+              .select-form
+                = f.collection_select :brand_id, Brand.all, :id, :name, { prompt: '---' }
+              .select-details__text
+                %h 商品の状態
+                %h.red
+                  必須
+              .select-form
+                = f.select :status,[["新品、 未使用","新品、 未使用"],["未使用に近い","未使用に近い"], ["目立った傷や汚れなし","目立った傷や汚れなし"], ["やや傷や汚れあり","やや傷や汚れあり"], ["傷や汚れあり","傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]],{ prompt: '---' }
+        .sell-box
+          .sell-container
+            %h 配送について
+            .select-details
+              .select-details__text
+                %h 配送料の負担
+                %h.red
+                  必須
+              .select-form
+                = f.select :burden, [["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)","着払い(購入者負担)"]],{ prompt: '---' },id:'burden'
+              .method-select.hidden
+                .select-details__text
+                  %h 配送の方法
+                  %h.red
+                    必須
+                .select-form
+                  = f.select :method, [["未定","未定"],["らくらくメルカリ便","らくらくメルカリ便"],["ゆうメール","ゆうメール"],["レターパック","レターパック"],["普通郵便(定形、定形外)","普通郵便(定形、定形外)"],["クロネコヤマト","クロネコヤマト"],["ゆうパック","ゆうパック"],["クリックポスト","クリックポスト"],["ゆうパケット","ゆうパケット"]],{ prompt: '---' }
+              .select-details__text
+                %h 発送元の地域
+                %h.red
+                  必須
+              .select-form
+                = f.collection_select :area_id, Area.all, :id, :name, { prompt: '---' }
+              .select-details__text
+                %h 発送までの日数
+                %h.red
+                  必須
+              .select-form
+                = f.select :ship, [["1〜２日で発送","1〜２日で発送"],["２〜３日で発送","２〜３日で発送"], ["４〜７日で発送","４〜7日で発送"]],{ prompt: '---' }
+        .sell-box
+          .sell-container
+            %h 販売価格(300~9,999,999)
+            .select-details
+              .price-form
+                .price-form__text
+                  %h 価格
+                  %h.red
+                    必須
+                .price-form__yen
+                  %label
+                    ¥
+                  = f.text_field :price, placeholder:"例） 300",class:"price-input"
+              .buyfee
+                販売手数料(10%)
+                %h1.buyfee--hyphen -
+              .buyfee--profit
+                販売利益
+                %h1.buyfee--profit__hyphen -
+        .sell-box
+          .sell-box__text5
+            禁止されている出品、行為を必ずご確認ください。
+            %br
+            またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+            %br
+            また、出品をもちまして加盟店規約に同意したことになります。
+          = f.hidden_field :user_id, value: current_user.id
+          = f.submit "変更する" ,class: "syuppin-btn"
+          = link_to root_path do
+            .back-btn
+              キャンセル
+.footer-new
+  .footer-text
+    %ul
+      %li 
+        プライバシーポリシー
+      %li 
+        メルカリ利用規約
+      %li 
+        特定商取引に関する規約   
+  .footer-rogo
+    = image_tag "show.png",  size: "80x65"
+  .footer-lnc
+    ©︎Mercari,lnc.

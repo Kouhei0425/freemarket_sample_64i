@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :goods,  only: [:new, :create, :show, :edit, :destroy] do
     resources :buys,  only: [:index, :create]
-    collection do
+    member do
       get 'selledit'
     end
   end
