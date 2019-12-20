@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def address
     @user = User.find_by(id: current_user.id)
+    @address = Address.find_by(user_id: current_user.id)
   end
 
   def payment
