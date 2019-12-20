@@ -3,7 +3,64 @@
 = render "user_pankz"
 
 
-.user-main
-  = render "side"
-
-= render 'toppage/footer'
+.user--main
+  .user--main__box
+    .user--main__head
+      本人情報の登録
+    .user--info
+      .user--info__top
+        %p
+          お客さまの本人情報をご登録ください。
+          %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        .user--info__top__right
+          本人確認書類のアップロードについて >
+      .user--info__name
+        .user--info__name__display
+        お名前
+        .user--info__name__display__full
+        あかさたな
+      .user--info__kana
+        .user--info__kana__display
+        お名前カナ
+        .user--info__kana__display__full
+        アカサタナ
+      .user--info__birthday
+        .user--info__birthday__display
+        生年月日
+        .user--info__birthday__display__full
+        11111111
+      .user--info__post
+        %li
+        郵便番号
+        %ul
+        任意
+        %input{:name => "zip-code", :placeholder => "例)1234567", :type => "text", :value => ""}/        
+      .user--info__prefectures
+        %li
+        都道府県
+        %ul
+        任意
+        %text
+      .user--info__city
+        %ul
+        市区町村
+        %ul
+        任意
+        %input{:name => "zip-code", :placeholder => "例)横浜市縁区", :type => "text", :value => ""}/        
+      .user--info__address
+        %ul
+        番地
+        %ul
+        任意
+        %input{:name => "zip-code", :placeholder => "例)青山1-1-1", :type => "text", :value => ""}/        
+      .user--info__bill
+        %ul
+        建物名
+        %ul
+        任意
+        %input{:name => "zip-code", :placeholder => "例)柳ビル103", :type => "text", :value => ""}/        
+      .user--info__btn
+        登録する
+  
+//= render 'toppage/footer'
