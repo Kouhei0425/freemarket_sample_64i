@@ -2,7 +2,8 @@ $( function(){
   var images = [];
   var inputs  =[];
 
-  $(document).on('change', 'input[type= "file"].upload-image',function(e) {
+
+  $(document).on('change', 'input[type= "file"].upload-image',function(event) {
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
     inputs.push($(this));
