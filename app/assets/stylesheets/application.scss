@@ -2,6 +2,7 @@
 @import "./font-awesome";
 @import "./reset";
 @import "modules/user";
+@import "modules/user_side";
 @import "modules/category";
 @import "modules/brand";
 @import "modules/toppage";
@@ -167,7 +168,7 @@ body {
               &__likes{
                 text-decoration: none;
                 margin-right: 14px;
-                font-size: 19px;
+                font-size: 21px;
                 padding-top: 4px;
                 .fa-heart{
                   color: rgb(204, 204, 204);
@@ -181,7 +182,7 @@ body {
               &__note{
                 text-decoration: none;
                 margin: 0 14px;
-                font-size: 19px;
+                font-size: 21px;
                 padding-top: 4px;
                 .fa-bell{
                   color: rgb(204, 204, 204);
@@ -195,7 +196,7 @@ body {
               &__todo{
                 text-decoration: none;
                 margin: 0 14px;
-                font-size: 19px;
+                font-size: 21px;
                 padding-top: 4px;
                 .fa-check{
                   color: rgb(204, 204, 204);
@@ -219,11 +220,12 @@ body {
                 }
                 span{
                   font-size: 14px;
+                  font-style: normal;
                   color: #333333;
                   text-decoration: none;
                   margin-left: 6px;
                   position: absolute;
-                  top: 6px;
+                  top: 8px;
                   left: 32px;
                 }
               }
