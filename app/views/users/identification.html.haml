@@ -19,17 +19,17 @@
         .user--info__name__display
         お名前
         .user--info__name__display__full
-        あかさたな
+        = @user.family_name
       .user--info__kana
         .user--info__kana__display
         お名前カナ
         .user--info__kana__display__full
-        アカサタナ
+        = @user.family_kana
       .user--info__birthday
         .user--info__birthday__display
         生年月日
         .user--info__birthday__display__full
-        11111111
+        1111
       .user--info__post
         %li
         郵便番号
@@ -62,5 +62,6 @@
         %input{:name => "zip-code", :placeholder => "例)柳ビル103", :type => "text", :value => ""}/        
       .user--info__btn
         登録する
-  
+
+  = render 'side'
 //= render 'toppage/footer'

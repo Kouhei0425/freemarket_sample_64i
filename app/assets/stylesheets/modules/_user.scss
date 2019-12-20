@@ -311,7 +311,7 @@
   }
 }
 
-//ユーザーマイページ
+//ユーザーマイページ, アドレス, プロフィール, 電話
 .user-main {
   margin: 40px auto 0 ;
   width: 1020px;
@@ -462,6 +462,30 @@
         cursor: pointer;
         text-align: center;
         margin-left: 24%;
+      }
+    }
+  }
+  .phone__content{
+    width: 700px;
+    background-color: #fff;
+    height: 211px;
+    &__head{
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      &__text{
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+    &__body{
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      padding: auto auto;
+      &__text{
+        margin: auto auto;
       }
     }
   }
