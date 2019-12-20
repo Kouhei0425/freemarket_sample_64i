@@ -1,7 +1,7 @@
 .single_header
   %h1.single_header__link
     = link_to root_path do
-      = image_tag "fmarket_logo_red.svg",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
+      = image_tag "mercari_logo_horizontal.png",  size: "185x49", alt: "Mercari", class: "single_header__link__img"
 
 .new-box
   .form-main
@@ -15,18 +15,13 @@
             %h.red 
               必須
           %p 最大10枚までアップロードできます
-          = f.fields_for :product_images do |image|
-            .dropzone-container.clearfix
+          = f.fields_for :images do |image|
+            .preview-box
               #preview
-              .dropzone-area
-                = image.label :image, class: "dropzone-box", for: "upload-image" do
-                  .input_area
-                    = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                    %p ここをクリックしてください
-              #preview2
-              .dropzone-area2
-                = image.label :image, class: "dropzone-box", for: "upload-image" 
-
+              = image.label :image, class: "dropzone-box", for: "upload-image" do
+                = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", data:{id: 0}
+                
+        
         .sell-box
           .sell-box__text1
             %h 商品名
@@ -127,10 +122,10 @@
             %br
             また、出品をもちまして加盟店規約に同意したことになります。
           = f.hidden_field :user_id, value: current_user.id
-          = f.submit "出品する" ,class: "syuppin-btn"
+          = f.submit "変更する" ,class: "syuppin-btn"
           = link_to root_path do
             .back-btn
-              もどる
+              キャンセル
 .footer-new
   .footer-text
     %ul
@@ -144,5 +139,3 @@
     = image_tag "show.png",  size: "80x65"
   .footer-lnc
     ©︎Mercari,lnc.
-              
-       

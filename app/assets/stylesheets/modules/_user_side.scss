@@ -1,0 +1,67 @@
+.user-main {
+  margin: 40px auto 0 ;
+  width: 1020px;
+  padding: 0 0 40px;
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  .myside {
+    width: 280px;
+    margin: 0 40px 0 0;
+    list-style: none;
+    &--top {
+      &__list{
+        position: relative;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fff;
+        color: #333;
+        border-top: 1px solid #eee;
+        &__active {
+          font-weight: 600;
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: #eee;
+          color: #333;
+        }
+      }
+    }
+    &--while {
+      margin: 40px 0 0;
+      font-weight: bold;
+      &__list__tag {
+        position: relative;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        border-top: 1px solid #eee;
+      }
+    }
+    &--under {
+      margin: 40px 0 0;
+      font-weight: bold;
+      &__list {
+        position: relative;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        border-top: 1px solid #eee;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+//js imageのやつ
+.dropzone-container{
+  display: flex;
+}
+.input_area{
+  height: 162px;
+  width: 100%;
+  margin-top: 16px;
+  background-color: #f5f5f5;
+  border:dotted 1px gray;
+  text-align: center;
+  cursor: pointer;
+}
+#preview{
+  height: 162px;
+  margin-top: 16px;
+  display: flex;
+}
+#upload-image{
+  display: none;
+}
+.img_view{
+  margin-left: 27px;
+  margin-right: 27px;
+}
+.dropzone-area2{
+  display: none;
+}
+.btn_wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+

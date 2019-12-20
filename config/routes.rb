@@ -8,12 +8,41 @@ Rails.application.routes.draw do
     end
   end
 
-  
-  resources :users
+  resources :brands
+  resources :users, except: :show do 
+    member do
+      get 'profile'
+      get 'address'
+      get 'payment'
+      get 'email'
+      get 'identification'
+      get 'phone'
+    end
+  end
+
+  resources :users, only: :show do
+    member do
+      get 'logout'
+      get 'news'
+      get 'guide'
+      get 'contact'
+      get 'todo'
+      get 'likes'
+      get 'items'
+      get 'dealing'
+      get 'sold'
+      get 'buying'
+      get 'bought'
+      get 'rates'
+    end
+  end
   resources :brands
   resources :categories, only: [:show]
-  resources :goods,  only: [:new, :create, :show] do
-  resources :buys,  only: [:index, :create]
+  resources :goods,  except: [:index] do
+    resources :buys,  only: [:index, :create]
+    member do
+      get 'selledit'
+    end
   end
 
   resources :credit, only: [:new, :show] do

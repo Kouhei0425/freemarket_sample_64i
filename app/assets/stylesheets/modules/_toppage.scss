@@ -56,6 +56,9 @@
      margin-bottom: 16px;
      font-size: 28px;
    }
+   &__title{
+    font-weight: 600;
+   }
    &__tags{
      text-align: center;
      &__tag{
@@ -70,6 +73,7 @@
       &__tag li,a{
         color: black;
         text-decoration: none;
+        font-size: 14px;
       }
     }
    }
@@ -100,7 +104,8 @@
         font-size:15px;
         color: rgb(0, 149, 238);
         cursor: pointer;
-        &_see a{
+
+        a{
           color: rgb(0, 149, 238);
         }
       }
