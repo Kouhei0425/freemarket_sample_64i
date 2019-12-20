@@ -9,9 +9,31 @@ Rails.application.routes.draw do
   end
 
   resources :brands
-  resources :users do
-    collection do
+  resources :users, except: :show do 
+    member do
+      get 'profile'
+      get 'address'
+      get 'payment'
+      get 'email'
+      get 'identification'
+      get 'phone'
+    end
+  end
+
+  resources :users, only: :show do
+    member do
       get 'logout'
+      get 'news'
+      get 'guide'
+      get 'contact'
+      get 'todo'
+      get 'likes'
+      get 'items'
+      get 'dealing'
+      get 'sold'
+      get 'buying'
+      get 'bought'
+      get 'rates'
     end
   end
   resources :brands
