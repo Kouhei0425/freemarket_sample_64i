@@ -193,4 +193,114 @@
   } 
 }
 
-
+// ここからログアウトボタン
+.header-user-nav{
+  height: 49px;
+  width:100%;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  &__pankz{
+    margin: 0 15%;
+    padding: 13px 0;
+    font-size: 14px;
+    white-space: normal;
+    a{
+      color: #000000 ;
+    }
+    i{
+      color: #a9a9a9;
+      padding: 0 10px;
+      font-size: 16px;
+    }
+    .pankuzu-ca-last {
+      font-weight: bold;
+    }
+  }
+}
+.logout {
+  margin: 40px auto 40px;
+  width: 70%;
+  display: flex;
+  .myside {
+    width: 280px;
+    margin: 0 40px 0 0;
+    list-style: none;
+    &--top {
+      &__list{
+        position: relative;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fff;
+        color: #333;
+        border-top: 1px solid #eee;
+        &__active {
+          font-weight: 600;
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: #eee;
+          color: #333;
+        }
+      }
+    }
+    &--while {
+      margin: 40px 0 0;
+      font-weight: bold;
+      &__list__tag {
+        position: relative;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        border-top: 1px solid #eee;
+      }
+    }
+    &--under {
+      margin: 40px 0 0;
+      font-weight: bold;
+      &__list {
+        position: relative;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        background: #fff;
+        font-size: 14px;
+        color: #333;
+        border-top: 1px solid #eee;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  &__main {
+    width: 700px;
+    height: 180px;
+    background-color: #fff;
+    .logout-btn{
+      height: 50px;
+      width: 320px;
+      margin: 65px auto;
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      line-height: 50px;
+      background-color:red;
+      display: block;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}

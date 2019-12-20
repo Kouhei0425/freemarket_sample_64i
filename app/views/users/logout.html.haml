@@ -1,0 +1,10 @@
+= render 'toppage/header.html.haml'
+= render "toppage/button.html.haml"
+= render "user_pankz"
+
+.logout
+  = render 'side.html.haml'
+  .logout__main
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'logout-btn'
+
+= render 'toppage/footer.html.haml'
