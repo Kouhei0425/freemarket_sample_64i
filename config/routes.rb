@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   end
   resources :brands
   resources :categories, only: [:show]
-  resources :goods,  only: [:new, :create, :show, :edit, :update] do
+  resources :goods,  except: [:index] do
     resources :buys,  only: [:index, :create]
     member do
       get 'selledit'

@@ -1,7 +1,7 @@
 .myside
    %nav.myside--top
       %li.myside--top__list__active
-         = link_to "マイページ", new_user_path, class: 'myside--top__list__box'
+         = link_to "マイページ", user_path(current_user.id), class: 'myside--top__list__box'
          = icon "fas",'chevron-right', class: 'icon'
       %li.myside--top__list
          お知らせ

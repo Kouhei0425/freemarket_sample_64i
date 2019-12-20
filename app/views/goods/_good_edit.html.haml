@@ -98,7 +98,7 @@
     .item--edit__box__stop
       出品を一旦停止する
     .item--edit__box__delete
-      この商品を削除する
+      = link_to 'この商品を削除する', good_path(good.id), method: :delete
 
 
   
