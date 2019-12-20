@@ -8,7 +8,7 @@
   .address__content
     .address__content__head
       %h2.address__content__head__text 発送元・お届け先住所変更
-    %form.address__content__form{:action => "https://www.mercari.com/jp/mypage/deliver_address/", :method => "POST", :novalidate => "novalidate"}
+    .address__content__form{:action => "https://www.mercari.com/jp/mypage/deliver_address/", :method => "POST", :novalidate => "novalidate"}
       .form-group
         %label{:for => "name"} お名前
         %span.form-require 必須
@@ -24,11 +24,13 @@
       .form-group
         %label{:for => "zip_code1"} 郵便番号
         %span.form-require 必須
+        %br
         %input.input-default{"data-region" => "jp", :maxlength => "8", :name => "zip_code1", :pattern => "\\d{3}-\\d{4}", :placeholder => "例) 123-4567", :type => "text", :value => ""}/
       .form-group
         %label{:for => "prefecture"} 都道府県
         %span.form-require 必須
-        .select-wrap
+        %br
+        .select-prefecture
           %i.icon-arrow-bottom
           %select.select-default{:name => "prefecture"}
             %option{:value => "北海道"} 北海道
@@ -82,10 +84,12 @@
       .form-group
         %label{:for => "city"} 市区町村
         %span.form-require 必須
+        %br
         %input.input-default{:name => "city", :placeholder => "例) 横浜市緑区", :type => "text", :value => ""}/
       .form-group
         %label{:for => "address1_label"} 番地
         %span.form-require 必須
+        %br
         %input.input-default{:name => "address1", :placeholder => "例) 青山1−1−1", :type => "text", :value => ""}/
       .form-group
         %label{:for => "address2_label"} 建物名
@@ -96,7 +100,7 @@
         %span.form-arbitrary 任意
         %input.input-default{:name => "telephone", :placeholder => "例) 09012345678", :type => "number", :value => ""}/
       %input{:name => "after_save_callback", :type => "hidden", :value => "https://www.mercari.com/jp/mypage/deliver_address/"}/
-      %button.btn-default.btn-red{:type => "submit"} 変更する
+      %button.btn-red{:type => "submit"} 変更する
 
 
 = render 'toppage/footer'
