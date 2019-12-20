@@ -15,27 +15,51 @@ class User < ApplicationRecord
   validates :family_name, presence: true, format: { with: /\A[一-龥ぁ-ん]/ }
   validates :first_name, presence: true, format: { with: /\A[一-龥ぁ-ん]/ }
   
-  def self.from_omniauth(auth)
-    user = User.find_by(uid: auth.uid, provider: auth.provider)
-    if user
-      #SNSを使って登録したユーザーがいたらそのユーザーを返す
-      return user
-    else
-      #いなかった場合はnewします。
-      new_user = User.new(
-        email: auth.info.email,
-        nickname: auth.info.name,
-        uid: auth.uid,
-        provider: auth.provider,
-        #パスワードにnull制約があるためFakerで適当に作ったものを突っ込んでいます
-        password: Faker::Internet.password(min_length: 8,max_length: 128)
-      )
-      return new_user
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+  def self.without_sns_data(auth)
+    user = User.where(email: auth.info.email).first
+
+      if user.present?
+        sns = SnsCredential.create(
+          uid: auth.uid,
+          provider: auth.provider,
+          user_id: user.id
+        )
+      else
+        user = User.new(
+          nick_name: auth.info.name,
+          email: auth.info.email,
+        )
+        sns = SnsCredential.new(
+          uid: auth.uid,
+          provider: auth.provider
+        )
+      end
+      return { user: user ,sns: sns}
     end
+
+   def self.with_sns_data(auth, snscredential)
+    user = User.where(id: snscredential.user_id).first
+    unless user.present?
+      user = User.new(
+        nickname: auth.info.name,
+        email: auth.info.email,
+      )
+    end
+    return {user: user}
+   end
+
+   def self.find_oauth(auth)
+    uid = auth.uid
+    provider = auth.provider
+    snscredential = SnsCredential.where(uid: uid, provider: provider).first
+    if snscredential.present?
+      user = with_sns_data(auth, snscredential)[:user]
+      sns = snscredential
+    else
+      user = without_sns_data(auth)[:user]
+      sns = without_sns_data(auth)[:sns]
+    end
+    return { user: user ,sns: sns}
   end
-end
 end
 
