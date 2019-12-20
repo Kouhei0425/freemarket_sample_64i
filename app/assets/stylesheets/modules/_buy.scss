@@ -3,124 +3,146 @@ body{
   .buy-show{
     position: relative;
     .buy-box{
-      width: 620px;
-      margin: 40px auto 0;
+      width: 700px;
+      margin: 0 auto ;
       padding-top: 12px;
       background-color: white;
       &__note{
-        font-size: 24px;
-        margin: 24px auto;
+        font-size: 22px;
+        margin: 0 auto;
+        padding: 24px 0 36px 0;
         text-align: center;
         font-weight: bold;
         background-color: white;
+        border-bottom:solid 1px rgb(245, 245, 245);
       }
       &__detail{
-        height: 150px;
-        margin-top: 16px;
-        margin-left: 40px;
-        display: flex;
-        justify-content: space-between;
-        &__img{
-          width: 150px;
-          background-color:rgb(245, 245, 245); 
-          border: solid 1px#EEEEEE; 
-          border-collapse: collapse;
-          &__thumbnail{
-            height: 150px;
+        height: 80px;
+        width: 668px;
+        padding:32px 16px;
+        border-bottom:solid 1px rgb(245, 245, 245);
+        &__container{
+          height: 80px;
+          width: 343px;
+          margin:0 auto;
+          display: flex;
+          &__img{
+            width: 80px;
+            background-color:rgb(245, 245, 245); 
+            border: solid 1px#EEEEEE; 
+            border-collapse: collapse;
+            &__thumbnail{
+              height: 80px;
+              width: 80px;
+            }
           }
-        }
-        &__text{
-          width: calc(100% - 150px);
-          padding: 0 40px 0 40px;
-          .buy-text{
+          &__text{
+            width: calc(100% - 150px);
+            margin-left: 16px;
+            font-size: 14px;
+            .buy-box__price{
+              margin-top:8px;
+              width: 250px;
+            }
             
+           }
           }
-        }
-      }
+       }
       .price-box__detail{
-        width: 620px;
+        width: 343px;
+        height: 30px;
         margin: 0 auto;
-        padding-top: 40px;
+        padding-top: 32px ;
         background-color: white;
         display: flex;
         justify-content: space-between;
         &__text{
-          height: 150px;
-          width: calc(100% - 150px);
-          margin-top: 20px;
-          padding: 0 40px;
-          font-size: 20px;
           font-weight: bold;
+          font-size: 18px;
+          margin-top:5px;
         }
         &__price{
-          width: 100%;
-          margin-top: 16px;
-          padding: 0 40px;
-          font-size: 24px;
           font-weight: bold;
+          font-size: 24px;
+        }
+      }
+      .point-use{
+        width: 343px;
+        margin: 24px auto 32px;
+        font-size: 14px;
+        color:gray;
+        display: flex;
+        &__check{
+          width: 20px;
+          height: 20px;
+          background-color:#ccc;
+          border-radius:3px;
+          margin-right: 10px;
         }
       }
       .credit-box{
-        width: 620px;
+        width: 343px;
         margin: 0 auto;
-        padding-top: 40px;
+        padding: 40px 0 20px;
         background-color: white;
+        border-top:solid 1px rgb(245, 245, 245) ;
+        border-bottom: solid 1px rgb(245, 245, 245);
+        display: flex;
+        justify-content: space-between;
         &__detail{
-          height: 150px;
-          width: calc(100% - 150px);
-          margin-top: 16px;
-          padding: 0 40px;
+          width: 200px;
           &__title{
             width: 100%;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
+            margin-bottom: 5px;
           }
           &__name{
-            
-            font-size: 16px;
+            font-size: 14px;
+            &__tipe{
+              .card-tipe{
+                height: 40px;
+                width: 60px;
+              }
+            }
           }
         }
       }
       .user-box{
-        width: 620px;
+        width: 343px;
         margin: 0 auto;
-        padding-top: 40px;
+        padding: 40px 0;
         background-color: white;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px rgb(245, 245, 245);
         &__detail{
-          height: 150px;
-          width: calc(100% - 150px);
-          margin-top: 16px;
-          padding: 0 40px;
+          width: 270px;
           &__title{
-            width: 100%;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
+            margin-bottom: 10px;
           }
           &__name{
-            
-            font-size: 16px;
+            font-size: 13px;
           }
+        }
+        &__address{
+          font-size: 14px;
         }
       }
       .button-box{
-        width: 620px;
-        height: 120px;
+        width: 343px;
+        height: 100px;
         margin: 40px auto 0;
         &__body{
           width: 100%;
           &__buy{
-            height: 60px;
-            margin-top: 16px;
-            margin-bottom: 40px;
-            margin-left: 120px;
-            margin-right: 120px;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 60px;
-            background-color:red;
-            display: block;
+           width: 100%;
+           background-color:#ea352d;
+           height: 50px;
+           color:white;
+           font-size: 14px;
           }
         }
         &__right{
@@ -132,3 +154,12 @@ body{
     }
   }
 }
+.change-btn{
+  color: #0099e8;
+  font-size: 14px;
+}
+
+            
+          
+  
+            

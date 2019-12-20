@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require slick.min.js
+//= require slick.js
 //= require_tree .

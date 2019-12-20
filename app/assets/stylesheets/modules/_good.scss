@@ -367,7 +367,17 @@ body{
     color: #BD081C;
   }
   
-    
+  
+// #show
+
+.big-images { max-width: 700px; margin: 0 auto 5px; padding: 0;}
+.big-images img, .big-images-nav img{ width: 100%;}
+.small-images { max-width: 700px; margin: 0 auto;}
+.small-images li { margin: 5px;}
+.small-images .slick-next { right: 20px; z-index: 100;}
+.small-images .slick-prev { left: 15px; z-index: 100;}
+.small-images .slick-current { opacity: 0.5;}
+.small-images div div div { cursor: pointer;}
             
           
         
