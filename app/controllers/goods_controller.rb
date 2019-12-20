@@ -23,9 +23,16 @@ class GoodsController < ApplicationController
         redirect_to root_path
       end
     end
-    
   end
-  
+
+  def edit
+    @good = Good.find(params[:id])
+  end
+
+  def selledit
+    @good = Good.new
+  end
+
   private
   def good_params
     params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 

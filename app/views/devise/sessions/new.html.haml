@@ -11,16 +11,16 @@
         .signup-btn
           新規会員登録
     .login-main__sns
-      = link_to "#" do
+      = link_to "http://localhost:3000/users/auth/facebook" do
         %i.facebook-btn
           = image_tag "facebook-logo.jpeg", size: "26x26", alt: "Facebook", class: "facebook-logo"
           .facebook-btn__text
-            Facebookでログイン
+            %p Facebookでログイン
       = link_to "#" do
         %i.google-btn
           = image_tag "google-logo.png", size: "22x22", alt: "Google", class: "google-logo"
           .google-btn__text
-          Googleでログイン
+            %p Googleでログイン
     .login-main__form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .email-field
@@ -31,4 +31,21 @@
           = image_tag "norobot.png", size: "300x74", alt: "Norobot", class: "norobot"
           = f.submit "ログイン", class: "login-btn"
           - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-            = link_to "パスワードをお忘れの方", new_password_path(resource_name)
+            = link_to new_password_path(resource_name) do
+              %p パスワードをお忘れの方
+.footer-signin
+  .footer-text
+    %ul
+      %li 
+        = link_to "https://www.mercari.com/jp/privacy/" do
+          %p プライバシーポリシー
+      %li 
+        = link_to "https://www.mercari.com/jp/tos/" do
+          %p フリマ利用規約
+      %li 
+        = link_to "https://www.mercari.com/jp/tokutei/" do
+          %p 特定商取引に関する規約
+  .footer-logo
+    = image_tag "trollface.png", size: "60x60", alt: "Fmarket", class: "logo-img"
+  .footer-lnc
+    ©︎Fmarket,lnc.

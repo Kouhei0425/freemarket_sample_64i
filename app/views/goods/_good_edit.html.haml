@@ -1,0 +1,111 @@
+.show
+  .item-box
+    .item-box__name
+      = @good.name
+    .item-box__word
+    - if user_signed_in?
+    - else
+      .item-box__word__box
+        #{@good.name}は、###回の取引実績を持つ
+        #{link_to @good.user.nick_name, root_path, class: 'word-link'}
+        さんから出品されました。
+        #{link_to @good.brand.name, root_path, class: 'word-link'}（
+        - category_link = good.categories[2].name + '/' + good.categories[0].name
+        = link_to category_link, category_path(good.categories[2].id), class: 'word-link'
+        ）の商品で、
+        #{@good.area.name}
+        から
+        #{@good.ship}
+        で発送されます。
+    .item-box__detail
+      .item-box__detail__img
+        = image_tag good.images[0].image, class: 'item-box__detail__img__top'
+        .small-images
+          - @good.images.each do |image|
+            = image_tag image.image, class: 'small-images__img'
+      %table
+        %tbody
+          %tr
+            %th
+              出品者
+            %td
+              = link_to good.user.nick_name, root_path
+              %br
+              ☺︎4541  ☻50  ☹6
+          %tr
+            %th
+              カテゴリー
+            %td
+              = link_to good.categories[0].name, category_path(good.categories[0].id)
+              %br
+              %i.fas.fa-chevron-right
+                = link_to good.categories[1].name, category_path(good.categories[1].id)
+              %br
+              %i.fas.fa-chevron-right
+                = link_to good.categories[2].name, category_path(good.categories[2].id)
+          %tr
+            %th
+              ブランド
+            %td
+              = link_to good.brand.name, brand_path(good.id)
+          %tr
+          - if good.size.present?
+            %th
+              商品のサイズ
+            %td
+              = good.size
+          %tr
+            %th
+              商品の状態
+            %td
+              = good.status
+          %tr
+            %th
+              配送料の負担
+            %td
+              = good.burden
+          %tr
+            %th
+              配送の方法
+            %td
+              = good.method
+          %tr
+            %th
+              配送元地域
+            %td
+              = link_to good.area.name, root_path
+          %tr
+            %th
+              発送日の目安
+            %td
+              #{good.ship}で発送
+    .item-box__price
+      ¥
+      .item-box__price__main
+        = good.price.to_s(:delimited)
+      .item-box__price__tax
+        (税込) 送料込み
+    = link_to '購入画面に進む', good_buys_path(good.id), class: 'item-box__buy'
+    .item-box__caution
+      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+    .item-box__description
+      = simple_format good.explain 
+  .item--edit__box
+    .item--edit__box__top
+      = link_to '商品の編集', selledit_goods_path(good.id), class: 'item--box__edit'
+    .item--edit__box__or
+      or
+    .item--edit__box__stop
+      出品を一旦停止する
+    .item--edit__box__delete
+      この商品を削除する
+
+
+  
+  .comment-box
+    .comment-box__content
+      .comment-box__content__caution
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      .comment-box__content__textarea
+      .comment-box__content__btn
+        コメントする

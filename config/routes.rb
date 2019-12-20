@@ -8,12 +8,19 @@ Rails.application.routes.draw do
     end
   end
 
-  
-  resources :users
+  resources :brands
+  resources :users do
+    collection do
+      get 'logout'
+    end
+  end
   resources :brands
   resources :categories, only: [:show]
-  resources :goods,  only: [:new, :create, :show] do
-  resources :buys,  only: [:index, :create]
+  resources :goods,  only: [:new, :create, :show, :edit] do
+    resources :buys,  only: [:index, :create]
+    collection do
+      get 'selledit'
+    end
   end
 
   resources :credit, only: [:new, :show] do
