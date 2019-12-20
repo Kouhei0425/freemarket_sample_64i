@@ -20,10 +20,10 @@
         で発送されます。
     .item-box__detail
       .item-box__detail__img
-        = image_tag @good.images[0].image, class: 'item-box__detail__img__top'
+        = image_tag @good.images[0].image, size: "300x300", class: 'item-box__detail__img__top'
         .small-images
           - @good.images.each do |image|
-            = image_tag image.image, class: 'small-images__img'
+            = image_tag image.image,  size: "60x60", class: 'small-images__img'
       %table
         %tbody
           %tr

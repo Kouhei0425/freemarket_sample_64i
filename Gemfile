@@ -92,9 +92,8 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
-
+gem 'gon'
 gem 'payjp'
-gem 'dotenv-rails'
 
 
 group :test, :development do
