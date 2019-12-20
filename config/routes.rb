@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     member do
       get 'logout'
+      get 'notification'
       get 'news'
       get 'guide'
       get 'contact'
