@@ -21,25 +21,17 @@
               -# １〜５枚目プレビュー表示
               .item__img__dropzone__input
                 = image.label :image, for: "upload-image" do
-                  .input-area
-                    = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
-                  .item__img__dropzone2__input2__description__text
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード
-                    
+                  .input-area-edit
+                    -@good.images.each do |ima|
+                      = image.file_field :image, multiple: true, name: 'images[image][]', id: ima.id, class: "upload-image", 'data-image': 0
+                
             .item__img__dropzone2.clearfix
               #preview2-edit
               -# ６〜１０枚目プレビュー表示
               .item__img__dropzone2__input2
                 = image.label :image, for: "upload-image" do
-                  .input-area
-                    = image.file_field :image, id: "upload-image", class: "upload-image", 'data-image': 0
-                  .item__img__dropzone2__input2__description__text
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード
-                
+                  .input-area-edit
+                    = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
         
         .sell-box
           .sell-box__text1
