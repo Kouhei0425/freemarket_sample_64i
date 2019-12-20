@@ -31,6 +31,7 @@
     width: 456px;
     margin: 0 auto;
     background-color: #fff;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     &__signup{
       padding:40px 64px;
       text-align: center;
@@ -51,7 +52,7 @@
     &__sns{
       padding:40px 64px;
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       .facebook-btn{
         display: block;
         width: 100%;
@@ -70,7 +71,10 @@
           left: 16px;
         }
         &__text{
-          text-decoration: none;
+          p{
+            text-decoration: none;
+            font-style: normal;
+          }
         }
       }
       .google-btn{
@@ -91,7 +95,10 @@
           left: 18px;
         }
         &__text{
-          text-decoration: none;
+          p{
+            text-decoration: none;
+            font-style: normal;
+          }
         }
       }
     }
@@ -139,8 +146,54 @@
           line-height: 50px;
           background-color:red;
           display: block;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+        p{
+          color: #0099e8;
+          text-decoration: none;
+          &:hover {
+            color: #b3d4fc;
+            text-shadow: none;
+            text-decoration:underline;
+          }
         }
       }
     }
+  }
+}
+.footer-signin{
+  height: 140px;
+  width: 456px;
+  padding: 40px 0;
+  margin: 0 auto;
+  .footer-text{
+    height: 12px;
+    ul{
+      display: flex;
+      font-size: 12px;
+      justify-content: space-around;
+      li{
+        p{
+          color: #333;
+          text-decoration: none;
+          &:hover {
+            color:#999;
+            text-decoration:underline;
+          }
+        }
+      }
+    }
+  }
+  .footer-logo{
+    height: 65px;
+    width: 80px;
+    margin: 40px 188px 0 188px;
+  }
+  .footer-lnc{
+    font-size:14px;
+    text-align: center;
+    margin-top: 8px;
   }
 }

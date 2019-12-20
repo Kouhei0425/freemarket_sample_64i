@@ -31,10 +31,8 @@ class GoodsController < ApplicationController
 
   def selledit
     @good = Good.new
-  
   end
 
- 
   private
   def good_params
     params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 
