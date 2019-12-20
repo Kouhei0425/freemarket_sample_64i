@@ -1,6 +1,6 @@
 = render "toppage/header"
 .bigbox
   .bigbox--edit
-    = render "good.edit.html.haml"
+    = render "good_edit", { good: @good }
 = render 'toppage/footer.html.haml'
 
