@@ -13,19 +13,19 @@
     background-size: cover;
 
     &.fadeSlider_01 {
-      background-image: url(/assets/toppage.png);
+      background-image: image-url("/assets/toppage.png");
       animation: fadeSlideImg01 30s ease-out infinite;
       animation-delay: 3s;
     }
     &.fadeSlider_02 {
       opacity: 0;
-      background-image: url(/assets/toppage2.png);
+      background-image: image-url("/assets/toppage2.png");
       animation: fadeSlideImg02 30s ease-out infinite;
       animation-delay: 3s;
     }
     &.fadeSlider_03 {
       opacity: 0;
-      background-image: url(/assets/image.jpg);
+      background-image: image-url("/assets/image.jpg");
       animation: fadeSlideImg02 30s ease-out infinite;
       animation-delay: 3s;
     }
