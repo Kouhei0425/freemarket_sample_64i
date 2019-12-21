@@ -19,7 +19,7 @@ $( function() {
   
     // 登録済画像のプレビュー表示
     gon.good_images.forEach(function(image, index){
-      var img = $(`<div class= "img_view  "><div class="img_area "><img class="image" width ="70" height="114"  ></div></div>`);
+      var img = $(`<div class= "img_view  "><div class="img_area "><img src=${image.image.url} class="image" width ="70" height="114" ></div></div>`);
   
       // カスタムデータ属性を付与
       img.data("image", index);
@@ -28,13 +28,7 @@ $( function() {
   
       // 画像に編集・削除ボタンをつける
       img.append(btn_wrapper);
-  
-      binary_data = gon.good_images_binary_datas[index]
-  
-      // 表示するビューにバイナリーデータを付与
-      img.find("img").attr({
-        src: "data:image/jpeg;base64," + binary_data
-      });
+
   
       // 登録済画像のビューをimagesに格納
       images.push(img)

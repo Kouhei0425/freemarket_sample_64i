@@ -36,26 +36,8 @@ class GoodsController < ApplicationController
     gon.good = @good
     gon.good_images = @good.images
 
-    require 'base64'
-    require 'fog-aws'
-
-    gon.good_images_binary_datas = []
-    if Rails.env.production?
-      client = Aws::S3::Client.new(
-        region: 'ap-northeast-1',
-        access_key_id: Rails.application.credentials.aws[:access_key_id],
-        secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-      )
-      @good.images.each do |image|
-        binary_data = client.get_object(bucket: 'freemarket-sample-64i-image', key: image.image_url.file.path).body.read
-        gon.good_images_binary_datas << Base64.strict_encode64(binary_data)
-      end
-    else
-      @good.images.each do |image|
-        binary_data = File.read(image.image.file.file)
-        gon.good_images_binary_datas << Base64.strict_encode64(binary_data)
-      end
-    end
+    
+      
   end
 
 
