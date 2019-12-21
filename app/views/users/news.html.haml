@@ -1,0 +1,13 @@
+= render 'toppage/header'
+= render "user_pankz"
+
+.news
+  .news--box
+    .news--box__list
+      %h2
+        ニュース一覧
+      %img
+        = image_tag"footer3.png", size:'698x240'
+
+  = render 'side.html.haml'
+= render 'toppage/footer.html.haml'

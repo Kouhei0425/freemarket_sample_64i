@@ -1,0 +1,38 @@
+= render 'toppage/header.html.haml'
+= render "user_pankz"
+.contact
+  .contact--main
+    .contact--main__head
+      %h1
+        お問い合わせ項目を選ぶ
+    .contact--main__list
+      %li
+        会員登録・ログインについて
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        購入・支払いについて
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        発送・受取・評価について
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        売り上げの振込申請について
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        トラブルがあった
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        機能要望
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        不具合の報告
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        退会したい
+        = icon "fas",'chevron-right', class: 'icon'
+      %li
+        その他
+        = icon "fas",'chevron-right', class: 'icon'
+
+  = render 'side.html.haml'
+= render 'toppage/footer.html.haml'

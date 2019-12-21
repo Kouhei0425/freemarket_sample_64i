@@ -76,6 +76,7 @@
         &__active {
           display: inline-block;
           padding: 20px 129px;
+          border-top: 2px solid #ea352d;
         }
           &__do {
             background: #eee;
@@ -116,6 +117,7 @@
         font-weight: bold;
       }
       .active {
+        border-top: 2px solid #ea352d;
         background: #fff;
         padding: 20px 135px;
       }
