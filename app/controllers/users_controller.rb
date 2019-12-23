@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   def contact
   end
-
+ 
   def todo
     @user = User.find_by(id: current_user.id)
   end
