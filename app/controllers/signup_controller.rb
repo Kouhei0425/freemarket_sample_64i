@@ -27,7 +27,7 @@ class SignupController < ApplicationController
     
     @user = User.new
     @credit = Credit.new
-    @address = Adress.new
+    @address = Address.new
   end
 
   def step4
