@@ -19,7 +19,6 @@ class SignupController < ApplicationController
     session[:birthday_year] = user_params[:birthday_year]
     session[:birthday_month] = user_params[:birthday_month]
     session[:birthday_date] = user_params[:birthday_date]
-
     @user = User.new
   end
 
@@ -28,7 +27,7 @@ class SignupController < ApplicationController
     
     @user = User.new
     @credit = Credit.new
-    @user.build_address
+    @address = Adress.new
   end
 
   def step4
@@ -47,11 +46,15 @@ class SignupController < ApplicationController
     )
     if @user.save
       Address.create( 
-        post: user_params[:address_attributes][:post],
-        prefecture: user_params[:address_attributes][:prefecture],
-        city: user_params[:address_attributes][:city],
-        address: user_params[:address_attributes][:address],
-        buil: user_params[:address_attributes][:buil],
+        amily_name: [:family_name],
+        first_name: address_params[:first_name],
+        family_kana: address_params[:family_kana],
+        first_kana: address_params[:first_kana],
+        post: address_params[:post],
+        prefecture: address_params[:prefecture],
+        city: address_params[:city],
+        address: address_params[:address],
+        buil: address_params[:buil],
         user_id: @user.id
       )
       sign_in User.find(@user.id) 
@@ -100,4 +103,20 @@ class SignupController < ApplicationController
       address_attributes: [:post,:prefecture,:city,:address,:buil]
     )
   end
+
+  def address_params
+    params.require(:address).permit(
+      :family_name,
+      :first_name,
+      :family_kana,
+      :first_kana,
+      :phone_number,
+      :post,
+      :prefecture,
+      :city,
+      :address,
+      :buil
+    )
+  end
+
 end

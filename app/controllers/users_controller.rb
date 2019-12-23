@@ -89,8 +89,20 @@ class UsersController < ApplicationController
   
   private
   def user_address_params
-    params.require(:user).permit(address: [])
+    params.require(:address).permit(
+      :family_name,
+      :first_name,
+      :family_kana,
+      :first_kana,
+      :phone_number,
+      :post,
+      :prefecture,
+      :city,
+      :address,
+      :buil
+    )
   end
+
   def user_params
     params.require(:user).permit(
       :nick_name,
