@@ -57,7 +57,7 @@ class SignupController < ApplicationController
       sign_in User.find(@user.id) 
     else
       flash[:alert] = '登録情報の記入に間違いがある可能性があります'
-      redirect_to :back
+      ##redirect_to :back
     end
   end
   
