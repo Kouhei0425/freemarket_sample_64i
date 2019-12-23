@@ -44,7 +44,7 @@ class SignupController < ApplicationController
       phone_number: session[:phone_number]
     )
     if @user.save
-      Address.create( 
+      @address = Address.create( 
         family_name: address_params[:family_name],
         first_name: address_params[:first_name],
         family_kana: address_params[:family_kana],
@@ -57,10 +57,14 @@ class SignupController < ApplicationController
         phone_number: address_params[:phone_number],
         user_id: @user.id
       )
+      unless @address.save
+        redirect_to step3_signup_index_path
+        flash.now[:alert] = '登録情報の記入に間違いがある可能性があります'
+      end
       sign_in User.find(@user.id) 
     else
-      flash[:alert] = '登録情報の記入に間違いがある可能性があります'
-      redirect_to :back
+      flash.now[:alert] = '登録情報の記入に間違いがある可能性があります'
+      redirect_to step1_signup_index_path
     end
   end
   
