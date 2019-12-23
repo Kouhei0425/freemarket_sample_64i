@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     member do
       get 'profile'
       get 'address'
+      patch 'address_update'
       get 'payment'
       get 'email'
       get 'identification'
