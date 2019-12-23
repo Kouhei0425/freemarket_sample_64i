@@ -13,19 +13,19 @@
     background-size: cover;
 
     &.fadeSlider_01 {
-      background-image: image-url("/assets/toppage.png");
+      background-image: image-url("toppage.png");
       animation: fadeSlideImg01 30s ease-out infinite;
       animation-delay: 3s;
     }
     &.fadeSlider_02 {
       opacity: 0;
-      background-image: image-url("/assets/toppage2.png");
+      background-image: image-url("toppage2.png");
       animation: fadeSlideImg02 30s ease-out infinite;
       animation-delay: 3s;
     }
     &.fadeSlider_03 {
       opacity: 0;
-      background-image: image-url("/assets/image.jpg");
+      background-image: image-url("image.jpg");
       animation: fadeSlideImg02 30s ease-out infinite;
       animation-delay: 3s;
     }
@@ -166,7 +166,7 @@
   background-image: image-url("footer2.png");
   background-size:cover;
   height: 260px;
-  width: 1440px;
+  width: 100%;
   border-top: solid 1px rgb(245, 245, 245);
   position: relative;
   z-index: 0;

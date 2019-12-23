@@ -1,5 +1,6 @@
 class Good < ApplicationRecord
   belongs_to :user
+  belongs_to :buy
   belongs_to :brand
   belongs_to :area
   has_many :category_goods
