@@ -57,6 +57,14 @@ class UsersController < ApplicationController
 
   def buying
     @user = User.find_by(id: current_user.id)
+    @buys = Buy.where(user_id: current_user.id)
+
+    @buied_goods = []
+    @buys.each do |buy|
+      buy = Good.where(id: buy.id).first
+      @buied_goods << buy
+    end
+
   end
 
   def bought
