@@ -26,7 +26,6 @@ class SignupController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     
     @user = User.new
-    @credit = Credit.new
     @address = Address.new
   end
 
@@ -46,7 +45,7 @@ class SignupController < ApplicationController
     )
     if @user.save
       Address.create( 
-        amily_name: [:family_name],
+        family_name: address_params[:family_name],
         first_name: address_params[:first_name],
         family_kana: address_params[:family_kana],
         first_kana: address_params[:first_kana],
@@ -55,6 +54,7 @@ class SignupController < ApplicationController
         city: address_params[:city],
         address: address_params[:address],
         buil: address_params[:buil],
+        phone_number: address_params[:phone_number],
         user_id: @user.id
       )
       sign_in User.find(@user.id) 
@@ -99,8 +99,7 @@ class SignupController < ApplicationController
       :birthday_year,
       :birthday_month,
       :birthday_date,
-      :phone_number,
-      address_attributes: [:post,:prefecture,:city,:address,:buil]
+      :phone_number
     )
   end
 
@@ -115,7 +114,8 @@ class SignupController < ApplicationController
       :prefecture,
       :city,
       :address,
-      :buil
+      :buil,
+      :phone_number
     )
   end
 
