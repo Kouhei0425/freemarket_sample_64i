@@ -1,0 +1,211 @@
+.guide-header
+  .guide-header__up
+    = link_to root_path, class: 'logo' do
+      = image_tag "fmarket_logo_red.svg", size: "134x34", alt: "Mercari", class: "logo-img"
+    %i.header-login-nav__lists__mypage
+      = link_to user_path(current_user.id) do
+        %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
+  .guide-header__down
+    メルカリガイド
+.guide-box
+  .guide-box__img
+    .guide-box__img__filter
+      .guide-box__img__filter__text
+        メルカリガイド
+  .guide-box__container
+    .guide-box__nav
+      .guide-box__nav__first
+        .title 初めてガイド
+        .lists
+          .list  初めての方へ
+          = icon'fas','chevron-down',class:"guide-icon"
+        .lists
+          .list  ルールとマナー
+          = icon'fas','chevron-down',class:"guide-icon"
+        .lists
+          .list  メルカリ便とは
+          = icon'fas','chevron-down',class:"guide-icon"
+      .guide-box__nav__second
+        .title よくある質問
+        .lists
+          .list  メルカリ出品までの流れ・売り方
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  電話番号認証ができない
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  ログインができない
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  配送遅延について（メルカリ便）
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  取引開始後のよくあるトラブルの解決策
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  商品が売れた後の流れ
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  商品／カテゴリー別の出品方法について
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  振込スケジュール
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  機種変更をする際の注意
+          = icon'fas','chevron-right',class:"guide-icon"
+      .guide-box__nav__third
+        .title カテゴリーから探す
+        .a-list  購入について
+        .a-list  出品について
+        .a-list  メルカリ便について
+        .a-list  登録ログイン・通知などの機能について
+        .a-list  キャンセル・返金について
+        .a-list  メルペイについて
+        .a-list  自動車本体の取引について
+        .a-list  メルカリ教室について
+      .guide-box__nav__fourth
+        .title 公式Q&A メルカリボックス
+        .a-list  解決策を検索または質問する
+      .guide-box__nav__fifth
+        .title 利用規約など
+        .lists
+          .list  利用規約
+          = icon'fas','chevron-right',class:"guide-icon"
+        .lists
+          .list  商標について
+          = icon'fas','chevron-right',class:"guide-icon"
+    .guide-box__about
+      .guide-box__about__content1
+        .guide-box__about__title
+          = icon 'fab','whatsapp',class:"about-icon"
+          初めての方へ
+        .guide-box__about__texts
+          .guide-box__about__texts__text
+            メルカリ初心者ガイド
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts__text
+            利用料
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts__text
+            メルカリの名前の由来
+            = icon'fas','chevron-right',class:"guide-icon"
+      .guide-box__about__content
+        .guide-box__about__title
+          = icon 'fas','clipboard-list',class:"about-icon"
+          ルールとマナー
+        .guide-box__about__texts
+          .guide-box__about__texts__text
+            禁止されている出品物
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts__text
+            禁止されている行為
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts__text
+            盗難品を見つけたら
+            = icon'fas','chevron-right',class:"guide-icon"
+      .guide-box__about__content1
+        .guide-box__about__title
+          = icon 'fas','shopping-cart',class:"about-icon"
+          購入について
+        .guide-box__about__texts2
+          .guide-box__about__texts2__main
+            よくある質問
+          .guide-box__about__texts2__sub
+            売上金（またはメルペイ残高）での購入について
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            メルカリのポイントについて
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            発送された商品が届かない
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            届いた商品が説明文と違う/壊れている
+            = icon'fas','chevron-right',class:"guide-icon"
+        .all-view
+          すべて見る
+      .guide-box__about__content
+        .guide-box__about__title
+          = icon 'fas','yen-sign',class:"about-icon"
+          出品について
+        .guide-box__about__texts2
+          .guide-box__about__texts2__main
+            よくある質問
+          .guide-box__about__texts2__sub
+            配送ナビ
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            商品代金が支払われない
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            受取評価をしてくれない
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            取引をキャンセルしたい（メルカリ）
+            = icon'fas','chevron-right',class:"guide-icon"
+        .all-view
+          すべて見る
+      .guide-box__about__content1
+        .guide-box__about__title
+          = icon 'fas','truck',class:"about-icon"
+          メルカリ便とは
+        .guide-box__about__texts2
+          .guide-box__about__texts2__main.three
+            よくある質問
+          .guide-box__about__texts2__sub
+            お知らせ・機能設定とは
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            プッシュ通知が届かない
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            本人情報の登録について
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            本人情報の登録・変更について
+            = icon'fas','chevron-right',class:"guide-icon"
+        .all-view.three
+          すべて見る
+      .guide-box__about__content
+        .guide-box__about__title
+          = icon 'fas','user-alt',class:"about-icon"
+          登録ログイン
+          通知などの機能について
+        .guide-box__about__texts2
+          .guide-box__about__texts2__main
+            よくある質問
+          .guide-box__about__texts2__sub
+            お知らせ・機能設定とは
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            プッシュ通知が届かない
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            本人情報の登録について
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            本人情報の登録・変更について
+            = icon'fas','chevron-right',class:"guide-icon"
+        .all-view
+          すべて見る
+      .guide-box__about__content
+        .guide-box__about__title
+          = icon 'fas','undo',class:"about-icon"
+          キャンセル・返金について
+        .guide-box__about__texts2
+          .guide-box__about__texts2__main
+            よくある質問
+          .guide-box__about__texts2__sub
+            取引をキャンセルしたい（メルカリ）
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            取引をキャンセルしたい
+            = icon'fas','chevron-right',class:"guide-icon"
+          .guide-box__about__texts2__sub
+            いつキャンセルできるようになりますか？
+            = icon'fas','chevron-right',class:"guide-icon"
+        .all-view
+          すべて見る
+= render "toppage/footer"
+
