@@ -26,7 +26,6 @@ class SignupController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     
     @user = User.new
-    @credit = Credit.new
     @address = Address.new
   end
 
@@ -45,8 +44,8 @@ class SignupController < ApplicationController
       phone_number: session[:phone_number]
     )
     if @user.save
-      Address.create( 
-        amily_name: [:family_name],
+      @address = Address.create( 
+        family_name: address_params[:family_name],
         first_name: address_params[:first_name],
         family_kana: address_params[:family_kana],
         first_kana: address_params[:first_kana],
@@ -55,12 +54,18 @@ class SignupController < ApplicationController
         city: address_params[:city],
         address: address_params[:address],
         buil: address_params[:buil],
+        phone_number: address_params[:phone_number],
         user_id: @user.id
       )
+      unless @address.save
+        redirect_to step3_signup_index_path
+        flash.now[:alert] = '登録情報の記入に間違いがある可能性があります'
+      end
       sign_in User.find(@user.id) 
     else
-      flash[:alert] = '登録情報の記入に間違いがある可能性があります'
-      redirect_to :back
+
+      flash.now[:alert] = '登録情報の記入に間違いがある可能性があります'
+      redirect_to step1_signup_index_path
     end
   end
   
@@ -99,8 +104,7 @@ class SignupController < ApplicationController
       :birthday_year,
       :birthday_month,
       :birthday_date,
-      :phone_number,
-      address_attributes: [:post,:prefecture,:city,:address,:buil]
+      :phone_number
     )
   end
 
@@ -115,7 +119,8 @@ class SignupController < ApplicationController
       :prefecture,
       :city,
       :address,
-      :buil
+      :buil,
+      :phone_number
     )
   end
 

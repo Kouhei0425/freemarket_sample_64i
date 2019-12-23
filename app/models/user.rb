@@ -6,8 +6,6 @@ class User < ApplicationRecord
   has_many :credits
   has_one :address
   has_many :sns_credentials, dependent: :destroy
-  accepts_nested_attributes_for :address
-  accepts_nested_attributes_for :credits
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
   validates :family_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/ }

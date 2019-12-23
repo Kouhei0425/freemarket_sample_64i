@@ -7,8 +7,12 @@ class UsersController < ApplicationController
     @user = User.find_by(id: current_user.id)
   end
 
-  def address
-    @user = User.find_by(id: current_user.id)
+  def profile_update
+    user = User.find(params[:id])
+    user.update(user_params)
+  end
+
+  def address_edit
     @address = Address.find_by(user_id: current_user.id)
   end
   

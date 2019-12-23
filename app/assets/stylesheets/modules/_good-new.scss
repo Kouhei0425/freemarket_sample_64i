@@ -166,6 +166,20 @@
     }
   }
 }
+.good-edit-btn {
+  margin: 16px 0 16px 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+}
 .footer-new{
   height: 140px;
   width: 456px;
@@ -221,6 +235,7 @@ select{
   height: 162px;
   width: 618px;
 }
+
 
 //JS関連の記述
 .img {
