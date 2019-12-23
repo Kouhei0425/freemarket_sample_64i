@@ -7,8 +7,12 @@ class UsersController < ApplicationController
     @user = User.find_by(id: current_user.id)
   end
 
-  def address
-    @user = User.find_by(id: current_user.id)
+  def profile_update
+    user = User.find(params[:id])
+    user.update(user_params)
+  end
+
+  def address_edit
     @address = Address.find_by(user_id: current_user.id)
   end
   
@@ -89,8 +93,20 @@ class UsersController < ApplicationController
   
   private
   def user_address_params
-    params.require(:user).permit(address: [])
+    params.require(:address).permit(
+      :family_name,
+      :first_name,
+      :family_kana,
+      :first_kana,
+      :phone_number,
+      :post,
+      :prefecture,
+      :city,
+      :address,
+      :buil
+    )
   end
+
   def user_params
     params.require(:user).permit(
       :nick_name,

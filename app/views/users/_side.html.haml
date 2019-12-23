@@ -22,13 +22,13 @@
          = link_to "出品した商品 取引中", dealing_user_path(current_user.id), class: "myside--top__list__box"
          = icon "fas",'chevron-right', class: 'icon'
       %li.myside--top__list
-         = link_to "購入した商品 売却済み", bought_user_path(current_user.id), class: "myside--top__list__box"
+         = link_to "出品した商品 売却済み", sold_user_path(current_user.id), class: "myside--top__list__box"
          = icon "fas",'chevron-right', class: 'icon'
       %li.myside--top__list
          = link_to "購入した商品 取引中", buying_user_path(current_user.id), class: "myside--top__list__box"
          = icon "fas",'chevron-right', class: 'icon'
       %li.myside--top__list
-         = link_to "購入した商品 過去の取引", todo_user_path(current_user.id), class: "myside--top__list__box"
+         = link_to "購入した商品 過去の取引", bought_user_path(current_user.id), class: "myside--top__list__box"
          = icon "fas",'chevron-right', class: 'icon'
       %li.myside--top__list
          = link_to "ニュース一覧", news_user_path(current_user.id), class: "myside--top__list__box"
@@ -54,7 +54,7 @@
       = link_to "プロフィール", profile_user_path(current_user.id), class: "myside--top__list__box"
       = icon "fas",'chevron-right', class: 'icon'
    %ul.myside--under__list
-      = link_to "発送先・お届け先住所変更", address_user_path(current_user.id), class: "myside--top__list__box"
+      = link_to "発送元・お届け先住所変更", address_edit_user_path(current_user.id), class: "myside--top__list__box"
       = icon "fas",'chevron-right', class: 'icon'
    %ul.myside--under__list
       = link_to "支払い方法", payment_user_path(current_user.id), class: "myside--top__list__box"

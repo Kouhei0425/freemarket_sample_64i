@@ -19,7 +19,6 @@ class SignupController < ApplicationController
     session[:birthday_year] = user_params[:birthday_year]
     session[:birthday_month] = user_params[:birthday_month]
     session[:birthday_date] = user_params[:birthday_date]
-
     @user = User.new
   end
 
@@ -27,8 +26,7 @@ class SignupController < ApplicationController
     session[:phone_number] = user_params[:phone_number]
     
     @user = User.new
-    @credit = Credit.new
-    @user.build_address
+    @address = Address.new
   end
 
   def step4
@@ -46,18 +44,28 @@ class SignupController < ApplicationController
       phone_number: session[:phone_number]
     )
     if @user.save
-      Address.create( 
-        post: user_params[:address_attributes][:post],
-        prefecture: user_params[:address_attributes][:prefecture],
-        city: user_params[:address_attributes][:city],
-        address: user_params[:address_attributes][:address],
-        buil: user_params[:address_attributes][:buil],
+      @address = Address.create( 
+        family_name: address_params[:family_name],
+        first_name: address_params[:first_name],
+        family_kana: address_params[:family_kana],
+        first_kana: address_params[:first_kana],
+        post: address_params[:post],
+        prefecture: address_params[:prefecture],
+        city: address_params[:city],
+        address: address_params[:address],
+        buil: address_params[:buil],
+        phone_number: address_params[:phone_number],
         user_id: @user.id
       )
+      unless @address.save
+        redirect_to step3_signup_index_path
+        flash.now[:alert] = '登録情報の記入に間違いがある可能性があります'
+      end
       sign_in User.find(@user.id) 
     else
-      flash[:alert] = '登録情報の記入に間違いがある可能性があります'
-      ##redirect_to :back
+
+      flash.now[:alert] = '登録情報の記入に間違いがある可能性があります'
+      redirect_to step1_signup_index_path
     end
   end
   
@@ -96,8 +104,24 @@ class SignupController < ApplicationController
       :birthday_year,
       :birthday_month,
       :birthday_date,
-      :phone_number,
-      address_attributes: [:post,:prefecture,:city,:address,:buil]
+      :phone_number
     )
   end
+
+  def address_params
+    params.require(:address).permit(
+      :family_name,
+      :first_name,
+      :family_kana,
+      :first_kana,
+      :phone_number,
+      :post,
+      :prefecture,
+      :city,
+      :address,
+      :buil,
+      :phone_number
+    )
+  end
+
 end

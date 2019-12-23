@@ -43,7 +43,7 @@
   &__img{
     height: 180px;
     margin-bottom:24px;
-    background-image: url(guide-image.png);
+    background-image: image-url("guide-image.png");
     background-size:cover;
     &__filter{
       background-color: rgba(0,0,0,0.4);

@@ -13,14 +13,19 @@
 ActiveRecord::Schema.define(version: 20191220063707) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "post",       null: false
-    t.string   "prefecture", null: false
-    t.string   "city",       null: false
-    t.string   "address",    null: false
-    t.string   "buil",       null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "family_name",  null: false
+    t.string   "first_name",   null: false
+    t.string   "family_kana",  null: false
+    t.string   "first_kana",   null: false
+    t.string   "post",         null: false
+    t.string   "prefecture",   null: false
+    t.string   "city",         null: false
+    t.string   "address",      null: false
+    t.string   "buil",         null: false
+    t.integer  "user_id",      null: false
+    t.string   "phone_number", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
