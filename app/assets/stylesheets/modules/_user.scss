@@ -337,16 +337,18 @@
     &__image{;
     }
     &__icon{
+      display: flex;
       position: absolute;
       top: 120px;
       left: 30%;
       img{
-      border-radius: 50%;
+        height: 60px;
+        border-radius: 50%;
       }
-      input[type="text"]{
+      .nickname-input{
         height: 28px;
         width: 200px;
-        margin: 0 0 48px 8px;
+        margin: 8px 0 48px 8px;
         vertical-align: middle;
         padding: 10px 16px 8px;
         border-radius: 4px;

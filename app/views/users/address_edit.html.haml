@@ -22,7 +22,7 @@
           %span.form-require 必須
           = f.text_field :family_kana, placeholder:"例) ヤマダ",class:"input-default"
           = f.text_field :first_kana, placeholder:"例) アヤ",class:"input-default"
-          = f.fields_for @address do |a|
+          = f.fields_for :address do |a|
             .form-group
             %label 郵便番号
             %span.form-require 必須
@@ -34,7 +34,7 @@
             %br
             .select-prefecture
               %i.icon-arrow-bottom
-                = a.collection_select :prefecture, Area.all, :name, :name, { prompt: '---' }
+                = a.collection_select :prefecture, Area.all, :name, :name
             .form-group
             %label 市区町村
             %span.form-require 必須

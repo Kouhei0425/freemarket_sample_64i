@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   resources :users, except: :show do 
     member do
       get 'profile'
-      get 'address'
+      patch 'profile_update'
+      get 'address_edit'
       patch 'address_update'
       get 'payment'
       get 'email'
