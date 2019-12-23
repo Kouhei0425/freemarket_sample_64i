@@ -312,35 +312,20 @@
       text-align: center;
       font-weight: bold;
     }
-    #new_user{
+    #new_address{
       width: 343px;
       margin: 30px auto 0;
       input{
         margin-top:10px;
       }
-      #user_family_name{
+      #address_family_name{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
         border: 1px #ccc solid;
         border-radius:6px;
       }
-      #user_first_name{
-        width: 310px;
-        height: 28px;
-        padding: 10px 16px 8px;
-        border: 1px #ccc solid;
-        border-radius:6px;
-        margin-bottom: 20px;
-      }
-      #user_family_kana{
-        width: 310px;
-        height: 28px;
-        padding: 10px 16px 8px;
-        border: 1px #ccc solid;
-        border-radius:6px;
-      }
-      #user_first_kana{
+      #address_first_name{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -348,7 +333,14 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_attributes_post{
+      #address_family_kana{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+      }
+      #address_first_kana{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -356,12 +348,20 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_attributes_prefecture{
+      #address_post{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #address_prefecture{
         width: 100%;
         margin-top:10px;
         border: 1px #ccc solid;
       }
-      #user_address_attributes_city{
+      #address_city{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -369,7 +369,7 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_attributes_address{
+      #address_address{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -377,7 +377,7 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_attributes_buil{
+      #address_buil{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -385,7 +385,7 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_phone_number{
+      #address_phone_number{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
