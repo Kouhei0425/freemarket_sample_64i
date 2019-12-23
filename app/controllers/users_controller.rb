@@ -13,13 +13,12 @@ class UsersController < ApplicationController
   end
 
   def address_edit
-    @user = User.find_by(id: current_user.id)
+    @address = Address.find_by(user_id: current_user.id)
   end
   
   def address_update
     user = User.find(params[:id])
     user.update(user_params)
-    @user.address_attributes.build
     address = Address.where(user_id: user.id)[0]
     address.update(user_address_params)
     redirect_to user_path(params[:id])
