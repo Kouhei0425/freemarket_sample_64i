@@ -29,31 +29,31 @@
             %br
             = a.text_field :post, placeholder:"例) 123-4567",class:"input-default"
             .form-group
-              %label 都道府県
-              %span.form-require 必須
-              %br
-              .select-prefecture
-                %i.icon-arrow-bottom
-                  = a.collection_select :prefecture, Area.all, :name, :name, { prompt: '---' }
+            %label 都道府県
+            %span.form-require 必須
+            %br
+            .select-prefecture
+              %i.icon-arrow-bottom
+                = a.collection_select :prefecture, Area.all, :name, :name, { prompt: '---' }
             .form-group
-              %label 市区町村
-              %span.form-require 必須
-              %br
-              = a.text_field :city, placeholder:"例) 横浜市緑区",class:"input-default"
+            %label 市区町村
+            %span.form-require 必須
+            %br
+            = a.text_field :city, placeholder:"例) 横浜市緑区",class:"input-default"
             .form-group
-              %label 番地
-              %span.form-require 必須
-              %br
-              = a.text_field :address, placeholder:"例) 青山1−1−1",class:"input-default"
+            %label 番地
+            %span.form-require 必須
+            %br
+            = a.text_field :address, placeholder:"例) 青山1−1−1",class:"input-default"
             .form-group
-              %label 建物名
-              %span.form-arbitrary 任意
-              = a.text_field :buil, placeholder:"例) 柳ビル103",class:"input-default"
+            %label 建物名
+            %span.form-arbitrary 任意
+            = a.text_field :buil, placeholder:"例) 柳ビル103",class:"input-default"
             .form-group
-              %label 電話
-              %span.form-arbitrary 任意
-              = f.text_field :phone_number, placeholder:"例) 09012345678",class:"input-default"
-            = f.submit "変更する", class: "btn-red"
+            %label 電話
+            %span.form-arbitrary 任意
+            = f.text_field :phone_number, placeholder:"例) 09012345678",class:"input-default"
+        = f.submit "変更する", class: "btn-red"
 
 
 = render 'toppage/footer'
