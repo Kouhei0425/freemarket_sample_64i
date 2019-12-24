@@ -48,15 +48,15 @@ class GoodsController < ApplicationController
     @good = Good.find(params[:id])
     @good.update(good_params)
     if @good.update(good_params)
-      if params[:images][:image]
-        params[:images][:image].each do |image|
-          Image.create(image: image, good_id: @good.id)
-        end
+
+      params[:images][:image].each do |image|
+        Image.create(image: image, good_id: @good.id) unless image =""
       end
-      if params[:destroy][:ids]
-        params[:destroy][:ids].each do |id|
-         image = Image.find(id)
-         image.destroy
+  
+      params[:destroy][:ids].each do |id|
+        unless id=""
+          image = Image.find(id)
+          image.destroy
         end
       end
       
