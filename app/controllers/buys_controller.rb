@@ -3,7 +3,7 @@ class BuysController < ApplicationController
 
   def index
     @good = Good.find(params[:good_id])
-    @address = Address.where(user_id: current_user.id)[0]
+    @address = Address.where(user_id: current_user.id).first()
     @buy = Buy.new
     @buy.buy_addresses.build
 
@@ -28,10 +28,12 @@ class BuysController < ApplicationController
     :currency => 'jpy' #日本円
   )
     @buy = Buy.new(buy_params)
+    @good = Good.where(id: buy_params[:good_id]).first()
     if @buy.save
       buy_address = params[:buy][:buy_addresses_attributes][:'0']
       BuyAddress.create(post: buy_address[:post], prefecture: buy_address[:prefecture], city: buy_address[:city],
       address: buy_address[:address], buil: buy_address[:buil], buy_id: @buy.id )
+      @good.update_columns(buy_id: @buy.id)
       redirect_to root_path
     end
   end

@@ -80,13 +80,14 @@
         display: inline-block;
         justify-content: space-between;
         
-
         .top_ca__ca_block__box__small_box__image{
           overflow: hidden;
           height:188px;
           position: relative;
           width: 188px;
-
+          .sold-box{
+            position: absolute;
+          }
           .top_ca__ca_block__box__small_box__price{
             align-items: center;
             background: rgba(0,0,0,0.3);

@@ -26,7 +26,11 @@
           = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @ladies_goods.each do |good|
-          = render "good", { good: good } 
+          -if good.buy
+            = render "good-sold", { good: good } 
+          - else
+            = render "good", { good: good } 
+
        
   .top_ca
     .top_ca__ca_block
@@ -38,7 +42,11 @@
           = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @mens_goods.each do |good|
-          = render "good", { good: good } 
+          -if good.buy
+            = render "good-sold", { good: good } 
+          - else
+            = render "good", { good: good } 
+ 
   
   .top_ca
     .top_ca__ca_block
@@ -50,7 +58,11 @@
           = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @electronics_goods.each do |good|
-          = render "good", { good: good }
+          -if good.buy
+            = render "good-sold", { good: good } 
+          - else
+            = render "good", { good: good } 
+
   
   .top_ca
     .top_ca__ca_block
@@ -85,7 +97,11 @@
           = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @chanel_goods.each do |good|
-          = render "good", { good: good }
+          -if good.buy
+            = render "good-sold", { good: good } 
+          - else
+            = render "good", { good: good } 
+
   .top_ca
     .top_ca__ca_block
       .top_ca__ca_block__title
@@ -96,7 +112,11 @@
           = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @louis_goods.each do |good|
-          = render "good", { good: good }
+          -if good.buy
+            = render "good-sold", { good: good } 
+          - else
+            = render "good", { good: good } 
+
   .top_ca
     .top_ca__ca_block
       .top_ca__ca_block__title
@@ -107,7 +127,11 @@
           = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @supreme_goods.each do |good|
-          = render "good", { good: good }
+          -if good.buy
+            = render "good-sold", { good: good } 
+          - else
+            = render "good", { good: good } 
+
   .top_ca
     .top_ca__ca_block
       .top_ca__ca_block__title
@@ -118,7 +142,11 @@
           = icon "fas",'chevron-right', class: 'icon'
       .top_ca__ca_block__box
         - @nike_goods.each do |good|
-          = render "good", { good: good }
+          -if good.buy
+            = render "good-sold", { good: good } 
+          - else
+            = render "good", { good: good } 
+
 = render "footer"
       
       
