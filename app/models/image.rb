@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
-  belongs_to   :good, optional: true
+  belongs_to   :good
   mount_uploader :image, ImageUploader
 end
 
