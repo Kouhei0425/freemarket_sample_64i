@@ -33,7 +33,6 @@ class GoodsController < ApplicationController
     @good = Good.find(params[:id])
     gon.good = @good
     gon.good_images = @good.images
-
   end
 
 
@@ -41,6 +40,7 @@ class GoodsController < ApplicationController
 
   def selledit
     @good = Good.find(params[:id])
+    
   end
 
 
