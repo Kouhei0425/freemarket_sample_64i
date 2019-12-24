@@ -5,10 +5,19 @@
 
 .user-main
   = render "side"
-  .phone__content
-    .phone__content__head
-      %h2.phone__content__head__text 完了
-    .phone__content__body
-      %p.phone__content__body__text 確認済みです
+  .user-main__sell
+    .user-main__sell__head
+      出品した商品
+    %ul.user-main__sell__body
+      %li.active
+        出品中
+      %li.dealing
+        取引中
+      %li.sold
+        売却済み
+    .mys--purchase--under
+      %ul.mys--purchase--under
+        %li.mys--purchase--under--box
+          取引中の商品がありません
 
 = render 'toppage/footer'

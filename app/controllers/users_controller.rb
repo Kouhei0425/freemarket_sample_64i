@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  before_action :move_to_toppage
 
   def show
+    @user = User.find_by(id: current_user.id)
   end
 
   def profile
@@ -8,8 +10,9 @@ class UsersController < ApplicationController
   end
 
   def profile_update
-    user = User.find(params[:id])
+    user = User.where(id: current_user.id)
     user.update(user_params)
+    redirect_to user_path(current_user.id)
   end
 
   def address_edit
@@ -17,11 +20,9 @@ class UsersController < ApplicationController
   end
   
   def address_update
-    user = User.find(params[:id])
-    user.update(user_params)
-    address = Address.where(user_id: user.id)[0]
+    address = Address.where(user_id: current_user.id)[0]
     address.update(user_address_params)
-    redirect_to user_path(params[:id])
+    redirect_to user_path(current_user.id)
   end
 
   def payment
@@ -122,4 +123,9 @@ class UsersController < ApplicationController
       :phone_number
     )
   end
+
+  def move_to_toppage
+    redirect_to root_path unless user_signed_in?
+  end
+
 end
