@@ -50,7 +50,7 @@
             %th
               ブランド
             %td
-              -if @good.brand.name
+              -if @good.brand.nil?
                 = link_to @good.brand.name, brand_path(@good.id)
               -else 
                 なし
