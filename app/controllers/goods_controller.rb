@@ -11,7 +11,11 @@ class GoodsController < ApplicationController
   end
 
   def create
-    @good = Good.create(good_params)
+    if params[:images][:image]
+      @good = Good.create(good_params)
+    else
+      redirect_to :back
+    end
     if @good.save
       params[:images][:image].each do |image|
         Image.create(image: image, good_id: @good.id )
@@ -19,8 +23,9 @@ class GoodsController < ApplicationController
       params[:category_ids][:category_id].each do |category_id|
         CategoryGood.create(category_id: category_id, good_id: @good.id)
       end
+      redirect_to root_path
     end
-    redirect_to root_path
+    
   end
 
   def destroy
