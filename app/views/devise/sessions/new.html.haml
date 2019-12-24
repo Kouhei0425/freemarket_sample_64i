@@ -13,12 +13,12 @@
     .login-main__sns
       = link_to "http://localhost:3000/users/auth/facebook" do
         %i.facebook-btn
-          = image_tag "facebook-logo.jpeg", size: "26x26", alt: "Facebook", class: "facebook-logo"
+          = image_tag asset_path("facebook-logo.jpeg"), size: "26x26", alt: "Facebook", class: "facebook-logo"
           .facebook-btn__text
             %p Facebookでログイン
       = link_to "http://localhost:3000/users/auth/google_oauth2" do
         %i.google-btn
-          = image_tag "google-logo.png", size: "22x22", alt: "Google", class: "google-logo"
+          = image_tag asset_path("google-logo.png"), size: "22x22", alt: "Google", class: "google-logo"
           .google-btn__text
             %p Googleでログイン
     .login-main__form
@@ -49,4 +49,4 @@
     = image_tag "trollface.png", size: "60x60", alt: "Fmarket", class: "logo-img"
   .footer-lnc
     ©︎Fmarket,lnc.
-= render "devise/shared/links"
+-# = render "devise/shared/links"

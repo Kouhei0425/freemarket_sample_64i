@@ -20,7 +20,5 @@ class ToppageController < ApplicationController
 
   def search
     @goods = Good.search(params[:keyword])
-    @category = Category.search(params[:keyword])
-    @brand_goods = Brand.search(params[:keyword])
   end
 end

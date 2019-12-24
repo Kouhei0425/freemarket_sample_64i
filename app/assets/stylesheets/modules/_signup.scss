@@ -312,35 +312,20 @@
       text-align: center;
       font-weight: bold;
     }
-    #new_user{
+    #new_address{
       width: 343px;
       margin: 30px auto 0;
       input{
         margin-top:10px;
       }
-      #user_family_name{
+      #address_family_name{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
         border: 1px #ccc solid;
         border-radius:6px;
       }
-      #user_first_name{
-        width: 310px;
-        height: 28px;
-        padding: 10px 16px 8px;
-        border: 1px #ccc solid;
-        border-radius:6px;
-        margin-bottom: 20px;
-      }
-      #user_family_kana{
-        width: 310px;
-        height: 28px;
-        padding: 10px 16px 8px;
-        border: 1px #ccc solid;
-        border-radius:6px;
-      }
-      #user_first_kana{
+      #address_first_name{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -348,7 +333,14 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_post{
+      #address_family_kana{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+      }
+      #address_first_kana{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -356,12 +348,20 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_prefecture{
+      #address_post{
+        width: 310px;
+        height: 28px;
+        padding: 10px 16px 8px;
+        border: 1px #ccc solid;
+        border-radius:6px;
+        margin-bottom: 20px;
+      }
+      #address_prefecture{
         width: 100%;
         margin-top:10px;
         border: 1px #ccc solid;
       }
-      #user_address_city{
+      #address_city{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -369,7 +369,7 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_address{
+      #address_address{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -377,7 +377,7 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_address_buil{
+      #address_buil{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -385,7 +385,7 @@
         border-radius:6px;
         margin-bottom: 20px;
       }
-      #user_phone_number{
+      #address_phone_number{
         width: 310px;
         height: 28px;
         padding: 10px 16px 8px;
@@ -520,4 +520,88 @@
 }
 a{
   text-decoration: none;
+}
+
+// ここからstep4
+
+#charge-form {
+  padding: 40px 40px 64px;
+  max-width: 343px;
+  margin: 0 auto;
+  label {
+    font-weight: bold;
+  }
+  li {
+    display: inline-block;
+    background: #ea352d;
+    margin: 0 200px 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    text-decoration: none;
+  }
+  .number {
+    display: block;
+    width: 90%;
+    height: 30px;
+    margin: 8px 0 0;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  .crad--type {
+    display: block;
+  }
+  .crad--deadline  {
+    margin-top: 32px;
+  }
+  select {
+    width: 42%;
+    display: inline-block;
+  }
+  ul {
+    display: inline-block;
+    background: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    text-decoration: none;
+  }
+  .crad--code {
+    margin-top: 32px;
+  }
+  .cvc {
+    display: block;
+    width: 90%;
+    height: 30px;
+    margin: 8px 0 0;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  .code {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: #0099e8;
+    text-align: right;
+  }
+  #token_submit{
+    margin-top: 32px;
+    background: #ea352d;
+    display: block;
+    width: 100%;
+    height: 48px;
+    color: #fff;
+  }
 }

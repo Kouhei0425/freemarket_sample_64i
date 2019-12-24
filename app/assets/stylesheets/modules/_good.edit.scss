@@ -23,6 +23,7 @@
       -webkit-transition: all ease-out .3s;
       transition: all ease-out .3s;
       cursor: pointer;
+
       
     }
     &__or{
@@ -45,7 +46,8 @@
       line-height: 48px;
       font-size: 14px;
     }
- }
-
-
+  }
+}
+.item--box__edit {
+  color: #FFF;
 }

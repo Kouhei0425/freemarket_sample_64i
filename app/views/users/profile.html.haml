@@ -12,9 +12,10 @@
     = image_tag "mypageback.png", alt: 'mypageback', height: '156', width: '700', class: 'mypage__content__image'
     .mypage__content__icon
       %img{:src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}
-      %input.nickname-input{:name => "nickname", :placeholder => "例)AYA☆セール中", :type => "text", value: current_user.nick_name}
+      = form_for @user, url: profile_update_user_path, method: :patch do |f|
+        = f.text_field :nick_name, placeholder:"例)AYA☆セール中", class:"nickname-input"
     .mypage__content__content
       %textarea.mypage-textarea{:name => "introduction", :placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-      %button.btn-red{:type => "submit"} 変更する
+        = f.submit "変更する", class:"btn-red"
 
 = render 'toppage/footer'

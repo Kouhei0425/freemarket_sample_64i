@@ -40,7 +40,7 @@
     width: 700px;
     &--user{
       &__img {
-        background-image: url(back.jpag);
+        background-image: image-url("back.jpag");
         height: 200px;
         position: relative;
         padding: 20px;
@@ -76,6 +76,7 @@
         &__active {
           display: inline-block;
           padding: 20px 129px;
+          border-top: 2px solid #ea352d;
         }
           &__do {
             background: #eee;
@@ -84,7 +85,7 @@
         }
         &__list {
           height: 500px;
-          background-image: url(me.image.jpag.png);
+          background-image: image-url("me.image.jpag.png");
           border-bottom: 1px solid #eee;    
         }
         &__btn {
@@ -116,6 +117,7 @@
         font-weight: bold;
       }
       .active {
+        border-top: 2px solid #ea352d;
         background: #fff;
         padding: 20px 135px;
       }
@@ -126,7 +128,7 @@
     
     &--under{
       &--box {
-        background-image: url(me.image.jpag.png);
+        background-image: image-url("me.image.jpag.png");
         padding: 160px 0 60px;
         text-align: center;
        }        
@@ -311,7 +313,7 @@
   }
 }
 
-//ユーザーマイページ
+//ユーザーマイページ, アドレス, プロフィール, 電話
 .user-main {
   margin: 40px auto 0 ;
   width: 1020px;
@@ -335,16 +337,18 @@
     &__image{;
     }
     &__icon{
+      display: flex;
       position: absolute;
       top: 120px;
       left: 30%;
       img{
-      border-radius: 50%;
+        height: 60px;
+        border-radius: 50%;
       }
-      input[type="text"]{
+      .nickname-input{
         height: 28px;
         width: 200px;
-        margin: 0 0 48px 8px;
+        margin: 8px 0 48px 8px;
         vertical-align: middle;
         padding: 10px 16px 8px;
         border-radius: 4px;
@@ -444,9 +448,10 @@
           line-height: 1.5;
           font-size: 16px;
         }
-        .select-prefecture{
-          width: 76%;
-        }
+      }
+      .select-prefecture{
+        width: 58%;
+        margin-left: 24%;
       }
       .btn-red{
         background: #ea352d;
@@ -462,6 +467,30 @@
         cursor: pointer;
         text-align: center;
         margin-left: 24%;
+      }
+    }
+  }
+  .phone__content{
+    width: 700px;
+    background-color: #fff;
+    height: 211px;
+    &__head{
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+      &__text{
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+    &__body{
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      padding: auto auto;
+      &__text{
+        margin: auto auto;
       }
     }
   }

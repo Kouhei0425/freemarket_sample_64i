@@ -1,0 +1,44 @@
+= render 'toppage/header'
+= render "toppage/button"
+= render "user_pankz"
+
+<<<<<<< HEAD
+.user-main
+  = render "side"
+
+  .buy-good
+    .buy-good__title
+      %h2 購入した商品
+    %ul.mypage-good
+      %li.transaction
+        %a{href: '/users/2/buying/'}取引中
+      %li.transaction
+        %a{href: '/users/2/bought/'}過去の取引
+    .buy-content
+      %ul.buy-content__item
+        %li.buy-content__item__not
+          取引中の商品がありません
+
+
+  
+=======
+
+.user-main
+  = render "side"
+  .my--purchase
+    %h4.my--purchase__head
+      購入した商品
+    %ul.my--purchase__situation
+      %li.active
+        %h5
+          取引中
+      %li
+        %h5
+          過去の取引
+    .my--purchase--under
+      %ul.my--purchase--under
+        %li.my--purchase--under--box
+          取引中の商品がありません
+
+>>>>>>> de491f002fb7af7c54db0ba2559e1258c81fd2ed
+= render 'toppage/footer'

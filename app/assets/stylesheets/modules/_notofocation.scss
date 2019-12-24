@@ -1,13 +1,22 @@
-.user-main {
-  margin: 40px auto 0 ;
+.notice {
+  margin: 40px auto 0;
   width: 1020px;
   padding: 0 0 40px;
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-  .myside {
+  &--box {
+    float: right;
+    background:  #fff;
+    &__main {
+      display: inline-block;
+      padding: 20px 129px;
+      border-top: 2px solid #ea352d;
+    }
+      &__list {
+        background:#eee;
+        display: inline-block;
+        padding: 20px 130px ;
+      }
+   }
+   .myside {
     width: 280px;
     margin: 0 40px 0 0;
     list-style: none;
@@ -30,7 +39,6 @@
           padding: 16px;
           background: #eee;
           color: #333;
-          
         }
       }
     }
@@ -65,8 +73,4 @@
       }
     }
   }
-}
-
-.myside--top__list__box {
-  color: black;
 }
