@@ -2,6 +2,15 @@ class GoodsController < ApplicationController
   before_action :move_to_sign_up, except: :show
   def show
     @good = Good.find(params[:id])
+    @user_goods = @good.user.goods.first(6)
+    if @good.categories.length == 3
+      @category = @good.categories[2]
+      @category_goods = @good.categories[2].goods.first(6)
+    else
+      @category = @good.categories[1]
+      @category_goods = @good.categories[1].goods.first(6)
+    end
+    
   end
   
   def new

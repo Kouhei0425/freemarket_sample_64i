@@ -127,7 +127,21 @@
         = icon'fab','line',class:'icon l'
       %a{href: 'https://www.pinterest.jp/'}
         = icon'fab','pinterest-square',class:'icon p'
-  = render 'othergood.html.haml'
+  .items-box
+    .items-box__other
+      .items-box__other__text
+        #{@good.user.nick_name}さんのその他の出品
+      .items-box__other__img
+        -@user_goods.each do |good|
+          = render 'othergood', { good: good }
+
+    .items-box__same
+      .items-box__same__text
+        #{@category.name} その他の商品
+      .items-box__same__img
+        -@category_goods.each do |good|
+          = render 'othergood-ca', { good: good }
+
   .item-name
     %ul.item-name__text
       %li
