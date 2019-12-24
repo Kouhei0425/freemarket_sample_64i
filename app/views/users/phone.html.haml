@@ -76,10 +76,9 @@
       = link_to logout_user_path(current_user.id), class: "myside--under__list" do
         %span ログアウト
         %i.fas.fa-chevron-right
-  .phone__content
-    .phone__content__head
-      %h2.phone__content__head__text 完了
-    .phone__content__body
-      %p.phone__content__body__text 確認済みです
-
+  .phone-box
+    .phone-box__top
+      完了
+    .phone-box__bottom
+      確認済みです
 = render 'toppage/footer'

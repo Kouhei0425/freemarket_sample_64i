@@ -50,7 +50,10 @@
             %th
               ブランド
             %td
-              = link_to @good.brand.name, brand_path(@good.id)
+              -unless @good.brand.nil?
+                = link_to @good.brand.name, brand_path(@good.id)
+              -else 
+                なし
           %tr
           - if @good.size.present?
             %th
@@ -88,7 +91,10 @@
         = @good.price.to_s(:delimited)
       .item-box__price__tax
         (税込) 送料込み
-    = link_to '購入画面に進む', good_buys_path(@good.id), class: 'item-box__buy'
+    -if @good.buy
+      = link_to '購入画面に進む', good_buys_path(@good.id), class: 'item-box__buy'
+    -else
+      %p.item-box__buy 購入済みの商品
     .item-box__caution
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
@@ -124,7 +130,21 @@
         = icon'fab','line',class:'icon l'
       %a{href: 'https://www.pinterest.jp/'}
         = icon'fab','pinterest-square',class:'icon p'
-  = render 'othergood.html.haml'
+  .items-box
+    .items-box__other
+      .items-box__other__text
+        #{@good.user.nick_name}さんのその他の出品
+      .items-box__other__img
+        -@user_goods.each do |good|
+          = render 'othergood', { good: good }
+
+    .items-box__same
+      .items-box__same__text
+        #{@category.name} その他の商品
+      .items-box__same__img
+        -@category_goods.each do |good|
+          = render 'othergood-ca', { good: good }
+
   .item-name
     %ul.item-name__text
       %li

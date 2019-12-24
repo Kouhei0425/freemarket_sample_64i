@@ -76,10 +76,18 @@
       = link_to logout_user_path(current_user.id), class: "myside--under__list" do
         %span ログアウト
         %i.fas.fa-chevron-right
-  .phone__content
-    .phone__content__head
-      %h2.phone__content__head__text 完了
-    .phone__content__body
-      %p.phone__content__body__text 確認済みです
-
+  .user-main__sell
+    .user-main__sell__head
+      出品した商品
+    %ul.user-main__sell__body
+      %li.active.white
+        出品中
+      %li.dealing.gray
+        取引中
+      %li.sold
+        売却済み
+    .user-main__sell__items
+      %ul.user-main__sell__items
+        %li.mys--purchase--under--box
+          取引中の商品がありません    
 = render 'toppage/footer'

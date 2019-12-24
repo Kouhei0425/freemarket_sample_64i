@@ -1,7 +1,7 @@
 class Good < ApplicationRecord
   belongs_to :user
   belongs_to :buy, optional: true
-  belongs_to :brand
+  belongs_to :brand, optional: true
   belongs_to :area
   has_many :category_goods
   has_many :categories, through: :category_goods, dependent: :destroy

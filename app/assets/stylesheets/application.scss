@@ -113,8 +113,25 @@ body {
           display: flex;
           .header-cat-nav {
             height: 100%;
-
             display: flex;
+            //position: relative;
+            //.header-cat-nav-category{
+            //  width: 72vw;
+            //  margin-top: 44px;
+            //  z-index: 20;
+            //  position: absolute;
+            //  &--1{
+            //    width: 224px;
+            //    background-color: #fff;
+            //    border: 1px solid #000;
+            //    &--li{
+            //      font-size: 14px;
+            //      color: black;
+            //      line-height: 44px;
+            //      display: block;
+            //    }
+            //  }
+            //}
             .header-nav-cat {
               width: 160px;
               text-decoration: none;

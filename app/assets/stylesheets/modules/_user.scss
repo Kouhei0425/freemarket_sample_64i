@@ -84,8 +84,8 @@
             padding: 20px 130px ;
         }
         &__list {
-          height: 500px;
-          background-image: image-url("me.image.jpag.png");
+          height: 250px;
+          // background-image: image-url("me.image.jpag.png");
           border-bottom: 1px solid #eee;    
         }
         &__btn {
@@ -128,8 +128,8 @@
     
     &--under{
       &--box {
-        background-image: image-url("me.image.jpag.png");
-        padding: 160px 0 60px;
+        // background-image: image-url("me.image.jpag.png");
+        padding: 110px 0 110px;
         text-align: center;
        }        
      }
@@ -401,7 +401,7 @@
         font-weight: bold;
       }
     }
-    &__image{;
+    &__image{
     }
     &__body{
       width: 100%;
@@ -543,28 +543,22 @@
       }
     }
   }
-  .phone__content{
-    width: 700px;
-    background-color: #fff;
-    height: 211px;
-    &__head{
-      padding: 8px 24px;
-      border-bottom: 1px solid #f5f5f5;
-      text-align: center;
-      &__text{
-        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-        font-size: 24px;
-        font-weight: bold;
-      }
-    }
-    &__body{
-      height: 100%;
-      width: 100%;
-      align-items: center;
-      padding: auto auto;
-      &__text{
-        margin: auto auto;
-      }
-    }
+}
+.phone-box{
+  width: 700px;
+  height: 208px;
+  background-color: #fff;
+  &__top{
+    height: 33px;
+    width: 652px;
+    padding:8px 24px;
+    font-weight: bold;
+    font-size:24px;
+    text-align: center;
+  }
+  &__bottom{
+    text-align: center;
+    line-height: 158px;
+    border-top:#eee solid 1px;
   }
 }
