@@ -8,7 +8,6 @@
     .form-main__text
       商品の情報を入力
     = form_for @good do |f|
-      %input.hidden{ multiple: true, type: "number", name: "destroy[ids][]"}/
       .form-main__container
         .form-img-box
           .form-img-box__text
@@ -16,23 +15,22 @@
             %h.red 
               必須
           %p 最大10枚までアップロードできます
-          = f.fields_for :images, @good.images.first do |image|
-            = image.hidden_field :image, multiple: true, name: "images[image][]", class: "upload-image"
-            .item__img__dropzone.clearfix
-              #preview-edit
-              -# １〜５枚目プレビュー表示
-              .item__img__dropzone__input
-                = image.label :image, for: "upload-image" do
-                  .input_area
-                    = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-                
-            .item__img__dropzone2.clearfix
-              #preview2-edit
-              -# ６〜１０枚目プレビュー表示
-              .item__img__dropzone2__input2
-                = image.label :image, for: "upload-image" do
-                  .input_area
-        
+          .item__img__dropzone.clearfix
+            #preview-edit
+            -# １〜５枚目プレビュー表示
+            .item__img__dropzone__input
+              = f.label :image, for: "upload-image" do
+                .input_area
+                  = f.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+              
+          .item__img__dropzone2.clearfix
+            #preview2-edit
+            -# ６〜１０枚目プレビュー表示
+            .item__img__dropzone2__input2
+              = f.label :image, for: "upload-image" do
+                .input_area
+          %input.upload-image{ multiple: true, type: "hidden", name: "images[image][]"}/
+          %input.hidden{ multiple: true, type: "number", name: "destroy[ids][]"}/
         .sell-box
           .sell-box__text1
             %h 商品名

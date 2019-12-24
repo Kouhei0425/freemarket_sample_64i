@@ -1,105 +1,12 @@
-.items-box
-  .items-box__other
-    .items-box__other__text
-      tanchanさんのその他の出品
-    .items-box__other__img
-      .other-good
-        .other-good__img
-          = image_tag "show.png",class:"img-6"
-        .other-good__text
-          .other-good__text__name
-            good name
-          .other-good__text__price
-            ¥ 10,000
-      .other-good
-        .other-good__img
-          = image_tag "show.png",class:"img-6"
-        .other-good__text
-          .other-good__text__name
-            good name
-          .other-good__text__price
-            ¥ 10,000
-      .other-good2
-        .other-good__img
-          = image_tag "show.png",class:"img-6"
-        .other-good__text
-          .other-good__text__name
-            good name
-          .other-good__text__price
-            ¥ 10,000
-      .other-good
-        .other-good__img
-          = image_tag "show.png",class:"img-6"
-        .other-good__text
-          .other-good__text__name
-            good name
-          .other-good__text__price
-            ¥ 10,000
-      .other-good
-        .other-good__img
-          = image_tag "show.png",class:"img-6"
-        .other-good__text
-          .other-good__text__name
-            good name
-          .other-good__text__price
-            ¥ 10,000
-      .other-good2
-        .other-good__img
-          = image_tag "show.png",class:"img-6"
-        .other-good__text
-          .other-good__text__name
-            good name
-          .other-good__text__price
-            ¥ 10,000
-  .items-box__same
-    .items-box__same__text
-      エフティーシーのシャツ その他の商品
-    .items-box__same__img
-      .same-good
-        .same-good__img
-          = image_tag "show.png",class:"img-6"
-        .same-good__text
-          .same-good__text__name
-            good name
-          .same-good__text__price
-            ¥ 20,000
-      .same-good
-        .same-good__img
-          = image_tag "show.png",class:"img-6"
-        .same-good__text
-          .same-good__text__name
-            good name
-          .same-good__text__price
-            ¥ 20,000
-      .same-good2
-        .same-good__img
-          = image_tag "show.png",class:"img-6"
-        .same-good__text
-          .same-good__text__name
-            good name
-          .same-good__text__price
-            ¥ 20,000
-      .same-good
-        .same-good__img
-          = image_tag "show.png",class:"img-6"
-        .same-good__text
-          .same-good__text__name
-            good name
-          .same-good__text__price
-            ¥ 20,000
-      .same-good
-        .same-good__img
-          = image_tag "show.png",class:"img-6"
-        .same-good__text
-          .same-good__text__name
-            good name
-          .same-good__text__price
-            ¥ 20,000
-      .same-good2
-        .same-good__img
-          = image_tag "show.png",class:"img-6"
-        .same-good__text
-          .same-good__text__name
-            good name
-          .same-good__text__price
-            ¥ 20,000
+.other-good
+  .other-good__img
+    = image_tag good.images[0].image, class:"img-6"
+  .other-good__text
+    .other-good__text__name
+      = good.name
+    .other-good__text__price
+      = good.price
+      
+
+  
+      
