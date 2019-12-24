@@ -1,54 +1,10 @@
 .fadeSlider{
   height: 390px;
   width: 100%;
-  position: relative;
-  span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url(fade.png);
+  background-size:contain;
+}
 
-    &.fadeSlider_01 {
-      background-image: image-url("toppage.png");
-      animation: fadeSlideImg01 30s ease-out infinite;
-      animation-delay: 3s;
-    }
-    &.fadeSlider_02 {
-      opacity: 0;
-      background-image: image-url("toppage2.png");
-      animation: fadeSlideImg02 30s ease-out infinite;
-      animation-delay: 3s;
-    }
-    &.fadeSlider_03 {
-      opacity: 0;
-      background-image: image-url("image.jpg");
-      animation: fadeSlideImg03 30s ease-out infinite;
-      animation-delay: 3s;
-    }
-  }
-}
-@keyframes fadeSlideImg01 {
-  0% { opacity: 1; }
-  33% { opacity: 0; }
-  66% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes fadeSlideImg02 {
-  0% { opacity: 0; }
-  33% { opacity: 1; }
-  66% { opacity: 0; }
-  100% { opacity: 0; }
-}
-@keyframes fadeSlideImg03 {
-  0% { opacity: 0; }
-  33% { opacity: 0; }
-  66% { opacity: 1; }
-  100% { opacity: 0; }
-}
 .top_popularity_ca{
   padding: 56px 0px 30px;
    &__title{
