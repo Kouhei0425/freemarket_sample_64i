@@ -12,6 +12,16 @@
     .header-nav
       .header-nav-box
         .header-cat-nav
+          //.header-cat-nav-category
+          //  .header-cat-nav-category--1
+          //    = link_to "レディース", category_path(1), class: "header-cat-nav-category--1--li", value: 1
+          //    = link_to "メンズ", category_path(2), class: "header-cat-nav-category--1--li", value: 2
+          //    = link_to "ベビー・キッズ", category_path(3), class: "header-cat-nav-category--1--li", value: 3
+          //    = link_to "インテリア・住まい・小物", category_path(4), class: "header-cat-nav-category--1--li", value: 4
+          //    = link_to "本・音楽・ゲーム", category_path(5), class: "header-cat-nav-category--1--li", value: 5
+          //    = link_to "おもちゃ・ホビー・グッズ", category_path(6), class: "header-cat-nav-category--1--li", value: 6
+          //  .header-cat-nav-category--2
+          //  .header-cat-nav-category--3
           %i.header-nav-cat
             = link_to category_path(1), class: 'nav-cat' do
               %svg.icon-cat{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 20 16", :width => "20"}
@@ -25,22 +35,18 @@
         .header-login-nav
           -if user_signed_in?
             .header-login-nav__lists
-              .header-login-nav__lists__likes
-                = link_to "#" do
-                  %i.far.fa-heart
-                  %span いいね！一覧
-              .header-login-nav__lists__note
-                = link_to user_path(current_user.id) do
-                  %i.far.fa-bell
-                  %span お知らせ
-              .header-login-nav__lists__todo
-                = link_to user_path(current_user.id) do
-                  %i.fas.fa-check
-                  %span やることリスト
-              %i.header-login-nav__lists__mypage
-                = link_to user_path(current_user.id) do
-                  %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
-                  %span マイページ
+              = link_to likes_user_path(current_user.id), class: "header-login-nav__lists__likes" do
+                %i.far.fa-heart
+                %span いいね！一覧
+              = link_to notification_user_path(current_user.id), class: "header-login-nav__lists__note" do
+                %i.far.fa-bell
+                %span お知らせ
+              = link_to todo_user_path(current_user.id), class: "header-login-nav__lists__todo" do
+                %i.fas.fa-check
+                %span やることリスト
+              = link_to user_path(current_user.id), class:"header-login-nav__lists__mypage" do
+                %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
+                %span マイページ
           -else
             = link_to "新規会員登録", step1_signup_index_path, class: 'btn-red'
             = link_to "ログイン", new_user_session_path, class: 'header-login'

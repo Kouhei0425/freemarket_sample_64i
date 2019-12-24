@@ -1,0 +1,39 @@
+.user-main__sell {
+  height: 245px;
+  background-color: #fff;
+  &__head {
+    width: 700px;
+    padding: 0 16px;
+    background-color: #fafafa;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 72px;
+  }
+  &__body ul {
+    display: flex;
+    justify-content: center;
+    padding: 20px 125px;
+    font-weight: bold;
+    .active {
+      background-color: #eee;
+      display: inline-block;
+      padding: 20px 135px;
+    }
+    .dealing {
+      display: inline-block;
+      
+    }
+    .sold {
+      background: #fff;
+      border-top: 2px solid #ea352d;
+      display: inline-block;
+    }
+  }
+
+  &--under{
+    &--box {
+      padding: 160px 0 60px;
+      text-align: center;
+    }        
+  }
+}

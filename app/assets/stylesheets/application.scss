@@ -25,6 +25,9 @@
 @import "modules/user_password";
 @import "modules/user.buying";
 @import "modules/user.bought";
+@import "modules/user_sell";
+
+//ここからヘッダー
 
 body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
@@ -110,8 +113,25 @@ body {
           display: flex;
           .header-cat-nav {
             height: 100%;
-
             display: flex;
+            //position: relative;
+            //.header-cat-nav-category{
+            //  width: 72vw;
+            //  margin-top: 44px;
+            //  z-index: 20;
+            //  position: absolute;
+            //  &--1{
+            //    width: 224px;
+            //    background-color: #fff;
+            //    border: 1px solid #000;
+            //    &--li{
+            //      font-size: 14px;
+            //      color: black;
+            //      line-height: 44px;
+            //      display: block;
+            //    }
+            //  }
+            //}
             .header-nav-cat {
               width: 160px;
               text-decoration: none;
@@ -178,6 +198,16 @@ body {
               display: flex;
               font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
               &__likes{
+                &:hover{
+                  .fa-heart{
+                    color: rgb(0, 149, 238);
+                  }
+                  span{
+                    font-size: 14px;
+                    color: rgb(0, 149, 238);
+                    margin-left: 6px;
+                  }
+                }
                 text-decoration: none;
                 margin-right: 14px;
                 font-size: 21px;
@@ -192,6 +222,16 @@ body {
                 }
               }
               &__note{
+                &:hover{
+                  .fa-bell{
+                    color: rgb(0, 149, 238);
+                  }
+                  span{
+                    font-size: 14px;
+                    color: rgb(0, 149, 238);
+                    margin-left: 6px;
+                  }
+                }
                 text-decoration: none;
                 margin: 0 14px;
                 font-size: 21px;
@@ -206,6 +246,16 @@ body {
                 }
               }
               &__todo{
+                &:hover{
+                  .fa-check{
+                    color: rgb(0, 149, 238);
+                  }
+                  span{
+                    font-size: 14px;
+                    color: rgb(0, 149, 238);
+                    margin-left: 6px;
+                  }
+                }
                 text-decoration: none;
                 margin: 0 14px;
                 font-size: 21px;
@@ -220,6 +270,23 @@ body {
                 }
               }
               &__mypage{
+                &:hover{
+                  img{
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                  }
+                  span{
+                    font-size: 14px;
+                    font-style: normal;
+                    color: rgb(0, 149, 238);
+                    text-decoration: none;
+                    margin-left: 6px;
+                    position: absolute;
+                    top: 8px;
+                    left: 32px;
+                  }
+                }
                 width: 112px;
                 display: flex;
                 text-decoration: none;

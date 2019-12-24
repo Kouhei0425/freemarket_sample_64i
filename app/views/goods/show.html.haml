@@ -50,7 +50,10 @@
             %th
               ブランド
             %td
-              = link_to @good.brand.name, brand_path(@good.id)
+              -unless @good.brand.nil?
+                = link_to @good.brand.name, brand_path(@good.id)
+              -else 
+                なし
           %tr
           - if @good.size.present?
             %th

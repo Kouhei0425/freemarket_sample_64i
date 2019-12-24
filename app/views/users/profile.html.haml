@@ -4,18 +4,89 @@
 
 
 .user-main
-  = render "side"
+  .myside
+    %nav.myside--top
+      = link_to user_path(current_user.id), class: "myside--top__list" do
+        %span マイページ
+        %i.fas.fa-chevron-right
+      = link_to notification_user_path(current_user.id), class: "myside--top__list" do
+        %span お知らせ
+        %i.fas.fa-chevron-right
+      = link_to todo_user_path(current_user.id), class: "myside--top__list" do
+        %span やることリスト
+        %i.fas.fa-chevron-right
+      = link_to likes_user_path(current_user.id), class: "myside--top__list" do
+        %span いいね！一覧
+        %i.fas.fa-chevron-right
+      = link_to new_good_path, class: 'myside--top__list' do
+        %span 出品する
+        %i.fas.fa-chevron-right
+      = link_to items_user_path(current_user.id), class: "myside--top__list" do
+        %span 出品した商品 出品中
+        %i.fas.fa-chevron-right
+      = link_to dealing_user_path(current_user.id), class: "myside--top__list" do
+        %span 出品した商品 取引中
+        %i.fas.fa-chevron-right
+      = link_to sold_user_path(current_user.id), class: "myside--top__list" do
+        %span 出品した商品 売却済み
+        %i.fas.fa-chevron-right
+      = link_to buying_user_path(current_user.id), class: "myside--top__list" do
+        %span 購入した商品 取引中
+        %i.fas.fa-chevron-right
+      = link_to bought_user_path(current_user.id), class: "myside--top__list" do
+        %span 購入した商品 過去の取引
+        %i.fas.fa-chevron-right
+      = link_to news_user_path(current_user.id), class: "myside--top__list" do
+        %span ニュース一覧
+        %i.fas.fa-chevron-right
+      = link_to guide_user_path(current_user.id), class: "myside--top__list" do
+        %span ガイド
+        %i.fas.fa-chevron-right
+      = link_to contact_user_path(current_user.id), class: "myside--top__list" do
+        %span お問い合わせ
+        %i.fas.fa-chevron-right
+    %h3.myside--while
+      メルペイ
+      %li.myside--while__list
+        %span 売り上げ・振込申請
+        %i.fas.fa-chevron-right
+      %li.myside--while__list
+        %span ポイント申請
+        %i.fas.fa-chevron-right
+    %h3.myside--under
+      設定
+      = link_to profile_user_path(current_user.id), class: "myside--under__list__active" do
+        %span プロフィール
+        %i.fas.fa-chevron-right
+      = link_to address_edit_user_path(current_user.id), class: "myside--under__list" do
+        %span 発送元・お届け先住所変更
+        %i.fas.fa-chevron-right
+      = link_to payment_user_path(current_user.id), class: "myside--under__list" do
+        %span 支払い方法
+        %i.fas.fa-chevron-right
+      = link_to email_user_path(current_user.id), class: "myside--under__list" do
+        %span メール/パスワード
+        %i.fas.fa-chevron-right
+      = link_to identification_user_path(current_user.id), class: "myside--under__list" do
+        %span 本人情報
+        %i.fas.fa-chevron-right
+      = link_to phone_user_path(current_user.id), class: "myside--under__list" do
+        %span 電話番号の確認
+        %i.fas.fa-chevron-right
+      = link_to logout_user_path(current_user.id), class: "myside--under__list" do
+        %span ログアウト
+        %i.fas.fa-chevron-right
   .mypage__content
     .mypage__content__head
       %h2.mypage__content__head__text プロフィール
     .mypage__content__image
     = image_tag "mypageback.png", alt: 'mypageback', height: '156', width: '700', class: 'mypage__content__image'
-    .mypage__content__icon
+    .mypage__content__body
       %img{:src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}
       = form_for @user, url: profile_update_user_path, method: :patch do |f|
         = f.text_field :nick_name, placeholder:"例)AYA☆セール中", class:"nickname-input"
-    .mypage__content__content
-      %textarea.mypage-textarea{:name => "introduction", :placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-        = f.submit "変更する", class:"btn-red"
+        .mypage__content__body__text
+          %textarea.mypage-textarea{:name => "introduction", :placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+          = f.submit "変更する", class:"btn-red"
 
 = render 'toppage/footer'

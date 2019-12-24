@@ -1,10 +1,11 @@
 .contact {
   margin: 40px auto 0;
+  margin-left: 15%;
   width: 80%;
   padding: 0 0 40px;
   background-color: rgb(245, 245, 245);;
+  display: flex;
   &--main {
-    float: right;
     width: 700px;
     &__head {
       background-color: #fff;
@@ -42,6 +43,24 @@
     list-style: none;
     &--top {
       &__list{
+        &:hover{
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: rgb(248, 248, 248);
+          color: #333;
+          .fa-chevron-right{
+            font-size: 16px;
+            color: #333;
+            position: absolute;
+            right: 14px;
+            transition-property: position;
+            transition-duration: 0.2s;
+          }
+        }
+        font-size: 14px;
         position: relative;
         display: block;
         display: flex;
@@ -60,12 +79,35 @@
           background: #eee;
           color: #333;
         }
+      .fa-chevron-right{
+        color: rgb(204, 204, 204);
+        font-size: 16px;
+      }
       }
     }
     &--while {
       margin: 40px 0 0;
       font-weight: bold;
-      &__list__tag {
+      &__list {
+        &:hover{
+          cursor: pointer;
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: rgb(248, 248, 248);
+          color: #333;
+          .fa-chevron-right{
+            font-size: 16px;
+            color: #333;
+            position: absolute;
+            right: 14px;
+            transition-property: position;
+            transition-duration: 0.2s;
+          }
+        }
+        font-weight: normal;
         position: relative;
         display: block;
         display: flex;
@@ -75,12 +117,34 @@
         font-size: 14px;
         color: #333;
         border-top: 1px solid #eee;
+      }
+      .fa-chevron-right{
+        color: rgb(204, 204, 204);
+        font-size: 16px;
       }
     }
     &--under {
       margin: 40px 0 0;
       font-weight: bold;
       &__list {
+        &:hover{
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: rgb(248, 248, 248);
+          color: #333;
+          .fa-chevron-right{
+            font-size: 16px;
+            color: #333;
+            position: absolute;
+            right: 14px;
+            transition-property: position;
+            transition-duration: 0.2s;
+          }
+        }
+        font-weight: normal;
         position: relative;
         display: block;
         display: flex;
@@ -90,6 +154,24 @@
         font-size: 14px;
         color: #333;
         border-top: 1px solid #eee;
+        &__active {
+          font-weight: 600;
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: #eee;
+          color: #333;
+          i{
+            font-size: 16px;
+            color: #333;
+          }
+        }
+        .fa-chevron-right{
+          color: rgb(204, 204, 204);
+          font-size: 16px;
+        }
       }
     }
   }

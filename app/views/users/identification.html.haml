@@ -3,9 +3,81 @@
 = render "user_pankz"
 
 
-.user--main
-  .user--main__box
-    .user--main__head
+.user-main
+  .myside
+    %nav.myside--top
+      = link_to user_path(current_user.id), class: "myside--top__list" do
+        %span マイページ
+        %i.fas.fa-chevron-right
+      = link_to notification_user_path(current_user.id), class: "myside--top__list" do
+        %span お知らせ
+        %i.fas.fa-chevron-right
+      = link_to todo_user_path(current_user.id), class: "myside--top__list" do
+        %span やることリスト
+        %i.fas.fa-chevron-right
+      = link_to likes_user_path(current_user.id), class: "myside--top__list" do
+        %span いいね！一覧
+        %i.fas.fa-chevron-right
+      = link_to new_good_path, class: 'myside--top__list' do
+        %span 出品する
+        %i.fas.fa-chevron-right
+      = link_to items_user_path(current_user.id), class: "myside--top__list" do
+        %span 出品した商品 出品中
+        %i.fas.fa-chevron-right
+      = link_to dealing_user_path(current_user.id), class: "myside--top__list" do
+        %span 出品した商品 取引中
+        %i.fas.fa-chevron-right
+      = link_to sold_user_path(current_user.id), class: "myside--top__list" do
+        %span 出品した商品 売却済み
+        %i.fas.fa-chevron-right
+      = link_to buying_user_path(current_user.id), class: "myside--top__list" do
+        %span 購入した商品 取引中
+        %i.fas.fa-chevron-right
+      = link_to bought_user_path(current_user.id), class: "myside--top__list" do
+        %span 購入した商品 過去の取引
+        %i.fas.fa-chevron-right
+      = link_to news_user_path(current_user.id), class: "myside--top__list" do
+        %span ニュース一覧
+        %i.fas.fa-chevron-right
+      = link_to guide_user_path(current_user.id), class: "myside--top__list" do
+        %span ガイド
+        %i.fas.fa-chevron-right
+      = link_to contact_user_path(current_user.id), class: "myside--top__list" do
+        %span お問い合わせ
+        %i.fas.fa-chevron-right
+    %h3.myside--while
+      メルペイ
+      %li.myside--while__list
+        %span 売り上げ・振込申請
+        %i.fas.fa-chevron-right
+      %li.myside--while__list
+        %span ポイント申請
+        %i.fas.fa-chevron-right
+    %h3.myside--under
+      設定
+      = link_to profile_user_path(current_user.id), class: "myside--under__list" do
+        %span プロフィール
+        %i.fas.fa-chevron-right
+      = link_to address_edit_user_path(current_user.id), class: "myside--under__list" do
+        %span 発送元・お届け先住所変更
+        %i.fas.fa-chevron-right
+      = link_to payment_user_path(current_user.id), class: "myside--under__list" do
+        %span 支払い方法
+        %i.fas.fa-chevron-right
+      = link_to email_user_path(current_user.id), class: "myside--under__list" do
+        %span メール/パスワード
+        %i.fas.fa-chevron-right
+      = link_to identification_user_path(current_user.id), class: "myside--under__list__active" do
+        %span 本人情報
+        %i.fas.fa-chevron-right
+      = link_to phone_user_path(current_user.id), class: "myside--under__list" do
+        %span 電話番号の確認
+        %i.fas.fa-chevron-right
+      = link_to logout_user_path(current_user.id), class: "myside--under__list" do
+        %span ログアウト
+        %i.fas.fa-chevron-right
+  .user-main__box
+    .user-main__head
       本人情報の登録
     = form_for @user do |f|
       .user--info
@@ -64,5 +136,4 @@
           %p
             本人情報の登録について >
   
-  = render 'side'
 = render 'toppage/footer'
