@@ -24,7 +24,9 @@
 
 &--under{
   &--box {
-    background-image: image-url("me.image.jpag.png");
+    // background-image: image-url("me.image.jpag.png");
+    background-color: #fff;
+    height: 100px;
     padding: 160px 0 60px;
     text-align: center;
    }        

@@ -1,6 +1,7 @@
-.user-main__sell {
+.user-main__sell{
   height: 245px;
   background-color: #fff;
+  position: relative;
   &__head {
     width: 700px;
     padding: 0 16px;
@@ -9,31 +10,50 @@
     font-weight: bold;
     line-height: 72px;
   }
-  &__body ul {
+  &__body  {
     display: flex;
-    justify-content: center;
-    padding: 20px 125px;
+    justify-content: space-between;
     font-weight: bold;
+    height: 74px;
+    text-align: center;
+    line-height: 74px;
     .active {
-      background-color: #eee;
-      display: inline-block;
-      padding: 20px 135px;
+      border-top: 2px solid #ea352d;
+      width: 244px;
+      // background-color: #eee;
+      // display: inline-block;
+      // padding: 20px 135px;
     }
     .dealing {
-      display: inline-block;
-      
+      background-color:#eee;
+      width: 244px;
+    }
+    .gray{
+      background-color:white;
+      color:black;
+      border-top: 2px solid #ea352d;
+    }
+    .white{
+      background-color: #eee;
+      border-style: none;
     }
     .sold {
-      background: #fff;
-      border-top: 2px solid #ea352d;
-      display: inline-block;
+      background: #eee;
+      width: 244px;
     }
   }
-
-  &--under{
-    &--box {
-      padding: 160px 0 60px;
-      text-align: center;
-    }        
+  .white-box{
+     position: absolute;
+     width: 244px;
+     height: 74px;
+     background-color: #fff;
+     top:72px;
+     left:488px;
+     border-top: 2px solid #ea352d;
+     text-align: center;
+     line-height: 74px;
+     font-weight: bold;
   }
+  
 }
+
