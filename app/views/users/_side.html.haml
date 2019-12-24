@@ -1,73 +1,72 @@
 .myside
    %nav.myside--top
-      %li.myside--top__list__active
-         = link_to "マイページ", user_path(current_user.id), class: 'myside--top__list__box'
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "お知らせ", notification_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "やることリスト", todo_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "いいね！一覧", likes_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "出品する", new_good_path, class: 'myside--top__list__box'
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "出品した商品 出品中", items_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "出品した商品 取引中", dealing_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "出品した商品 売却済み", sold_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "購入した商品 取引中", buying_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "購入した商品 過去の取引", bought_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "ニュース一覧", news_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "ガイド", guide_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--top__list
-         = link_to "お問い合わせ", contact_user_path(current_user.id), class: "myside--top__list__box"
-         = icon "fas",'chevron-right', class: 'icon'
+      = link_to user_path(current_user.id), class: "myside--top__list__active" do
+         %span マイページ
+         %i.fas.fa-chevron-right
+      = link_to notification_user_path(current_user.id), class: "myside--top__list" do
+         %span お知らせ
+         %i.fas.fa-chevron-right
+      = link_to todo_user_path(current_user.id), class: "myside--top__list" do
+         %span やることリスト
+         %i.fas.fa-chevron-right
+      = link_to likes_user_path(current_user.id), class: "myside--top__list" do
+         %span いいね！一覧
+         %i.fas.fa-chevron-right
+      = link_to new_good_path, class: 'myside--top__list' do
+         %span 出品する
+         %i.fas.fa-chevron-right
+      = link_to items_user_path(current_user.id), class: "myside--top__list" do
+         %span 出品した商品 出品中
+         %i.fas.fa-chevron-right
+      = link_to dealing_user_path(current_user.id), class: "myside--top__list" do
+         %span 出品した商品 取引中
+         %i.fas.fa-chevron-right
+      = link_to sold_user_path(current_user.id), class: "myside--top__list" do
+         %span 出品した商品 売却済み
+         %i.fas.fa-chevron-right
+      = link_to buying_user_path(current_user.id), class: "myside--top__list" do
+         %span 購入した商品 取引中
+         %i.fas.fa-chevron-right
+      = link_to bought_user_path(current_user.id), class: "myside--top__list" do
+         %span 購入した商品 過去の取引
+         %i.fas.fa-chevron-right
+      = link_to news_user_path(current_user.id), class: "myside--top__list" do
+         %span ニュース一覧
+         %i.fas.fa-chevron-right
+      = link_to guide_user_path(current_user.id), class: "myside--top__list" do
+         %span ガイド
+         %i.fas.fa-chevron-right
+      = link_to contact_user_path(current_user.id), class: "myside--top__list" do
+         %span お問い合わせ
+         %i.fas.fa-chevron-right
    %h3.myside--while
       メルペイ
-   %ul.myside--while__list
-      %li.myside--while__list__tag
-         売り上げ・振込申請
-         = icon "fas",'chevron-right', class: 'icon'
-      %li.myside--while__list__tag
-         ポイント申請
-         = icon "fas",'chevron-right', class: 'icon'
+      %li.myside--while__list
+         %span 売り上げ・振込申請
+         %i.fas.fa-chevron-right
+      %li.myside--while__list
+         %span ポイント申請
+         %i.fas.fa-chevron-right
    %h3.myside--under
       設定
-   %ul.myside--under__list
-      = link_to "プロフィール", profile_user_path(current_user.id), class: "myside--top__list__box"
-      = icon "fas",'chevron-right', class: 'icon'
-   %ul.myside--under__list
-      = link_to "発送元・お届け先住所変更", address_edit_user_path(current_user.id), class: "myside--top__list__box"
-      = icon "fas",'chevron-right', class: 'icon'
-   %ul.myside--under__list
-      = link_to "支払い方法", payment_user_path(current_user.id), class: "myside--top__list__box"
-      = icon "fas",'chevron-right', class: 'icon'
-   %ul.myside--under__list
-      = link_to "メール/パスワード", email_user_path(current_user.id), class: "myside--top__list__box"
-      = icon "fas",'chevron-right', class: 'icon'
-   %ul.myside--under__list
-      = link_to "本人情報", identification_user_path(current_user.id), class: "myside--top__list__box"
-      = icon "fas",'chevron-right', class: 'icon'
-   %ul.myside--under__list
-      = link_to "電話番号の確認", phone_user_path(current_user.id), class: "myside--top__list__box"
-      = icon "fas",'chevron-right', class: 'icon'
-   %ul.myside--under__list
-      = link_to "ログアウト", logout_user_path(current_user.id), class: "myside--top__list__box"
-      = icon "fas",'chevron-right', class: 'icon'
+      = link_to profile_user_path(current_user.id), class: "myside--under__list" do
+         %span プロフィール
+         %i.fas.fa-chevron-right
+      = link_to address_edit_user_path(current_user.id), class: "myside--under__list" do
+         %span 発送元・お届け先住所変更
+         %i.fas.fa-chevron-right
+      = link_to payment_user_path(current_user.id), class: "myside--under__list" do
+         %span 支払い方法
+         %i.fas.fa-chevron-right
+      = link_to email_user_path(current_user.id), class: "myside--under__list" do
+         %span メール/パスワード
+         %i.fas.fa-chevron-right
+      = link_to identification_user_path(current_user.id), class: "myside--under__list" do
+         %span 本人情報
+         %i.fas.fa-chevron-right
+      = link_to phone_user_path(current_user.id), class: "myside--under__list" do
+         %span 電話番号の確認
+         %i.fas.fa-chevron-right
+      = link_to logout_user_path(current_user.id), class: "myside--under__list" do
+         %span ログアウト
+         %i.fas.fa-chevron-right

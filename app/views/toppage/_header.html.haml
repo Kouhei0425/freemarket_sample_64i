@@ -25,22 +25,18 @@
         .header-login-nav
           -if user_signed_in?
             .header-login-nav__lists
-              .header-login-nav__lists__likes
-                = link_to "#" do
-                  %i.far.fa-heart
-                  %span いいね！一覧
-              .header-login-nav__lists__note
-                = link_to user_path(current_user.id) do
-                  %i.far.fa-bell
-                  %span お知らせ
-              .header-login-nav__lists__todo
-                = link_to user_path(current_user.id) do
-                  %i.fas.fa-check
-                  %span やることリスト
-              %i.header-login-nav__lists__mypage
-                = link_to user_path(current_user.id) do
-                  %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
-                  %span マイページ
+              = link_to likes_user_path(current_user.id), class: "header-login-nav__lists__likes" do
+                %i.far.fa-heart
+                %span いいね！一覧
+              = link_to notification_user_path(current_user.id), class: "header-login-nav__lists__note" do
+                %i.far.fa-bell
+                %span お知らせ
+              = link_to todo_user_path(current_user.id), class: "header-login-nav__lists__todo" do
+                %i.fas.fa-check
+                %span やることリスト
+              = link_to user_path(current_user.id), class:"header-login-nav__lists__mypage" do
+                %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/
+                %span マイページ
           -else
             = link_to "新規会員登録", step1_signup_index_path, class: 'btn-red'
             = link_to "ログイン", new_user_session_path, class: 'header-login'

@@ -136,12 +136,29 @@
     }
   }
   .myside {
-    float: left;
     width: 280px;
     margin: 0 40px 0 0;
     list-style: none;
     &--top {
       &__list{
+        &:hover{
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: rgb(248, 248, 248);
+          color: #333;
+          .fa-chevron-right{
+            font-size: 16px;
+            color: #333;
+            position: absolute;
+            right: 14px;
+            transition-property: position;
+            transition-duration: 0.2s;
+          }
+        }
+        font-size: 14px;
         position: relative;
         display: block;
         display: flex;
@@ -159,13 +176,37 @@
           padding: 16px;
           background: #eee;
           color: #333;
+          
         }
+      .fa-chevron-right{
+        color: rgb(204, 204, 204);
+        font-size: 16px;
+      }
       }
     }
     &--while {
       margin: 40px 0 0;
       font-weight: bold;
-      &__list__tag {
+      &__list {
+        &:hover{
+          cursor: pointer;
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: rgb(248, 248, 248);
+          color: #333;
+          .fa-chevron-right{
+            font-size: 16px;
+            color: #333;
+            position: absolute;
+            right: 14px;
+            transition-property: position;
+            transition-duration: 0.2s;
+          }
+        }
+        font-weight: normal;
         position: relative;
         display: block;
         display: flex;
@@ -175,12 +216,34 @@
         font-size: 14px;
         color: #333;
         border-top: 1px solid #eee;
+      }
+      .fa-chevron-right{
+        color: rgb(204, 204, 204);
+        font-size: 16px;
       }
     }
     &--under {
       margin: 40px 0 0;
       font-weight: bold;
       &__list {
+        &:hover{
+          position: relative;
+          display: block;
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          background: rgb(248, 248, 248);
+          color: #333;
+          .fa-chevron-right{
+            font-size: 16px;
+            color: #333;
+            position: absolute;
+            right: 14px;
+            transition-property: position;
+            transition-duration: 0.2s;
+          }
+        }
+        font-weight: normal;
         position: relative;
         display: block;
         display: flex;
@@ -191,8 +254,12 @@
         color: #333;
         border-top: 1px solid #eee;
       }
+      .fa-chevron-right{
+        color: rgb(204, 204, 204);
+        font-size: 16px;
+      }
     }
-  } 
+  }
 }
 
 // ここからユーザーページパンくず
