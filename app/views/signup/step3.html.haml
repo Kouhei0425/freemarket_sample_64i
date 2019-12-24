@@ -47,7 +47,7 @@
       .user-new__main__form__content__text
         %h 都道府県
         .red2 必須
-      = f.select :prefecture, [["北海道",1],["青森",2]]
+      = f.collection_select :prefecture, Area.all,:id,:name,{prompt:'---'}
       .user-new__main__form__content__text
         %h 市区町村
         .red2 必須

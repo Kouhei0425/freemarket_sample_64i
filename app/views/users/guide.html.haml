@@ -1,7 +1,7 @@
 .guide-header
   .guide-header__up
     = link_to root_path, class: 'logo' do
-      = image_tag "fmarket_logo_red.svg", size: "134x34", alt: "Mercari", class: "logo-img"
+      = image_tag asset_path("fmarket_logo_red.svg"), size: "134x34", alt: "Mercari", class: "logo-img"
     %i.header-login-nav__lists__mypage
       = link_to user_path(current_user.id) do
         %img{:alt => "", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "32"}/

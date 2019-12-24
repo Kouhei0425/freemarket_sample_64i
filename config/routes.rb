@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     end
   end
   resources :brands
-  resources :categories, only: [:show]
+  resources :categories, only: [:index, :show]
   resources :goods,  except: [:index] do
     resources :buys,  only: [:index, :create]
     member do

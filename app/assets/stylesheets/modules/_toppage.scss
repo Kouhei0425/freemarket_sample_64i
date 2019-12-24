@@ -26,7 +26,7 @@
     &.fadeSlider_03 {
       opacity: 0;
       background-image: image-url("image.jpg");
-      animation: fadeSlideImg02 30s ease-out infinite;
+      animation: fadeSlideImg03 30s ease-out infinite;
       animation-delay: 3s;
     }
   }
@@ -157,6 +157,7 @@
           padding:0 12px;
           background-color: white;
           width:188px;
+          color:black;
         }
       }
     }

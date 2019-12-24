@@ -3,43 +3,45 @@
     %span
       = link_to "フリマケ", root_path
       %i.fas.fa-angle-right
-    - if current_page?(user_path(current_user.id))
+    - if current_page?(user_path)
       %span.last-pankz マイページ
     - else
       = link_to user_path(current_user.id) do
         %span マイページ
       %i.fas.fa-angle-right
-    - if current_page?(profile_user_path(current_user.id))
+    - if current_page?(profile_user_path)
       %span.last-pankz プロフィール
-    - if current_page?(address_edit_user_path(current_user.id))
+    - if current_page?(address_edit_user_path)
       %span.last-pankz 発送先・お届け先住所変更
-    - if current_page?(payment_user_path(current_user.id))
+    - if current_page?(payment_user_path)
       %span.last-pankz 支払い方法
-    - if current_page?(email_user_path(current_user.id))
+    - if current_page?(email_user_path)
       %span.last-pankz メール/パスワード
-    - if current_page?(identification_user_path(current_user.id))
+    - if current_page?(identification_user_path)
       %span.last-pankz 本人情報の登録
-    - if current_page?(phone_user_path(current_user.id))
+    - if current_page?(phone_user_path)
       %span.last-pankz 電話番号の確認
-    - if current_page?(notification_user_path(current_user.id))
+    - if current_page?(notification_user_path)
       %span.last-pankz お知らせ
-    - if current_page?(todo_user_path(current_user.id))
+    - if current_page?(todo_user_path)
       %span.last-pankz やることリスト
-    - if current_page?(likes_user_path(current_user.id))
+    - if current_page?(likes_user_path)
       %span.last-pankz いいね！一覧
-    - if current_page?(items_user_path(current_user.id))
+    - if current_page?(items_user_path)
       %span.last-pankz 出品した商品 - 出品中
-    - if current_page?(dealing_user_path(current_user.id))
+    - if current_page?(dealing_user_path)
       %span.last-pankz 出品した商品 - 取引中
-    - if current_page?(sold_user_path(current_user.id))
+    - if current_page?(sold_user_path)
       %span.last-pankz 出品した商品 - 売却済み
-    - if current_page?(buying_user_path(current_user.id))
+    - if current_page?(buying_user_path)
       %span.last-pankz 購入した商品 - 取引中
-    - if current_page?(bought_user_path(current_user.id))
+    - if current_page?(bought_user_path)
       %span.last-pankz 購入した商品 - 過去の取引
-    - if current_page?(news_user_path(current_user.id))
+    - if current_page?(news_user_path)
       %span.last-pankz ニュース一覧
-    - if current_page?(rates_user_path(current_user.id))
+    - if current_page?(rates_user_path)
       %span.last-pankz 評価一覧
-    - if current_page?(contact_user_path(current_user.id))
+    - if current_page?(contact_user_path)
       %span.last-pankz お問い合わせ
+    - if current_page?(logout_user_path)
+      %span.last-pankz ログアウト

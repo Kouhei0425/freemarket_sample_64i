@@ -11,7 +11,11 @@ class GoodsController < ApplicationController
   end
 
   def create
-    @good = Good.create(good_params)
+    if params[:images][:image]
+      @good = Good.create(good_params)
+    else
+      redirect_to :back
+    end
     if @good.save
       params[:images][:image].each do |image|
         Image.create(image: image, good_id: @good.id )
@@ -19,8 +23,9 @@ class GoodsController < ApplicationController
       params[:category_ids][:category_id].each do |category_id|
         CategoryGood.create(category_id: category_id, good_id: @good.id)
       end
+      redirect_to root_path
     end
-    redirect_to root_path
+    
   end
 
   def destroy
@@ -48,15 +53,16 @@ class GoodsController < ApplicationController
     @good = Good.find(params[:id])
     @good.update(good_params)
     if @good.update(good_params)
-      if params[:images][:image]
-        params[:images][:image].each do |image|
-          Image.create(image: image, good_id: @good.id)
+      params[:images][:image].each do |image|
+        if image.present?
+          Image.create(image: image, good_id: @good.id)  
         end
       end
-      if params[:destroy][:ids]
-        params[:destroy][:ids].each do |id|
-         image = Image.find(id)
-         image.destroy
+
+      params[:destroy][:ids].each do |id|
+        if id.present?
+          image = Image.find(id) 
+          image.destroy 
         end
       end
       
@@ -68,7 +74,7 @@ class GoodsController < ApplicationController
         CategoryGood.create(category_id: category_id, good_id: @good.id)
       end
     end
-    redirect_to good_path(@good.id)
+    redirect_to root_path
   end
 
 
@@ -76,7 +82,7 @@ class GoodsController < ApplicationController
 
   def good_params
     params.require(:good).permit(:name, :explain, :size, :price, :method, :ship, :burden, 
-      :status, :brand_id, :area_id, :user_id, images_attribute: [:image], category_ids: [])
+      :status, :brand_id, :area_id, :user_id, category_ids: [])
   end
 
   def move_to_sign_up
