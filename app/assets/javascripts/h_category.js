@@ -15,6 +15,10 @@ $( function() {
     }
     //最初の１
     $(document).on('mouseover', '.header-nav-cat', function() {
+
+      $(".header-cat-nav-category").css({
+        'display' : `flex`
+      })
       $(".header-cat-nav-category--1").css({
         'visibility': `visible`
       })
@@ -29,11 +33,17 @@ $( function() {
       $(".header-cat-nav-category--1").css({
         'visibility': `hidden`
       })
+      $(".header-cat-nav-category").css({
+        'display' : `none`
+      })
     })
 
 
   $(document).on('mouseover', '.header-cat-nav-category--1--li', function() {
     $(".header-cat-nav-category--2--li").remove();
+    $(".header-cat-nav-category").css({
+      'display' : `flex`
+    })
     $(".header-cat-nav-category--1").css({
       'visibility': `visible`
     })
@@ -63,6 +73,9 @@ $( function() {
   });
    
   $(document).on('mouseout', '.header-cat-nav-category--1--li', function() {
+    $(".header-cat-nav-category").css({
+      'display' : `flex`
+    })
     $(".header-cat-nav-category--1").css({
       'visibility': `hidden`
     })
@@ -73,6 +86,9 @@ $( function() {
 
   $(document).on('mouseover', '.header-cat-nav-category--2--li', function() {
     $(".header-cat-nav-category--3--li").remove();
+    $(".header-cat-nav-category").css({
+      'display' : `flex`
+    })
     $(".header-cat-nav-category--1").css({
       'visibility': `visible`
     })
