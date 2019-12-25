@@ -19,6 +19,14 @@ body{
         &__box{
           font-size: 14px;
           color: #888888c0;
+          text-align: center;
+          line-height: 1.5;
+          table-layout: fixed;
+          overflow-wrap: break-word;
+        }
+        &__box-1{
+          font-size: 14px;
+          color: #888888c0;
           line-height: 1.5;
           table-layout: fixed;
           overflow-wrap: break-word;
