@@ -45,6 +45,7 @@
     &__title{
       font-size:24px;
       font-weight: 600;
+      margin-bottom: 16px;
       display: flex;
       justify-content: space-between;
       .top_ca__ca_block__name{
@@ -109,7 +110,7 @@
           box-sizing: border-box;
           font-size: 14px;
           height: 58px;
-          padding:0 12px;
+          padding:8px 12px 0;
           background-color: white;
           width:188px;
           color:black;
