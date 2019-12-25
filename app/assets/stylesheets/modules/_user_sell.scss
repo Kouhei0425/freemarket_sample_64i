@@ -10,35 +10,23 @@
     font-weight: bold;
     line-height: 72px;
   }
-  &__body  {
+  &__body {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
     height: 74px;
     text-align: center;
     line-height: 74px;
-    .active {
+    .active-tab {
       border-top: 2px solid #ea352d;
       width: 244px;
-      // background-color: #eee;
-      // display: inline-block;
-      // padding: 20px 135px;
-    }
-    .dealing {
-      background-color:#eee;
-      width: 244px;
-    }
-    .gray{
-      background-color:white;
+      background-color: #fff;
       color:black;
-      border-top: 2px solid #ea352d;
     }
-    .white{
-      background-color: #eee;
-      border-style: none;
-    }
-    .sold {
+    .body-tab {
       background: #eee;
+      text-decoration: none;
+      color: #333;
       width: 244px;
     }
   }
@@ -54,6 +42,24 @@
      line-height: 74px;
      font-weight: bold;
   }
-  
+  &__items{
+    padding: 24px 24px;
+    background-color: #fff;
+    &__box{
+      .top_ca__ca_block__box__small_box{
+        margin: 12px 12px;
+        display: inline-block;
+        .top_ca__ca_block__box__small_box__image{
+
+        }
+        .top_ca__ca_block__box__small_box__price{
+          span{
+          }
+        }
+        .top_ca__ca_block__box__small_box__message{
+        }
+      }
+    }
+  }
 }
 

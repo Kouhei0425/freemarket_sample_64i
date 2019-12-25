@@ -79,15 +79,21 @@
   .user-main__sell
     .user-main__sell__head
       出品した商品
-    %ul.user-main__sell__body
-      %li.active.white
+    .user-main__sell__body
+      = link_to items_user_path(current_user.id), class: "body-tab" do
         出品中
-      %li.dealing.gray
+      .active-tab
         取引中
-      %li.sold
+      = link_to sold_user_path(current_user.id), class: "body-tab" do
         売却済み
     .user-main__sell__items
-      %ul.user-main__sell__items
-        %li.mys--purchase--under--box
-          取引中の商品がありません    
+      .user-main__sell__items__box
+        - if @goods
+          - @goods.each do |good|
+            - if good.buy
+              = render "good", { good: good }
+            - else
+        - else
+          取引中の商品はありません
+
 = render 'toppage/footer'

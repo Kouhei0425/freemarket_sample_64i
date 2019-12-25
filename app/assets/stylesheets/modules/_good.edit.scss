@@ -24,8 +24,6 @@
       -webkit-transition: all ease-out .3s;
       transition: all ease-out .3s;
       cursor: pointer;
-
-      
     }
     &__or{
       display: inline-block;
@@ -39,6 +37,7 @@
       margin: 16px 0 16px 0;
       line-height: 48px;
       font-size: 14px;
+      cursor: pointer;
     }
     &__delete {
       background: silver;
@@ -46,6 +45,7 @@
       margin: 16px 0 16px 0;
       line-height: 48px;
       font-size: 14px;
+      cursor: pointer;
     }
   }
 }

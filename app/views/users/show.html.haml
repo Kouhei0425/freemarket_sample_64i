@@ -7,7 +7,7 @@
       .mymain--user__img
         .mymain--user__img__block
           .mymain--user__img__block__face
-            = image_tag"sample1.png", size:'60x60'
+            %img{:src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}
           
           .mymain--user__img__name
             = @user.nick_name
@@ -20,6 +20,7 @@
               出品数
               %span
                 0
+    - if params[:id] == current_user.id
       .mymain--user__todo
         %ul.mymain--user__todo
           %li.mymain--user__todo__active
@@ -30,7 +31,8 @@
           .mymain--user__todo__btn
             %a
               一覧を見る
-
+    - else
+  - if params[:id] == current_user.id
     .mymain--purchase
       %h4.mymain--purchase__head
         購入した商品
@@ -45,5 +47,6 @@
         %ul.mymain--purchase--under
           %li.mymain--purchase--under--box
             取引中の商品がありません
+  - else
   = render 'side.html.haml'
 = render 'toppage/footer.html.haml'

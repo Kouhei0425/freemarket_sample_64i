@@ -1,38 +1,52 @@
-.mys--purchase {
+.my--purchase {
   height: 245px;
   background-color: #fff;
   &__head {
+    width: 700px;
     padding: 0 16px;
     background-color: #fafafa;
     font-size: 16px;
+    font-weight: bold;
     line-height: 72px;
   }
-  &__situation li {
-    display: inline-block;
-    padding: 20px 125px;
-    font-weight: bold;
-  }
-  .active {
-    
-    
-    padding: 20px 135px;
-  }
   &__situation {
-    background-color: #eee;
-    
-  }
-  .kako {
-    background: #fff;
-    border-top: 2px solid #ea352d;
-  }
-
-&--under{
-  &--box {
-    // background-image: image-url("me.image.jpag.png");
-    height: 100px;
-    padding: 160px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    height: 74px;
     text-align: center;
-    background-color: #fff;
-   }        
- }
+    line-height: 74px;
+    .active {
+      border-top: 2px solid #ea352d;
+      width: 350px;
+      background-color: #fff;
+      color:black;
+    }
+    .non-active {
+      background: #eee;
+      text-decoration: none;
+      color: #333;
+      width: 350px;
+    }
+  }
+  &--under{
+    &--box {
+      padding: 20px 0 20px;
+      background-color: #fff;
+      .top_ca__ca_block__box__small_box{
+        margin: 12px 12px;
+        display: inline-block;
+        .top_ca__ca_block__box__small_box__image{
+
+        }
+        .top_ca__ca_block__box__small_box__price{
+          span{
+          }
+        }
+        .top_ca__ca_block__box__small_box__message{
+        }
+      }
+    }
+  }
 }
+

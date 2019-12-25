@@ -40,7 +40,7 @@
     width: 700px;
     &--user{
       &__img {
-        background-image: image-url("back.jpag");
+        background-image: image-url("haikei.jpg");
         height: 200px;
         position: relative;
         padding: 20px;
@@ -402,6 +402,7 @@
       }
     }
     &__image{
+      background-image: image-url("haikei.jpg");
     }
     &__body{
       width: 100%;
@@ -432,7 +433,7 @@
         padding: 40px 16px;
         background-color: #fff;
         margin-top: -16px;
-        textarea.mypage-textarea {
+        .mypage-textarea {
           display: block;
           width: 97%;
           max-width: 100%;

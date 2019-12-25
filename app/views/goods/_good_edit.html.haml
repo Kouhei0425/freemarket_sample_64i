@@ -50,9 +50,9 @@
               ブランド
             %td
               -if good.brand.nil?
-                = link_to good.brand.name, brand_path(good.id)
-              -else
                 なし
+              -else
+                = link_to good.brand.name, brand_path(good.id)
           %tr
           - if good.size.present?
             %th
@@ -90,9 +90,6 @@
         = good.price.to_s(:delimited)
       .item-box__price__tax
         (税込) 送料込み
-    = link_to '購入画面に進む', good_buys_path(good.id), class: 'item-box__buy'
-    .item-box__caution
-      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
       = simple_format good.explain 
   .item--edit__box

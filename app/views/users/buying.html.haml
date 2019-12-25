@@ -76,17 +76,21 @@
         %span ログアウト
         %i.fas.fa-chevron-right
   .my--purchase
-    %h4.my--purchase__head
+    .my--purchase__head
       購入した商品
-    %ul.my--purchase__situation
-      %li.active
+    .my--purchase__situation
+      .active
         %h5
           取引中
-      %li
+      = link_to bought_user_path(current_user.id), class: "non-active" do
         %h5
           過去の取引
     .my--purchase--under
-      %ul.my--purchase--under
-        %li.my--purchase--under--box
+      .my--purchase--under--box
+        - if @good
+          - @good.each do |good|
+            = render "toppage/good", { good: good } 
+        - else
           取引中の商品がありません
+          
 = render 'toppage/footer'

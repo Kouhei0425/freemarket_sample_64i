@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :move_to_toppage
 
   def show
-    @user = User.find_by(id: current_user.id)
+    @user = User.find(params[:id])
   end
 
   def profile
@@ -57,31 +57,33 @@ class UsersController < ApplicationController
   end
 
   def items
-    @user = User.find_by(id: current_user.id)
+    @goods = Good.where(user_id: current_user.id)
   end
 
   def dealing
-    @user = User.find_by(id: current_user.id)
+    @goods = Good.where(user_id: current_user.id)
   end
 
   def sold
-    @user = User.find_by(id: current_user.id)
+    @goods = Good.where(user_id: current_user.id)
   end
 
   def buying
-    @user = User.find_by(id: current_user.id)
     @buys = Buy.where(user_id: current_user.id)
-
-    @buied_goods = []
+    @good = []
     @buys.each do |buy|
-      buy = Good.where(id: buy.id).first
-      @buied_goods << buy
+      buy = Good.where(id: buy.good_id).first
+      @good << buy
     end
-
   end
 
   def bought
-    @user = User.find_by(id: current_user.id)
+    @buys = Buy.where(user_id: current_user.id)
+    @good = []
+    @buys.each do |buy|
+      buy = Good.where(id: buy.good_id).first
+      @good << buy
+    end
   end
 
   def rates
@@ -120,7 +122,8 @@ class UsersController < ApplicationController
       :birthday_year,
       :birthday_month,
       :birthday_date,
-      :phone_number
+      :phone_number,
+      :profile
     )
   end
 
