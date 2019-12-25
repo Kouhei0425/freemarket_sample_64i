@@ -114,24 +114,61 @@ body {
           .header-cat-nav {
             height: 100%;
             display: flex;
-            //position: relative;
-            //.header-cat-nav-category{
-            //  width: 72vw;
-            //  margin-top: 44px;
-            //  z-index: 20;
-            //  position: absolute;
-            //  &--1{
-            //    width: 224px;
-            //    background-color: #fff;
-            //    border: 1px solid #000;
-            //    &--li{
-            //      font-size: 14px;
-            //      color: black;
-            //      line-height: 44px;
-            //      display: block;
-            //    }
-            //  }
-            //}
+            position: relative;
+            .header-cat-nav-category{
+              width: 72vw;
+              height: 572px;
+              margin-top: 44px;
+              z-index: 20;
+              display: flex;
+              position: absolute;
+              &--1{
+                width: 224px;
+                background-color: #fff;
+                box-shadow: -0.1px 0.1px 1px 1px gray;
+                visibility: hidden;
+                &--li{
+                  font-size: 14px;
+                  color: black;
+                  line-height: 44px;
+                  display: block;
+                  &:hover{
+                    color: white;
+                    background-color: red;
+                  }
+                }
+              }
+              &--2{
+                width: 224px;
+                background-color: #fff;
+                box-shadow: -0.1px 0.1px 1px 1px gray;
+                visibility: hidden;
+                &--li{
+                  font-size: 14px;
+                  color: black;
+                  line-height: 30px;
+                  display: block;
+                  &:hover{
+                    background-color: rgba(177, 177, 177, 0.16);
+                  }
+                }
+              }
+              &--3{
+                width: 224px;
+                background-color: #fff;
+                box-shadow: -0.1px 0.1px 1px 1px gray;
+                visibility: hidden;
+                &--li{
+                  font-size: 13px;
+                  color: black;
+                  line-height: 25px;
+                  display: block;
+                  &:hover{
+                    background-color: rgba(177, 177, 177, 0.16);
+                  }
+                }
+              }
+            }
             .header-nav-cat {
               width: 160px;
               text-decoration: none;
@@ -413,5 +450,6 @@ body {
     }
   }
 }
+
  
 

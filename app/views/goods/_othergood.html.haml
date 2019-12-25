@@ -5,7 +5,9 @@
     .other-good__text__name
       = good.name
     .other-good__text__price
-      = good.price
+      %span
+        ¥
+      = good.price.to_s(:delimited)
       
 
   
