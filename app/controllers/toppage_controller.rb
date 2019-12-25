@@ -16,6 +16,12 @@ class ToppageController < ApplicationController
     @nike_goods = @nike.goods.order("created_at DESC").first(10)
     @supreme = Brand.find(4)
     @supreme_goods = @supreme.goods.order("created_at DESC").first(10)
+
+    @children = Category.where( parent_id: params[:parent_id] )
+    respond_to do |format|
+      format.html
+      format.json { render json: @children}
+    end
   end
 
   def search

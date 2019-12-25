@@ -12,16 +12,23 @@
     .header-nav
       .header-nav-box
         .header-cat-nav
-          //.header-cat-nav-category
-          //  .header-cat-nav-category--1
-          //    = link_to "レディース", category_path(1), class: "header-cat-nav-category--1--li", value: 1
-          //    = link_to "メンズ", category_path(2), class: "header-cat-nav-category--1--li", value: 2
-          //    = link_to "ベビー・キッズ", category_path(3), class: "header-cat-nav-category--1--li", value: 3
-          //    = link_to "インテリア・住まい・小物", category_path(4), class: "header-cat-nav-category--1--li", value: 4
-          //    = link_to "本・音楽・ゲーム", category_path(5), class: "header-cat-nav-category--1--li", value: 5
-          //    = link_to "おもちゃ・ホビー・グッズ", category_path(6), class: "header-cat-nav-category--1--li", value: 6
-          //  .header-cat-nav-category--2
-          //  .header-cat-nav-category--3
+          .header-cat-nav-category
+            .header-cat-nav-category--1
+              = link_to "レディース", category_path(1), class: "header-cat-nav-category--1--li", value: 1
+              = link_to "メンズ", category_path(2), class: "header-cat-nav-category--1--li", value: 2
+              = link_to "ベビー・キッズ", category_path(3), class: "header-cat-nav-category--1--li", value: 3
+              = link_to "インテリア・住まい・小物", category_path(4), class: "header-cat-nav-category--1--li", value: 4
+              = link_to "本・音楽・ゲーム", category_path(5), class: "header-cat-nav-category--1--li", value: 5
+              = link_to "おもちゃ・ホビー・グッズ", category_path(6), class: "header-cat-nav-category--1--li", value: 6
+              = link_to "コスメ・香水・美容", category_path(7), class: "header-cat-nav-category--1--li", value: 7
+              = link_to "家電・スマホ・カメラ", category_path(8), class: "header-cat-nav-category--1--li", value: 8
+              = link_to "スポーツ・レジャー", category_path(9), class: "header-cat-nav-category--1--li", value: 9
+              = link_to "ハンドメイド", category_path(10), class: "header-cat-nav-category--1--li", value: 10
+              = link_to "チケット", category_path(11), class: "header-cat-nav-category--1--li", value: 11
+              = link_to "自動車・オートバイ", category_path(12), class: "header-cat-nav-category--1--li", value: 12
+              = link_to "その他", category_path(13), class: "header-cat-nav-category--1--li", value: 13
+            .header-cat-nav-category--2
+            .header-cat-nav-category--3
           %i.header-nav-cat
             = link_to category_path(1), class: 'nav-cat' do
               %svg.icon-cat{"aria-hidden" => "true", :height => "16", :viewbox => "0 0 20 16", :width => "20"}
